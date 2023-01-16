@@ -6,3 +6,21 @@ Bryce FUERTES, Thomas FALSIMAGNE, Alex JOLAS, James GRASSER, Nolan JACQUEMONT
 
 # I. Contexte général 
 
+
+# II. Objectifs du projet 
+
+
+# III. Répartition des tâches et suivi des backlogs 
+
+[cols="1,2,2,5",options=header]
+|===
+| Date    | Nom         |  Lien                             | Retour
+| 16/01/2023 | BACKLOG PRODUIT| https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/issues | 
+| 16/01/2023 | SPRINT 1 | https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/milestone/2 | 
+| 16/01/2023 | SPRINT 2 | https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/milestone/3 |
+|===
+
+# IV. Livrables 
+
+
+
