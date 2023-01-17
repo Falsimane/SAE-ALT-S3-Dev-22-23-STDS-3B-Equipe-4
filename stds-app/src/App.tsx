@@ -1,3 +1,4 @@
+
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
@@ -14,40 +15,40 @@ import CardContent from '@mui/material/CardContent';
 
 function CardBox(props: { colordot: string; title: string }) {
   return (
-      <Box sx={{ display: "flex", justifyContent: "center", marginTop: 5 }}>
-        <Box sx={{ width: "90%" }}>
-          <Typography
-              sx={{
-                textAlign: "left",
-                fontWeight: "bold",
-                fontSize: 20,
-                marginBottom: 1
-              }}
-          >
-            {" "}
-            {props.title}{" "}
-          </Typography>
-
+    <Box sx={{ display: "flex", justifyContent: "center", marginTop: 5 }}>
+      <Box sx={{ width: "90%" }}>
+        <Typography
+          sx={{
+            textAlign: "left",
+            fontWeight: "bold",
+            fontSize: 20,
+            marginBottom: 1
+          }}
+        >
+          {" "}
+          {props.title}{" "}
+        </Typography>
+        
 
           <Card sx={{ backgroundColor: "#E6E6E6", height: 120 }}>
             <CardActionArea sx={{height: '100%'}}>
               <CardContent>
-                <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "flex-end",
-                      marginRight: 1,
-                      marginTop: 1
-                    }}
-                >
-                  <CircleIcon sx={{ color: props.colordot }} />
-                </Box>
-              </CardContent>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "flex-end",
+                marginRight: 1,
+                marginTop: 1
+              }}
+            >
+              <CircleIcon sx={{ color: props.colordot }} />
+            </Box>
+            </CardContent>
             </CardActionArea>
           </Card>
-
-        </Box>
+        
       </Box>
+    </Box>
   );
 }
 
@@ -64,48 +65,48 @@ export default function App() {
     setAnchorEl(null);
   };
 
-return (
+  return (
     <div className="App">
       <AppBar sx={{ position: "static", backgroundColor: "#ffbe76" }}>
         <Toolbar>
           <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="open drawer"
-              onClick={handleMenu}
-              sx={{ mr: 2 }}
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleMenu}
+            sx={{ mr: 2 }}
           >
             <MenuIcon sx={{ color: "#000" }} />
           </IconButton>
           <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{
-                  flexGrow: 1,
-                  display: {color: "#000"},
-                  fontWeight: "bold",
-                  fontStyle: "italic",
-                  fontSize: 25
-              }}
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", sm: "block", color: "#000" },
+              fontWeight: "bold",
+              fontStyle: "italic",
+              fontSize: 25
+            }}
           >
             STDS
           </Typography>
         </Toolbar>
       </AppBar>
 
-      <Menu
-          id="simple-menu"
-          anchorEl={anchorEl}
-          keepMounted
-          open={Boolean(anchorEl)}
-          onClose={handleClose}
-          PaperProps={{
-            sx: {
-              bgcolor: "#F6E58D"
-            }
-          }}
+      <Menu 
+        id="simple-menu"
+        anchorEl={anchorEl}
+        keepMounted
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+        PaperProps={{
+          sx: {
+            bgcolor: "#F6E58D"
+          }
+        }}
       >
         <MenuItem onClick={handleClose}>Accueil</MenuItem>
         <MenuItem onClick={handleClose}>Maintenance</MenuItem>
@@ -115,5 +116,5 @@ return (
       <CardBox colordot={colordotQuant} title={"Quantité fût"} />
       <CardBox colordot={colordotPuiss} title={"Puissance"} />
     </div>
-);
+  );
 }
