@@ -113,7 +113,7 @@ export default function App() {
             justifyContent: "center",
             backgroundColor: "#F6E58D",
             position: 'relative',
-            width: '12%',
+            width: 90,
             left: '50%',
             transform: 'translate(-50%,0%)',
             fontWeight: "bold",

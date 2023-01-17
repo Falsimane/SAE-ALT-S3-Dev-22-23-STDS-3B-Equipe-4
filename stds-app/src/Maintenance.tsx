@@ -68,7 +68,7 @@ export default function Maintenance() {
                 justifyContent: "center",
                 backgroundColor: "#F6E58D",
                 position: 'relative',
-                width: '12%',
+                width: 130,
                 left: '50%',
                 transform: 'translate(-50%,0%)',
                 fontWeight: "bold",
