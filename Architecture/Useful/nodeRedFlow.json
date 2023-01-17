@@ -1,0 +1,350 @@
+[
+    {
+        "id": "eff59a804fbaabef",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "14ee0a99cf9a266e",
+        "type": "comment",
+        "z": "eff59a804fbaabef",
+        "name": "WARNING: please check you have started this container with a volume that is mounted to /data\\n otherwise any flow changes are lost when you redeploy or upgrade the container\\n (e.g. upgrade to a more recent node-red docker image).\\n  If you are using named volumes you can ignore this warning.\\n Double click or see info side panel to learn how to start Node-RED in Docker to save your work",
+        "info": "\nTo start docker with a bind mount volume (-v option), for example:\n\n```\ndocker run -it -p 1880:1880 -v /home/user/node_red_data:/data --name mynodered nodered/node-red\n```\n\nwhere `/home/user/node_red_data` is a directory on your host machine where you want to store your flows.\n\nIf you do not do this then you can experiment and redploy flows, but if you restart or upgrade the container the flows will be disconnected and lost. \n\nThey will still exist in a hidden data volume, which can be recovered using standard docker techniques, but that is much more complex than just starting with a named volume as described above.",
+        "x": 350,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "c2607bd0456feccd",
+        "type": "mqtt in",
+        "z": "eff59a804fbaabef",
+        "name": "",
+        "topic": "STDS/2/Température/T1",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "20337f9fc18666e4",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 240,
+        "wires": [
+            [
+                "78d781be09d41871"
+            ]
+        ]
+    },
+    {
+        "id": "1fe960256cc87bab",
+        "type": "mqtt in",
+        "z": "eff59a804fbaabef",
+        "name": "",
+        "topic": "STDS/2/Température/T2",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "20337f9fc18666e4",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 320,
+        "wires": [
+            [
+                "0ad956b1cbefa25f"
+            ]
+        ]
+    },
+    {
+        "id": "0ad956b1cbefa25f",
+        "type": "function",
+        "z": "eff59a804fbaabef",
+        "name": "function 4",
+        "func": "msg.payload = Number(msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 320,
+        "wires": [
+            [
+                "e2557e6331be5840"
+            ]
+        ]
+    },
+    {
+        "id": "19176de6d0ffc475",
+        "type": "influxdb out",
+        "z": "eff59a804fbaabef",
+        "influxdb": "7f94651edc9c4017",
+        "name": "",
+        "measurement": "T1",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "db0",
+        "precisionV18FluxV20": "s",
+        "retentionPolicyV18Flux": "",
+        "org": "aa9bb0087705f3f7",
+        "bucket": "tireuse",
+        "x": 710,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "e2557e6331be5840",
+        "type": "influxdb out",
+        "z": "eff59a804fbaabef",
+        "influxdb": "7f94651edc9c4017",
+        "name": "",
+        "measurement": "T2",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "db0",
+        "precisionV18FluxV20": "s",
+        "retentionPolicyV18Flux": "",
+        "org": "aa9bb0087705f3f7",
+        "bucket": "tireuse",
+        "x": 710,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "15b5c962d5e1175b",
+        "type": "mqtt in",
+        "z": "eff59a804fbaabef",
+        "name": "",
+        "topic": "STDS/2/Puissance",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "20337f9fc18666e4",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 420,
+        "wires": [
+            [
+                "c469fb974e630557"
+            ]
+        ]
+    },
+    {
+        "id": "c469fb974e630557",
+        "type": "function",
+        "z": "eff59a804fbaabef",
+        "name": "function 6",
+        "func": "msg.payload = Number(msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 400,
+        "wires": [
+            [
+                "bc7c6369ef6f1e28"
+            ]
+        ]
+    },
+    {
+        "id": "bc7c6369ef6f1e28",
+        "type": "influxdb out",
+        "z": "eff59a804fbaabef",
+        "influxdb": "7f94651edc9c4017",
+        "name": "",
+        "measurement": "Puissance",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "db0",
+        "precisionV18FluxV20": "s",
+        "retentionPolicyV18Flux": "",
+        "org": "aa9bb0087705f3f7",
+        "bucket": "tireuse",
+        "x": 690,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "058137605f1b8bc4",
+        "type": "mqtt in",
+        "z": "eff59a804fbaabef",
+        "name": "",
+        "topic": "STDS/2/Diag",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "20337f9fc18666e4",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 500,
+        "wires": [
+            [
+                "bf8b869b79dcb651"
+            ]
+        ]
+    },
+    {
+        "id": "bf8b869b79dcb651",
+        "type": "function",
+        "z": "eff59a804fbaabef",
+        "name": "function 7",
+        "func": "msg.payload = String(msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 500,
+        "wires": [
+            [
+                "9f28421696f46690"
+            ]
+        ]
+    },
+    {
+        "id": "9f28421696f46690",
+        "type": "influxdb out",
+        "z": "eff59a804fbaabef",
+        "influxdb": "7f94651edc9c4017",
+        "name": "",
+        "measurement": "Diagnostic2",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "db0",
+        "precisionV18FluxV20": "s",
+        "retentionPolicyV18Flux": "",
+        "org": "aa9bb0087705f3f7",
+        "bucket": "tireuse",
+        "x": 740,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "c4561695cd27f552",
+        "type": "mqtt in",
+        "z": "eff59a804fbaabef",
+        "name": "",
+        "topic": "STDS/1/Diag",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "20337f9fc18666e4",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 600,
+        "wires": [
+            [
+                "5f180e9377710539"
+            ]
+        ]
+    },
+    {
+        "id": "5f180e9377710539",
+        "type": "function",
+        "z": "eff59a804fbaabef",
+        "name": "function 8",
+        "func": "msg.payload = String(msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 600,
+        "wires": [
+            [
+                "b72203c2f1aeef04"
+            ]
+        ]
+    },
+    {
+        "id": "b72203c2f1aeef04",
+        "type": "influxdb out",
+        "z": "eff59a804fbaabef",
+        "influxdb": "7f94651edc9c4017",
+        "name": "",
+        "measurement": "Diagnostic1",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "db0",
+        "precisionV18FluxV20": "s",
+        "retentionPolicyV18Flux": "",
+        "org": "aa9bb0087705f3f7",
+        "bucket": "tireuse",
+        "x": 760,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "78d781be09d41871",
+        "type": "function",
+        "z": "eff59a804fbaabef",
+        "name": "function 5",
+        "func": "msg.payload = Number(msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 240,
+        "wires": [
+            [
+                "19176de6d0ffc475"
+            ]
+        ]
+    },
+    {
+        "id": "20337f9fc18666e4",
+        "type": "mqtt-broker",
+        "name": "BROKER MQTT",
+        "broker": "iot.iut-blagnac.fr",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "7f94651edc9c4017",
+        "type": "influxdb",
+        "hostname": "influxdb",
+        "port": "8086",
+        "protocol": "http",
+        "database": "db0",
+        "name": "OUTPUT",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://influxdb:8086",
+        "rejectUnauthorized": false
+    }
+]
