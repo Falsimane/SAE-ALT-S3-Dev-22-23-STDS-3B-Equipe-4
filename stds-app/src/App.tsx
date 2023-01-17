@@ -75,7 +75,7 @@ export default function App() {
             color="inherit"
             aria-label="open drawer"
             onClick={handleMenu}
-            sx={{ mr: 2 }}
+            sx={{position: "absolute", mr: 2, zIndex: 1}}
           >
             <MenuIcon sx={{ color: "#000" , fontSize: 40}} />
           </IconButton>
@@ -84,11 +84,13 @@ export default function App() {
             noWrap
             component="div"
             sx={{
-              flexGrow: 1,
               display: {color: "#000" },
               fontWeight: "bold",
               fontStyle: "italic",
-              fontSize: 25
+              fontSize: 25,
+                position: "relative",
+                textAlign: "center",
+                width: '100%'
             }}
           >
             STDS
@@ -109,7 +111,7 @@ export default function App() {
         }}
       >
         <MenuItem onClick={handleClose} sx={{fontSize: 20}}>Accueil</MenuItem>
-        <MenuItem onClick={handleClose}sx={{fontSize: 20}}>Maintenance</MenuItem>
+        <MenuItem onClick={handleClose} sx={{fontSize: 20}}>Maintenance</MenuItem>
       </Menu>
 
       <CardBox colordot={colordotTemp} title={"Température"} />
