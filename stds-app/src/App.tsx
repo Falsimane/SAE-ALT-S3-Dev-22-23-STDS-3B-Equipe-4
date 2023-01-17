@@ -77,7 +77,7 @@ export default function App() {
             onClick={handleMenu}
             sx={{ mr: 2 }}
           >
-            <MenuIcon sx={{ color: "#000" }} />
+            <MenuIcon sx={{ color: "#000" , fontSize: 40}} />
           </IconButton>
           <Typography
             variant="h6"
@@ -85,7 +85,7 @@ export default function App() {
             component="div"
             sx={{
               flexGrow: 1,
-              display: { xs: "none", sm: "block", color: "#000" },
+              display: {color: "#000" },
               fontWeight: "bold",
               fontStyle: "italic",
               fontSize: 25
@@ -108,8 +108,8 @@ export default function App() {
           }
         }}
       >
-        <MenuItem onClick={handleClose}>Accueil</MenuItem>
-        <MenuItem onClick={handleClose}>Maintenance</MenuItem>
+        <MenuItem onClick={handleClose} sx={{fontSize: 20}}>Accueil</MenuItem>
+        <MenuItem onClick={handleClose}sx={{fontSize: 20}}>Maintenance</MenuItem>
       </Menu>
 
       <CardBox colordot={colordotTemp} title={"Température"} />
