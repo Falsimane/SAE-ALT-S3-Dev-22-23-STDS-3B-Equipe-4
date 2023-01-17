@@ -19,7 +19,7 @@ export default function Header(props: {page:string; dimensionsTitre:number}) {
     const handleClose = () => {
         setAnchorEl(null);
     };
-    const openIndex = () => {
+    const openAccueil = () => {
         handleClose();
         navigate("/");
     }
@@ -27,21 +27,32 @@ export default function Header(props: {page:string; dimensionsTitre:number}) {
         handleClose();
         navigate("/maintenance");
     }
+    let selectedAccueil = false;
+    let selectedMaintenance = false;
+    switch (props.page) {
+        case 'Accueil':
+            selectedAccueil = true;
+            break;
+        case 'Maintenance':
+            selectedMaintenance = true;
+            break;
+    }
+
     return (
 
         <div className="Header">
-    <AppBar sx={{position: "static", backgroundColor: "#ffbe76"}}>
-        <Toolbar>
             <IconButton
                 size="large"
                 edge="start"
                 color="inherit"
                 aria-label="open drawer"
                 onClick={handleMenu}
-                sx={{position: "absolute", mr: 2, zIndex: 1}}
+                sx={{position: "absolute", left: '2%', mr: 2, zIndex: 1}}
             >
                 <MenuIcon sx={{color: "#000", fontSize: 40}}/>
             </IconButton>
+    <AppBar sx={{position: "static", backgroundColor: "#ffbe76"}}>
+        <Toolbar>
             <Typography
                 variant="h6"
                 noWrap
@@ -89,8 +100,8 @@ export default function Header(props: {page:string; dimensionsTitre:number}) {
             }
         }}
     >
-        <MenuItem onClick={openIndex} sx={{fontSize: 20}}>Accueil</MenuItem>
-        <MenuItem onClick={openMaintenance} sx={{fontSize: 20}}>Maintenance</MenuItem>
+        <MenuItem onClick={openAccueil} sx={{fontSize: 20}} selected={selectedAccueil}>Accueil</MenuItem>
+        <MenuItem onClick={openMaintenance} sx={{fontSize: 20}} selected={selectedMaintenance}>Maintenance</MenuItem>
     </Menu>
         </div>
 )
