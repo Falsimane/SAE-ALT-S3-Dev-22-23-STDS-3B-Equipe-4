@@ -8,6 +8,7 @@ import * as React from "react";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 
+
 export default function CardBoxMaintenance(props: { titre:string ; pdfimg: boolean}) {
     return (
         <Box sx={{ display: "flex", justifyContent: "center", marginTop: 5 }}>
@@ -22,6 +23,8 @@ export default function CardBoxMaintenance(props: { titre:string ; pdfimg: boole
                             <Typography sx = {{ fontSize: 30, marginLeft: 10}}> {props.titre} </Typography>
                             
                             <ArrowForwardIosIcon fontSize ='large' sx={{position: 'absolute', right : 30}}/>
+
+                            
                         </CardContent>
                     </CardActionArea>
                 </Card>
