@@ -29,6 +29,8 @@ import {Swiper, SwiperSlide} from "swiper/react";
 
 import 'swiper/css';
 import './theme/App.css';
+import Temperature from "./pages/Temperature";
+import QuantiteFut from "./pages/QuantiteFut";
 
 setupIonicReact();
 
@@ -55,6 +57,8 @@ const AppMediaQuery = () => {
                     </Route>
                     <Route path="/puissance" exact={true} component={Puissance} />
                     <Route path="/maintenance" exact={true} component={Maintenance} />
+                    <Route path="/quantite" exact={true} component={QuantiteFut} />
+                    <Route path="/temperature" exact={true} component={Temperature} />
                 </IonRouterOutlet>
             </IonReactRouter>
         );
