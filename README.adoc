@@ -9,7 +9,7 @@ Bryce FUERTES, Thomas FALSIMAGNE, Alex JOLAS, James GRASSER, Nolan JACQUEMONT
 
 # II. Objectifs du projet 
 
-# III. Acteur de l'équipe projet 
+# III. Acteurs de l'équipe projet 
 
 [cols="1,2,2,5",options=header]
 |===
