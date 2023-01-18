@@ -29,13 +29,8 @@ import {Swiper, SwiperSlide} from "swiper/react";
 
 import 'swiper/css';
 import './theme/App.css';
-<<<<<<< HEAD
-import mqttScrapper from "./Utils/mqtt/mqtt-scrapper";
-import MqttScrapper from "./Utils/mqtt/mqtt-scrapper";
-=======
 import Temperature from "./pages/Temperature";
 import QuantiteFut from "./pages/QuantiteFut";
->>>>>>> f131e58124a3808f6946cce5270e41fe372b2a04
 
 setupIonicReact();
 
