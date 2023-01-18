@@ -20,9 +20,7 @@ export default function Maintenance() {
     };
     return (
         <IonPage id="maintenance-page">
-            <IonHeader>
-                <Header page={"Maintenance"} dimensionsTitre={130}/>
-            </IonHeader>
+            <Header page={"Maintenance"} dimensionsTitre={130}/>
             <IonContent fullscreen>
                 <IonRefresher slot="fixed" onIonRefresh={refresh}>
                     <IonRefresherContent></IonRefresherContent>

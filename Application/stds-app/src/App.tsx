@@ -24,8 +24,42 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import Maintenance from "./pages/Maintenance";
 import React from "react";
+import {useMediaQuery} from "@mui/material";
+import {Swiper, SwiperSlide} from "swiper/react";
+
+import 'swiper/css';
+import './theme/App.css';
 
 setupIonicReact();
+
+const AppMediaQuery = () => {
+    const isMobileOrTablet = useMediaQuery('(max-width: 768px)');
+
+    if (isMobileOrTablet) {
+        return (
+            <Swiper className="mySwiper">
+                <SwiperSlide>
+                    <Home/>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <Maintenance/>
+                </SwiperSlide>
+            </Swiper>
+        )
+    } else {
+        return (
+            <IonReactRouter>
+                <IonRouterOutlet>
+                    <Route path="/home" exact={true}>
+                        <Home />
+                    </Route>
+                    <Route path="/puissance" exact={true} component={Puissance} />
+                    <Route path="/maintenance" exact={true} component={Maintenance} />
+                </IonRouterOutlet>
+            </IonReactRouter>
+        );
+    }
+}
 
 const App: React.FC = () => (
     <IonApp>
@@ -34,11 +68,8 @@ const App: React.FC = () => (
                 <Route path="/" exact={true}>
                     <Redirect to="/home" />
                 </Route>
-                <Route path="/home" exact={true}>
-                    <Home />
-                </Route>
-                <Route path="/maintenance" exact={true} component={Maintenance} />
                 <Route path="/puissance" exact={true} component={Puissance} />
+                <Route path="/home" component={AppMediaQuery} />
             </IonRouterOutlet>
         </IonReactRouter>
     </IonApp>

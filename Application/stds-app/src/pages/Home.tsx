@@ -24,9 +24,7 @@ const Home: React.FC = () => {
 
   return (
       <IonPage id="home-page">
-        <IonHeader>
-          <Header page={"Accueil"} dimensionsTitre={90}/>
-        </IonHeader>
+        <Header page={"Accueil"} dimensionsTitre={90}/>
         <IonContent fullscreen>
           <IonRefresher slot="fixed" onIonRefresh={refresh}>
             <IonRefresherContent></IonRefresherContent>
