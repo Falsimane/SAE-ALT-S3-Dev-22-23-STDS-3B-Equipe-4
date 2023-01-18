@@ -31,7 +31,7 @@ N'ayant pas la compétence nécessaire pour concevoir la partie applicative du p
 | Bryce Fuertes | Développeur FRONT-END | S'occupe du développement de l'interface FRONT-END de l'application. |
 |===
 
-# III. Suivi des backlogs
+== IV. Suivi des backlogs
 
 [cols="1,2,2,5",options=header]
 |===
@@ -42,7 +42,7 @@ N'ayant pas la compétence nécessaire pour concevoir la partie applicative du p
 |===
 
 
-# IV. Livrables 
+== V. Livrables 
 
 
 
