@@ -29,14 +29,18 @@ import {Swiper, SwiperSlide} from "swiper/react";
 
 import 'swiper/css';
 import './theme/App.css';
+<<<<<<< HEAD
 import mqttScrapper from "./Utils/mqtt/mqtt-scrapper";
 import MqttScrapper from "./Utils/mqtt/mqtt-scrapper";
+=======
+import Temperature from "./pages/Temperature";
+import QuantiteFut from "./pages/QuantiteFut";
+>>>>>>> f131e58124a3808f6946cce5270e41fe372b2a04
 
 setupIonicReact();
 
 const AppMediaQuery = () => {
     const isMobileOrTablet = useMediaQuery('(max-width: 768px)');
-    mqttScrapper()
 
     if (isMobileOrTablet) {
         return (
@@ -58,6 +62,8 @@ const AppMediaQuery = () => {
                     </Route>
                     <Route path="/puissance" exact={true} component={Puissance} />
                     <Route path="/maintenance" exact={true} component={Maintenance} />
+                    <Route path="/quantite" exact={true} component={QuantiteFut} />
+                    <Route path="/temperature" exact={true} component={Temperature} />
                 </IonRouterOutlet>
             </IonReactRouter>
         );

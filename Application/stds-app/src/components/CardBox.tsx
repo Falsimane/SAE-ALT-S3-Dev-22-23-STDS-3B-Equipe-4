@@ -18,7 +18,7 @@ export default function CardBox(props: { colordot: string; title: string}){
             page = () => openPuissance();
             break;
 
-        case "Température":
+        case "Temperature":
             page = () => openTemperature();
             break;
 
