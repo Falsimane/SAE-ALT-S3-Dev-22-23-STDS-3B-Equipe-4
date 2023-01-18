@@ -7,9 +7,20 @@ import CircleIcon from "@mui/icons-material/Circle";
 import * as React from "react";
 import {useHistory} from "react-router";
 
-export default function CardBox(props: { colordot: string; title: string}) {
+export default function CardBox(props: { colordot: string; title: string}){
 
     const history = useHistory();
+
+    let page = () => openAccueil();
+
+    switch (props.title){
+        case "Puissance":
+            page = () => openPuissance();
+    }
+
+    const openAccueil = () => {
+        history.push("/home");
+    }
 
     const openPuissance = () => {
         history.push("/puissance");
@@ -32,7 +43,7 @@ export default function CardBox(props: { colordot: string; title: string}) {
 
 
                 <Card sx={{ backgroundColor: "#E6E6E6", height: 120 }}>
-                    <CardActionArea onClick={openPuissance} sx={{height: '100%'}}>
+                    <CardActionArea onClick={page} sx={{height: '100%'}}>
                         <CardContent>
                             <Box
                                 sx={{
