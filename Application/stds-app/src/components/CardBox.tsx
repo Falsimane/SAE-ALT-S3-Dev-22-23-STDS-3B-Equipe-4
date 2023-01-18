@@ -16,12 +16,15 @@ export default function CardBox(props: { colordot: string; title: string}){
     switch (props.title){
         case "Puissance":
             page = () => openPuissance();
+            break;
 
         case "Température":
             page = () => openTemperature();
+            break;
 
         case "QuantiteFut":
              page = () => openQuantite();
+             break;
     }
 
     const openAccueil = () => {
