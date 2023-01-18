@@ -9,8 +9,20 @@ Bryce FUERTES, Thomas FALSIMAGNE, Alex JOLAS, James GRASSER, Nolan JACQUEMONT
 
 # II. Objectifs du projet 
 
+# III. Acteur de l'équipe projet 
 
-# III. Répartition des tâches et suivi des backlogs 
+[cols="1,2,2,5",options=header]
+|===
+| Nom - Prénom  | Rôle         |  Tâches                             |
+| Nolan Jacquemont | Product Owner| Définit le produit et veille à ce que celui-ci réponde au besoin du département GIM.  |
+| Thomas Falsimagne | Scrum Master | Réalise la répartition des tâches et s'assure de la bonne coopération des différents membres de l'équipe.|
+| Alex Jolas | Développeur FRONT-END | S'occupe du développement de l'interface FRONT-END de l'application. |
+| James Grasser | Développeur FRONT-END| S'occupe du développement de l'interface FRONT-END de l'application. |
+| Bryce Fuertes | Développeur FRONT-END | S'occupe du développement de l'interface FRONT-END de l'application. |
+
+|===
+
+# III. Suivi des backlogs
 
 [cols="1,2,2,5",options=header]
 |===
@@ -19,6 +31,7 @@ Bryce FUERTES, Thomas FALSIMAGNE, Alex JOLAS, James GRASSER, Nolan JACQUEMONT
 | 16/01/2023 | SPRINT 1 | https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/milestone/2 | 
 | 16/01/2023 | SPRINT 2 | https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/milestone/3 |
 |===
+
 
 # IV. Livrables 
 
