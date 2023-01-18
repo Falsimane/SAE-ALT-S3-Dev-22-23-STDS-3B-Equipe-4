@@ -5,7 +5,12 @@ const mqttScrapper = () => {
     const [connectionStatus, setConnectionStatus] = React.useState(false);
 
     useEffect(() => {
-        const client = mqtt.connect("mqtt://iot.iut-blagnac.fr:8083")
+        const client = mqtt.connect({
+            host: "iot.iut-blagnac.fr",
+            port: 1883,
+            username: "student",
+            password: "student"
+        })
         client.on("connect", () => {
             setConnectionStatus(true);
         })
