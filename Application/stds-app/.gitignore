@@ -29,3 +29,5 @@ yarn-error.log*
 .eslintcache
 
 /android
+
+.package-lock.json
