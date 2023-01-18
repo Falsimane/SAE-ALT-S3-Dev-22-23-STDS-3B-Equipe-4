@@ -29,7 +29,7 @@ const Home: React.FC = () => {
             <IonRefresherContent></IonRefresherContent>
           </IonRefresher>
 
-          <CardBox colordot={colordotTemp} title={"Température"} />
+          <CardBox colordot={colordotTemp} title={"Temperature"} />
           <CardBox colordot={colordotQuant} title={"QuantiteFut"} />
           <CardBox colordot={colordotPuiss} title={"Puissance"} />
         </IonContent>
