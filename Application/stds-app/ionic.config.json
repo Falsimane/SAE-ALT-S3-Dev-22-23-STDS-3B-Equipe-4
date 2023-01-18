@@ -1,0 +1,7 @@
+{
+  "name": "STDS App",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
