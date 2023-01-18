@@ -16,10 +16,7 @@ Le client, M. Boulle, a missionné le département GIM et ses étudiants pour me
 
 N'ayant pas la compétence nécessaire pour concevoir la partie applicative du projet, les étudiants du département GIM ont donc fait appel à nous pour la réaliser. À partir du cahier des charges qu'ils nous ont founi, nous devons donc développer une application répondant aux différents besoins spécifiés. 
 
-[.text-justify]
-== II. Objectifs du projet 
-
-== III. Acteurs de l'équipe projet 
+== II. Acteurs de l'équipe projet 
 
 [cols="1,2,2,5",options=header]
 |===
@@ -31,7 +28,7 @@ N'ayant pas la compétence nécessaire pour concevoir la partie applicative du p
 | Bryce Fuertes | Développeur FRONT-END | S'occupe du développement de l'interface FRONT-END de l'application. |
 |===
 
-== IV. Suivi des backlogs
+== III. Suivi des backlogs
 
 [cols="1,2,2,5",options=header]
 |===
@@ -42,7 +39,7 @@ N'ayant pas la compétence nécessaire pour concevoir la partie applicative du p
 |===
 
 
-== V. Livrables 
+== IV. Releases  
 
 
 
