@@ -9,7 +9,6 @@ import * as React from "react";
 import Header from "./Header";
 import CardBoxMaintenance from "../components/CardBoxMaintenance";
 import {IonContent, IonHeader, IonPage, IonRefresher, IonRefresherContent} from "@ionic/react";
-import { Hidden } from "@mui/material";
 
 
 
@@ -20,7 +19,7 @@ export default function Maintenance() {
         }, 3000);
     };
     return (
-        <IonPage id="home-page">
+        <IonPage id="maintenance-page">
             <IonHeader>
                 <Header page={"Maintenance"} dimensionsTitre={130}/>
             </IonHeader>
