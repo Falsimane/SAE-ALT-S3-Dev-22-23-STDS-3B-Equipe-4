@@ -29,11 +29,14 @@ import {Swiper, SwiperSlide} from "swiper/react";
 
 import 'swiper/css';
 import './theme/App.css';
+import mqttScrapper from "./Utils/mqtt/mqtt-scrapper";
+import MqttScrapper from "./Utils/mqtt/mqtt-scrapper";
 
 setupIonicReact();
 
 const AppMediaQuery = () => {
     const isMobileOrTablet = useMediaQuery('(max-width: 768px)');
+    mqttScrapper()
 
     if (isMobileOrTablet) {
         return (
