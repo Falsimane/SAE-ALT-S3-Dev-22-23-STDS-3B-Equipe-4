@@ -1,6 +1,5 @@
 import {
   IonContent,
-  IonHeader,
   IonPage,
   IonRefresher,
   IonRefresherContent,
@@ -31,7 +30,7 @@ const Home: React.FC = () => {
           </IonRefresher>
 
           <CardBox colordot={colordotTemp} title={"Température"} />
-          <CardBox colordot={colordotQuant} title={"Quantité fût"} />
+          <CardBox colordot={colordotQuant} title={"QuantiteFut"} />
           <CardBox colordot={colordotPuiss} title={"Puissance"} />
         </IonContent>
       </IonPage>
