@@ -5,8 +5,16 @@ import CardActionArea from "@mui/material/CardActionArea";
 import CardContent from "@mui/material/CardContent";
 import CircleIcon from "@mui/icons-material/Circle";
 import * as React from "react";
+import {useHistory} from "react-router";
 
-export default function CardBox(props: { colordot: string; title: string }) {
+export default function CardBox(props: { colordot: string; title: string}) {
+
+    const history = useHistory();
+
+    const openPuissance = () => {
+        history.push("/puissance");
+    }
+
     return (
         <Box sx={{ display: "flex", justifyContent: "center", marginTop: 5 }}>
             <Box sx={{ width: "90%" }}>
@@ -24,7 +32,7 @@ export default function CardBox(props: { colordot: string; title: string }) {
 
 
                 <Card sx={{ backgroundColor: "#E6E6E6", height: 120 }}>
-                    <CardActionArea sx={{height: '100%'}}>
+                    <CardActionArea onClick={openPuissance} sx={{height: '100%'}}>
                         <CardContent>
                             <Box
                                 sx={{
