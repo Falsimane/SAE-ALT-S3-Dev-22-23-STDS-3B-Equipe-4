@@ -1,22 +1,25 @@
 # SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4
+v1, 2023-01-18 : Initial readme
+:icons: font
+:experimental:
 :toc:
+
 
 *Équipe 4* : +
 Bryce FUERTES, Thomas FALSIMAGNE, Alex JOLAS, James GRASSER, Nolan JACQUEMONT
 
-[.text-justify]
-# I. Contexte du projet 
+
+== I. Contexte du projet
 
 [.text-justify]
-Le client, M. Boulle, a missionné le département GIM et ses étudiants pour mettre au point une tireuse à bière connectée. Dans une approche IOT pour l'industrie 4.0, le client souhaite disposer d'une machine connectée qui envoie des données de température, de niveau de bière et de puissance électrique à l’utilisateur. Pour cela, ces données doivent pouvoir être lues sur une application web ou un site web, disponible sur un téléphone ou un ordinateur, afin que l'utilisateur puisse disposer d'une interface intuitive pour contrôler sa tireuse. 
-
-[.text-justify]
+Le client, M. Boulle, a missionné le département GIM et ses étudiants pour mettre au point une tireuse à bière connectée. Dans une approche IOT pour l'industrie 4.0, le client souhaite disposer d'une machine connectée qui envoie des données de température, de niveau de bière et de puissance électrique à l’utilisateur. Pour cela, ces données doivent pouvoir être lues sur une application web ou un site web, disponible sur un téléphone ou un ordinateur, afin que l'utilisateur puisse disposer d'une interface intuitive pour contrôler sa tireuse. +
++
 N'ayant pas la compétence nécessaire pour concevoir la partie applicative du projet, les étudiants du département GIM ont donc fait appel à nous pour la réaliser. À partir du cahier des charges qu'ils nous ont founi, nous devons donc développer une application répondant aux différents besoins spécifiés. 
 
 [.text-justify]
-# II. Objectifs du projet 
+== II. Objectifs du projet 
 
-# III. Acteurs de l'équipe projet 
+== III. Acteurs de l'équipe projet 
 
 [cols="1,2,2,5",options=header]
 |===
