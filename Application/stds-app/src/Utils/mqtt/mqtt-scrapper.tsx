@@ -1,11 +1,17 @@
-const mqtt = require('mqtt');
+import React, {useEffect} from "react";
+import mqtt from "mqtt";
 
-const client  = mqtt.connect('mqtt://iot.iut-blagnac.fr')
+const mqttScrapper = () => {
+    const [connectionStatus, setConnectionStatus] = React.useState(false);
 
+    useEffect(() => {
+        const client = mqtt.connect("mqtt://iot.iut-blagnac.fr:8083")
+        client.on("connect", () => {
+            setConnectionStatus(true);
+        })
+    }, []);
+    console.log(connectionStatus);
+}
 
-client.on('message', function (topic, message) {
-    // message is Buffer
-    console.log(message.toString())
-    client.end()
-})
+export default mqttScrapper;
 
