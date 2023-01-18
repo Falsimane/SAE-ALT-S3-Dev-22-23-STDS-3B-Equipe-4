@@ -78,6 +78,8 @@ const App: React.FC = () => (
                     <Redirect to="/home" />
                 </Route>
                 <Route path="/puissance" exact={true} component={Puissance} />
+                <Route path="/quantite" exact={true} component={QuantiteFut} />
+                <Route path="/temperature" exact={true} component={Temperature} />
                 <Route path="/home" component={AppMediaQuery} />
             </IonRouterOutlet>
         </IonReactRouter>
