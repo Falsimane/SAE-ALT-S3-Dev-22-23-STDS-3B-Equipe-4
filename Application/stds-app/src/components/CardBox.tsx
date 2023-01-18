@@ -5,6 +5,7 @@ import CardActionArea from "@mui/material/CardActionArea";
 import CardContent from "@mui/material/CardContent";
 import CircleIcon from "@mui/icons-material/Circle";
 import * as React from "react";
+import TemperatureChart from "./TemperatureChart";
 
 export default function CardBox(props: { colordot: string; title: string }) {
     return (
@@ -26,6 +27,8 @@ export default function CardBox(props: { colordot: string; title: string }) {
                 <Card sx={{ backgroundColor: "#E6E6E6", height: 120 }}>
                     <CardActionArea sx={{height: '100%'}}>
                         <CardContent>
+                            <TemperatureChart />
+                            <p>zefe</p>
                             <Box
                                 sx={{
                                     display: "flex",

@@ -9,6 +9,7 @@ import './Home.css';
 import Header from "./Header";
 import CardBox from "../components/CardBox";
 import React from "react";
+import TemperatureChart from "../components/TemperatureChart";
 
 const Home: React.FC = () => {
 
@@ -35,6 +36,7 @@ const Home: React.FC = () => {
           <CardBox colordot={colordotTemp} title={"Température"} />
           <CardBox colordot={colordotQuant} title={"Quantité fût"} />
           <CardBox colordot={colordotPuiss} title={"Puissance"} />
+          <TemperatureChart />
         </IonContent>
       </IonPage>
   );
