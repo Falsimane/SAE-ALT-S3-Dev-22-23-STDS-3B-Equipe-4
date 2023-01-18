@@ -16,6 +16,12 @@ export default function CardBox(props: { colordot: string; title: string}){
     switch (props.title){
         case "Puissance":
             page = () => openPuissance();
+
+        case "Température":
+            page = () => openTemperature();
+
+        case "QuantiteFut":
+             page = () => openQuantite();
     }
 
     const openAccueil = () => {
@@ -24,6 +30,14 @@ export default function CardBox(props: { colordot: string; title: string}){
 
     const openPuissance = () => {
         history.push("/puissance");
+    }
+
+    const openTemperature = () => {
+        history.push("/temperature");
+    }
+
+    const openQuantite = () => {
+        history.push("/quantite");
     }
 
     return (
