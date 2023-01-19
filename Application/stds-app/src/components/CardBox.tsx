@@ -21,10 +21,6 @@ export default function CardBox(props: { colordot: string; title: string}){
         case "Temperature":
             page = () => openTemperature();
             break;
-
-        case "QuantiteFut":
-             page = () => openQuantite();
-             break;
     }
 
     const openAccueil = () => {
@@ -37,10 +33,6 @@ export default function CardBox(props: { colordot: string; title: string}){
 
     const openTemperature = () => {
         history.push("/temperature");
-    }
-
-    const openQuantite = () => {
-        history.push("/quantite");
     }
 
     return (
