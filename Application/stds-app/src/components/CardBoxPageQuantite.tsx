@@ -24,9 +24,9 @@ export default function CardBoxTemperature(){
     let nombreVerre = Math.floor(6*pourcentageQuantite/100 * 4);
 
     let colorDot= "#22B04B";
-    if (pourcentageQuantite <= 10){
+    if (pourcentageQuantite <= 20){
         colorDot = "#ED1C24";
-    } else if(pourcentageQuantite <= 30){
+    } else if(pourcentageQuantite <= 50){
         colorDot = "#F49229";
     }
 
