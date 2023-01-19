@@ -3,12 +3,13 @@ import Typography from "@mui/material/Typography";
 import {IonContent, IonPage, IonRefresher, IonRefresherContent} from "@ionic/react";
 import Header from "./Header";
 import * as React from "react";
-import CircleIcon from "@mui/icons-material/Circle";
 import Divider from '@mui/material/Divider';
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import CardActionArea from "@mui/material/CardActionArea";
 import CardContent from "@mui/material/CardContent";
 import Card from "@mui/material/Card";
+import STDSDatasContext from "../utils/mqtt/STDSDatasContext";
+import {useContext} from "react";
+import InformationsEtat from "../components/InformationsEtat";
 
 export default function QuantiteFut() {
     const refresh = (e: CustomEvent) => {
@@ -17,22 +18,13 @@ export default function QuantiteFut() {
         }, 3000);
     };
 
+    const datas = useContext(STDSDatasContext);
 
-    let pourcentageQuantite = 75;
+    const pourcentageQuantite = datas.niveau;
+    let calculPourcentage = pourcentageQuantite;
+
     let nombreVerre = Math.floor(6*pourcentageQuantite/100 * 4);
 
-    let colorDot= "#22B04B";
-    let texteQuantite = "Quantité élevée";
-
-    if (pourcentageQuantite <= 10){
-        colorDot = "#ED1C24";
-        texteQuantite = "Quantité faible";
-    } else if(pourcentageQuantite <= 30){
-        colorDot = "#F49229";
-        texteQuantite = "Quantité intermédiaire";
-    }
-
-    let calculPourcentage = pourcentageQuantite;
     let radiusLiquideQuantiteTop = 0;
     let nombreApres90 = 0;
     if(pourcentageQuantite > 90){
@@ -50,31 +42,8 @@ export default function QuantiteFut() {
                 <IonRefresher slot="fixed" onIonRefresh={refresh}>
                     <IonRefresherContent></IonRefresherContent>
                 </IonRefresher>
-                <Card sx={{ backgroundColor: "#E6E6E6", height: 40, width: "80%", marginLeft: "10%", marginTop: 5}}>
-                    <CardActionArea sx={{height: '100%'}}>
-                        <CardContent sx={{display: "flex", alignItems: "center", height: "100%", padding : 0}}>
 
-                            <Typography sx={{fontWeight:"bold",paddingLeft:"4%"}}>
-                                ÉTAT
-                            </Typography>
-
-
-
-                            <Divider sx = {{ color:"blue",paddingLeft:"4%"} } orientation="vertical" variant="middle" />
-
-
-
-                            <CircleIcon sx={{ color: colorDot , marginLeft: "3%",  marginRight: "1%",  left :"30%"}} fontSize = "small"/>
-
-
-                            <Typography sx={{fontWeight:"bold",paddingLeft:"3%", fontSize:12}}>
-                                {texteQuantite}
-                            </Typography>
-
-                            <InfoOutlinedIcon sx={{position: "absolute", right: "15%", marginLeft: "10%", color:"blue" }}/>
-                        </CardContent>
-                    </CardActionArea>
-                </Card>
+                <InformationsEtat mesure={"Q"} nombre={pourcentageQuantite}/>
 
                         <Card sx={{ backgroundColor: "#E6E6E6", height: 120, width: "90%", marginLeft: "5%", marginTop:5}}>
                             <CardActionArea sx={{height: '100%'}}>
@@ -111,7 +80,6 @@ export default function QuantiteFut() {
                                 </CardContent>
                             </CardActionArea>
                         </Card>
-
                
                 </IonContent>
         </IonPage>

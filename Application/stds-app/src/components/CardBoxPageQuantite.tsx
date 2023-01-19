@@ -6,6 +6,8 @@ import CardContent from "@mui/material/CardContent";
 import * as React from "react";
 import CircleIcon from "@mui/icons-material/Circle";
 import {useHistory} from "react-router";
+import {useContext} from "react";
+import STDSDatasContext from "../utils/mqtt/STDSDatasContext";
 
 export default function CardBoxTemperature(){
 
@@ -14,7 +16,11 @@ export default function CardBoxTemperature(){
         history.push("/quantite");
     }
 
-    let pourcentageQuantite = 75;
+    const datas = useContext(STDSDatasContext);
+
+    const pourcentageQuantite = datas.niveau;
+    let calculPourcentage = pourcentageQuantite;
+
     let nombreVerre = Math.floor(6*pourcentageQuantite/100 * 4);
 
     let colorDot= "#22B04B";
@@ -24,7 +30,6 @@ export default function CardBoxTemperature(){
         colorDot = "#F49229";
     }
 
-    let calculPourcentage = pourcentageQuantite;
     let radiusLiquideQuantiteTop = 0;
     let nombreApres90 = 0;
     if(pourcentageQuantite > 90){
