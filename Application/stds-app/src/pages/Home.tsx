@@ -8,6 +8,7 @@ import './Home.css';
 import Header from "./Header";
 import CardBox from "../components/CardBox";
 import CardBoxPageQuantite from "../components/CardBoxPageQuantite";
+import CardBoxPagePuissance from "../components/CardBoxPagePuissance";
 import React from "react";
 
 const Home: React.FC = () => {
@@ -33,7 +34,8 @@ const Home: React.FC = () => {
 
           <CardBoxPageQuantite/>
 
-          <CardBox colordot={colordotPuiss} title={"Puissance"} />
+          <CardBoxPagePuissance/>
+          
         </IonContent>
       </IonPage>
   );
