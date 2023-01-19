@@ -42,7 +42,7 @@ export default function Puissance() {
             imageVal = "max-.png";
             break;
         case (valPuissance > 80):
-            imageVal = "max.png";
+            imageVal = "max+.png";
             break;
         default:
             imageVal = "min-.png"
@@ -87,17 +87,22 @@ export default function Puissance() {
 
                     </Box>
 
-                    <Box sx={{ height:"30%", width: "80%", backgroundColor:"#E6E6E6", margin:"10%", borderRadius:3, marginTop: "15%", position:"relative", display:"flex",  justifyContent:"center"}}>
+                                <Box sx={{ height:"40%", width: "80%", backgroundColor:"#E6E6E6", margin:"10%", borderRadius:3, marginTop: "15%",  display:"flex",  justifyContent:"center", alignItems:"center"}}>
 
 
                                 
-                                <Box sx={{height: "100%" ,width: "100%" , position:"relative",padding:0}}>
+                                <Box sx={{display: "flex" ,height:100, width:175 ,alignItems: "center"}}>
+
                                     <img src={require('../images/' + imageVal)}/>
                                 </Box>
-                                <Typography sx= {{ fontWeight:"bold", fontSize:30 ,marginRight:3}} color="black">
-                                    {valPuissance} W
-                                </Typography>
-                    
+
+                                <Box sx={{display: "flex"}}>
+
+                                    <Typography sx={{fontWeight:"bold", fontSize:30 , height:50, width:80}}>
+                                        {valPuissance} W
+                                    </Typography>
+
+                                </Box>
                         
 
 

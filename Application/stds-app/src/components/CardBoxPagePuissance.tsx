@@ -6,6 +6,9 @@ import CardContent from "@mui/material/CardContent";
 import * as React from "react";
 import CircleIcon from "@mui/icons-material/Circle";
 import {useHistory} from "react-router";
+import { fontWeight } from "@mui/system";
+import Grid from '@mui/material/Grid';
+
 
 export default function CardBoxPuissance(){
 
@@ -69,12 +72,31 @@ export default function CardBoxPuissance(){
 
                 <Card sx={{ backgroundColor: "#E6E6E6", height: 120 }}>
                     <CardActionArea onClick={openPage} sx={{height: '100%'}}>
-                        <CardContent sx={{display: "flex", alignItems: "center", height: "100%", padding : 0}}>
-                            <Box sx={{marginLeft: 10, display: "flex", alignItems: "end", height: 100, marginTop: 0.5, justifyContent: "center"}}>
+                        <CardContent sx={{display: "flex", alignItems: "center", height: "100%"}}>
 
-                                <Box sx={{position: "absolute",height:150,width:300, display:"flex",  justifyContent: "center",paddingTop:5}}>
-                                    <img src={require('../images/' + imageVal)} />
+
+                            <Box sx={{ display: "flex", alignItems: "start", marginTop: 0.5, justifyContent: "center"}}>
+
+                            <Box sx={{ display: "flex", alignItems: "center", height: 250, width: 200, marginBottom:0.5 ,justifyContent: "center"}}>
+                               
+                                <Box sx={{display: "flex" ,height:140, width:80 ,alignItems: "center"}}>
+
+                                    <img src={require('../images/' + imageVal)}  />
+
                                 </Box>
+
+                                <Box sx={{display: "flex"}}>
+
+                                    <Typography sx={{fontWeight:"bold", fontSize:30 , height:50, width:80}}>
+                                        {valPuissance} W
+                                    </Typography>
+
+                                </Box>
+
+                                
+                            </Box>
+
+
                             </Box>
                             <CircleIcon sx={{ color: colorDot, position: "absolute", right: 30}} />
                         </CardContent>
