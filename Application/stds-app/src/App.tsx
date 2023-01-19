@@ -31,7 +31,7 @@ import 'swiper/css';
 import './theme/App.css';
 import Temperature from "./pages/Temperature";
 import QuantiteFut from "./pages/QuantiteFut";
-import STDSDatasProvider from "./util/mqtt/STDSDatasProvider";
+import STDSDatasProvider from "./utils/mqtt/STDSDatasProvider";
 
 setupIonicReact();
 
