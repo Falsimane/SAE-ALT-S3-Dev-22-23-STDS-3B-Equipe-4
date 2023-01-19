@@ -43,7 +43,7 @@ export default function QuantiteFut() {
                     <IonRefresherContent></IonRefresherContent>
                 </IonRefresher>
 
-                <InformationsEtat mesure={"Q"} nombre={pourcentageQuantite}/>
+                <InformationsEtat mesure={"Quantité"} nombre={pourcentageQuantite}/>
 
                         <Card sx={{ backgroundColor: "#E6E6E6", height: 120, width: "90%", marginLeft: "5%", marginTop:5}}>
                             <CardActionArea sx={{height: '100%'}}>
