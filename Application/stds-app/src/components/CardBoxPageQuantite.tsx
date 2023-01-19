@@ -14,9 +14,15 @@ export default function CardBoxTemperature(){
         history.push("/quantite");
     }
 
-    const colorDot= "#F49229";
-
     let pourcentageQuantite = 75;
+    let nombreVerre = Math.floor(6*pourcentageQuantite/100 * 4);
+
+    let colorDot= "#22B04B";
+    if (pourcentageQuantite <= 10){
+        colorDot = "#ED1C24";
+    } else if(pourcentageQuantite <= 30){
+        colorDot = "#F49229";
+    }
 
     let calculPourcentage = pourcentageQuantite;
     let radiusLiquideQuantiteTop = 0;
@@ -52,6 +58,25 @@ export default function CardBoxTemperature(){
                                     <img src={require('../images/fut-bierre.png')} alt=""/>
                                 </Box>
                                 <Typography sx={{zIndex: 1, position: "absolute", bottom: 44, fontWeight: 'bold', textAlign: "center"}}>{pourcentageQuantite}%</Typography>
+                            </Box>
+                            <Box sx={{marginLeft: "22%", width: 80, height: 100}}>
+                                <Box sx={{ width: "100%", height: "50%", display: "flex", alignItems:"center", justifyContent:"left"}}>
+                                    <Box id={"pinte-bierre"} sx={{height: 30}}>
+                                        <img src={require('../images/pinte-bierre.png')} alt=""/>
+                                    </Box>
+                                    <Typography sx={{marginLeft: 1, fontWeight: "bold"}}>
+                                        x {nombreVerre/2}
+                                    </Typography>
+                                </Box>
+                                <Box sx={{ width: "100%", height: "50%", display: "flex", alignItems:"center", justifyContent:"left"}}>
+                                    <Box id={"verre-bierre"} sx={{height: 30}}>
+                                        <img src={require('../images/verre-bierre.png')} alt=""/>
+                                    </Box>
+                                    <Typography sx={{marginLeft: 1, fontWeight: "bold"}}>
+                                        x {nombreVerre}
+                                    </Typography>
+                                </Box>
+
                             </Box>
                             <CircleIcon sx={{ color: colorDot, position: "absolute", right: 30}} />
                         </CardContent>
