@@ -41,5 +41,17 @@ N'ayant pas la compétence nécessaire pour concevoir la partie applicative du p
 
 == IV. Releases  
 
+=== 1. Release sprint 1 
+
+
+=== 2. Release sprint 2 
+
+
+== V. Compte rendu 
+
+=== 1. Review sprint 1
+
+=== 2. Review sprint 2
+
 
 
