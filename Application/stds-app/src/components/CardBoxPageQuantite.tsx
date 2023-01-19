@@ -51,6 +51,7 @@ export default function CardBoxTemperature(){
                                 <Box sx={{position: "absolute"}}>
                                     <img src={require('../images/fut-bierre.png')}/>
                                 </Box>
+                                <Typography sx={{zIndex: 1, position: "absolute", bottom: 44, fontWeight: 'bold', textAlign: "center"}}>{pourcentageQuantite}%</Typography>
                             </Box>
                             <CircleIcon sx={{ color: colorDot, position: "absolute", right: 30}} />
                         </CardContent>
