@@ -1,6 +1,6 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import {IonContent, IonHeader, IonPage, IonRefresher, IonRefresherContent} from "@ionic/react";
+import {IonContent, IonPage, IonRefresher, IonRefresherContent} from "@ionic/react";
 import Header from "./Header";
 import * as React from "react";
 import InformationsEtat from "../components/InformationsEtat";
@@ -45,9 +45,7 @@ export default function Puissance() {
 
     return (
         <IonPage id="puissance-page">
-            <IonHeader>
                 <Header page={"Puissance"} dimensionsTitre={110}/>
-            </IonHeader>
             <IonContent fullscreen>
                 <IonRefresher slot="fixed" onIonRefresh={refresh}>
                     <IonRefresherContent></IonRefresherContent>
