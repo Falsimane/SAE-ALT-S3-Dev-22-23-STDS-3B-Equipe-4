@@ -1,0 +1,25 @@
+# Documentation utilitateur
+:icons: font
+:experimental:
+:toc:
+
+== I. Installation du backend
+
+=== 1. Prérequis
+
+* Avoir une version de docker qui fonctionne correctement (https://www.docker.com[disponible ici]).
+* Pouvoir décompresser un fichier au format `.zip`.
+* Avoir les ports 8080 et 8086 ouverts.
+
+=== 2. Téléchargement
+
+* Télécharger le https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/raw/main/Architecture/Useful/DockerBack.zip[backend], puis le décompresser.
+
+=== 3. Build
+
+. Ouvrir le répertoire décompressé dans un terminal.
+. Exécuter la commande `docker build -t stds .` et attendre la fin du build.
+
+=== 4. Lancement
+
+* Exécuter la commande `docker compose up`. 
