@@ -13,6 +13,42 @@ export default function Puissance() {
             e.detail.complete();
         }, 3000);
     };
+
+
+    let valPuissance= 85;
+   
+    let imageVal
+  
+    let calculPuissance = valPuissance;
+    let radiusLiquideQuantiteTop = 0;
+    let nombreApres90 = 0;
+    
+    
+
+    switch (true) {
+        case (valPuissance < 10):
+            imageVal = "min-.png"
+            break;
+        case (valPuissance <= 20 && valPuissance > 10):
+            imageVal = "min+.png"
+            break;
+        case (valPuissance <= 40 && valPuissance > 20):
+            imageVal = "medium-.png";
+            break;
+        case (valPuissance <= 60 && valPuissance > 40):
+            imageVal ="medium+.png";
+            break;
+        case (valPuissance <= 80 && valPuissance > 60):
+            imageVal = "max-.png";
+            break;
+        case (valPuissance > 80):
+            imageVal = "max.png";
+            break;
+        default:
+            imageVal = "min-.png"
+            break;
+    }   
+
     return (
         <IonPage id="puissance-page">
             <IonHeader>
@@ -51,7 +87,19 @@ export default function Puissance() {
 
                     </Box>
 
-                    <Box sx={{ height:"20%", width: "80%", backgroundColor:"#E6E6E6", margin:"10%", borderRadius:3, marginTop: "15%"}}>
+                    <Box sx={{ height:"30%", width: "80%", backgroundColor:"#E6E6E6", margin:"10%", borderRadius:3, marginTop: "15%", position:"relative", display:"flex",  justifyContent:"center"}}>
+
+
+                                
+                                <Box sx={{height: "100%" ,width: "100%" , position:"relative",padding:0}}>
+                                    <img src={require('../images/' + imageVal)}/>
+                                </Box>
+                                <Typography sx= {{ fontWeight:"bold", fontSize:30 ,marginRight:3}} color="black">
+                                    {valPuissance} W
+                                </Typography>
+                    
+                        
+
 
                     </Box>
 
