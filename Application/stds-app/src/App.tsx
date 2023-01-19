@@ -31,6 +31,7 @@ import 'swiper/css';
 import './theme/App.css';
 import Temperature from "./pages/Temperature";
 import QuantiteFut from "./pages/QuantiteFut";
+import STDSDatasProvider from "./utils/mqtt/STDSDatasProvider";
 
 setupIonicReact();
 
@@ -67,17 +68,19 @@ const AppMediaQuery = () => {
 
 const App: React.FC = () => (
     <IonApp>
-        <IonReactRouter>
-            <IonRouterOutlet>
-                <Route path="/" exact={true}>
-                    <Redirect to="/home" />
-                </Route>
-                <Route path="/puissance" exact={true} component={Puissance} />
-                <Route path="/quantite" exact={true} component={QuantiteFut} />
-                <Route path="/temperature" exact={true} component={Temperature} />
-                <Route path="/home" component={AppMediaQuery} />
-            </IonRouterOutlet>
-        </IonReactRouter>
+        <STDSDatasProvider>
+            <IonReactRouter>
+                <IonRouterOutlet>
+                    <Route path="/" exact={true}>
+                        <Redirect to="/home" />
+                    </Route>
+                    <Route path="/puissance" exact={true} component={Puissance} />
+                    <Route path="/quantite" exact={true} component={QuantiteFut} />
+                    <Route path="/temperature" exact={true} component={Temperature} />
+                    <Route path="/home" component={AppMediaQuery} />
+                </IonRouterOutlet>
+            </IonReactRouter>
+        </STDSDatasProvider>
     </IonApp>
 );
 
