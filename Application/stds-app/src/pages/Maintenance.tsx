@@ -8,7 +8,7 @@ import CircleIcon from "@mui/icons-material/Circle";
 import * as React from "react";
 import Header from "./Header";
 import CardBoxMaintenance from "../components/CardBoxMaintenance";
-import {IonContent, IonHeader, IonPage, IonRefresher, IonRefresherContent} from "@ionic/react";
+import {IonContent, IonPage, IonRefresher, IonRefresherContent} from "@ionic/react";
 
 
 

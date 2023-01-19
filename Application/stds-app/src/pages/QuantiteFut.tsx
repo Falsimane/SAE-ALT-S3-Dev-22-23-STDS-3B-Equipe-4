@@ -1,9 +1,6 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import Card from "@mui/material/Card";
-import CardActionArea from "@mui/material/CardActionArea";
-import CardContent from "@mui/material/CardContent";
-import {IonContent, IonHeader, IonPage, IonRefresher, IonRefresherContent} from "@ionic/react";
+import {IonContent, IonPage, IonRefresher, IonRefresherContent} from "@ionic/react";
 import Header from "./Header";
 import * as React from "react";
 import CircleIcon from "@mui/icons-material/Circle";
