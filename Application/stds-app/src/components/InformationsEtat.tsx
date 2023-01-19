@@ -47,6 +47,21 @@ export default function InformationsEtat(props: { mesure:string, nombre: number}
                 texteEtat = "Quantité élevée";
             }
             break;
+        case "Puissance":
+            msgVert = "Puissance correcte";
+            msgOrange = "Puissance faible";
+            msgRouge = "Problème critique"
+
+            if (props.nombre >= 70){
+                colorDot = "#ED1C24";
+                texteEtat = msgRouge;
+            } else if(props.nombre < 60){
+                colorDot = "#F49229";
+                texteEtat = msgOrange;
+            } else {
+                texteEtat = msgVert;
+            }
+            break;
     }
 
     return (
@@ -55,9 +70,9 @@ export default function InformationsEtat(props: { mesure:string, nombre: number}
                 open={open}
                 onClose={handleClose}
             >
-                <DialogTitle sx={{textAlign: "center", fontWeight: "bold"}}>
-                    <InfoOutlinedIcon sx={{position: "absolute", marginTop: 0.5, left: 35, color:"blue" }}/>
-                    Informations
+                <DialogTitle sx={{textAlign: "center", fontWeight: "bold", display: "flex", justifyContent: "center"}}>
+                    <InfoOutlinedIcon sx={{ color:"blue", marginRight: 1}}/>
+                    <Typography sx={{fontWeight: "bold"}}>Informations</Typography>
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText sx={{}}>
