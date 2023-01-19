@@ -52,7 +52,7 @@ export default function InformationsEtat(props: { mesure:string, nombre: number}
             msgOrange = "Puissance faible";
             msgRouge = "Problème critique"
 
-            if (props.nombre >= 70){
+            if (props.nombre >= 70 || props.nombre === 0){
                 colorDot = "#ED1C24";
                 texteEtat = msgRouge;
             } else if(props.nombre < 60){

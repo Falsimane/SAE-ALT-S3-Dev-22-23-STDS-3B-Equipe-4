@@ -4,6 +4,8 @@ import {IonContent, IonHeader, IonPage, IonRefresher, IonRefresherContent} from 
 import Header from "./Header";
 import * as React from "react";
 import InformationsEtat from "../components/InformationsEtat";
+import {useContext} from "react";
+import STDSDatasContext from "../utils/mqtt/STDSDatasContext";
 
 export default function Puissance() {
     const refresh = (e: CustomEvent) => {
@@ -12,8 +14,8 @@ export default function Puissance() {
         }, 3000);
     };
 
-
-    let valPuissance= 85;
+    const datas = useContext(STDSDatasContext);
+    const valPuissance = datas.puissance;
    
     let imageVal;
 
