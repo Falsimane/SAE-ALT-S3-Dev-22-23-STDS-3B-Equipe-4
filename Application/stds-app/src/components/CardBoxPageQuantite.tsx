@@ -24,7 +24,7 @@ export default function CardBoxTemperature(){
     if(pourcentageQuantite > 90){
         nombreApres90 = 10-(100-pourcentageQuantite);
         radiusLiquideQuantiteTop += nombreApres90;
-    } else if (pourcentageQuantite == 1){
+    } else if (pourcentageQuantite === 1){
         calculPourcentage = 1.1/90;
     }
 
@@ -49,7 +49,7 @@ export default function CardBoxTemperature(){
                             <Box sx={{marginLeft: 10, display: "flex", alignItems: "end", height: 100, marginTop: 0.5, justifyContent: "center"}}>
                                 <Box sx={{marginBottom: 0.3, position: "absolute", backgroundColor: "#FFD335", borderTopRightRadius : radiusLiquideQuantiteTop, borderTopLeftRadius : radiusLiquideQuantiteTop, width: 56, height: 0.9*calculPourcentage}}/>
                                 <Box sx={{position: "absolute"}}>
-                                    <img src={require('../images/fut-bierre.png')}/>
+                                    <img src={require('../images/fut-bierre.png')} alt=""/>
                                 </Box>
                                 <Typography sx={{zIndex: 1, position: "absolute", bottom: 44, fontWeight: 'bold', textAlign: "center"}}>{pourcentageQuantite}%</Typography>
                             </Box>
