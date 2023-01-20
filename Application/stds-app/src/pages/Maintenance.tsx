@@ -27,7 +27,7 @@ export default function Maintenance() {
                 </IonRefresher>
                 <Box sx={{ display: "flex", justifyContent: "center", marginTop: 5 , marginBottom: 10}}>
                     <Card sx={{ backgroundColor: "#E6E6E6", height: 150, width: "80%"}}>
-                        
+
                         <CardActionArea sx={{height: '100%'}}>
                             <CardContent sx= {{ height:"100%" , padding : 0}}>
 
@@ -40,31 +40,32 @@ export default function Maintenance() {
 
                                 <Box sx={{height: "50%", display:"flex", alignItems:"center", justifyContent:"center"}}>
 
-                                <Box sx={{backgroundColor: "#CFCFCE", borderRadius: 2 , textAlign: "center",display:"flex", alignItems:"center", padding : 2, marginBottom: 2}}>
+                                    <Box sx={{backgroundColor: "#CFCFCE", borderRadius: 2 , textAlign: "center",display:"flex", alignItems:"center", padding : 2, marginBottom: 2}}>
 
-                                    <Typography sx={{fontSize: 18,color:"#ED1C24" , fontWeight: "bold", textAlign:"center", width:"100%"}}>
-                                        Deconnexion réseau
-                                    </Typography>
-                                    
+                                        <Typography sx={{fontSize: 18,color:"#ED1C24" , fontWeight: "bold", textAlign:"center", width:"100%"}}>
+                                            Deconnexion réseau
+                                        </Typography>
+
+                                    </Box>
+
                                 </Box>
-                                
-                                </Box>
-                            
+
                             </CardContent>
                         </CardActionArea>
                     </Card>
-            </Box>
+                </Box>
 
 
 
 
 
 
-            <CardBoxMaintenance titre="Notice d'utilisation" pdfimg = {"visible"} /> 
-            <CardBoxMaintenance titre="Manuel de service" pdfimg = {"visible"} /> 
-            <CardBoxMaintenance titre="Maintenance préventive" pdfimg = {"hidden"}/>
-            <CardBoxMaintenance titre="Maintenance curative" pdfimg = {"hidden"}/> 
-
+                <CardBoxMaintenance titre="Notice d'utilisation" pdfimg = {"visible"} />
+                <CardBoxMaintenance titre="Manuel de service" pdfimg = {"visible"} />
+                <CardBoxMaintenance titre="Maintenance préventive" pdfimg = {"hidden"}/>
+                <CardBoxMaintenance titre="Maintenance curative" pdfimg = {"hidden"}/>
+                <br/>
+                <br/>
             </IonContent>
         </IonPage>
     );
