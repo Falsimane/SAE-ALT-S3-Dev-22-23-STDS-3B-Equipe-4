@@ -4,7 +4,7 @@ const useWebsocket = <T>(path: string, defaultValue: T) => {
     const [val, setVal] = React.useState(defaultValue);
 
     useEffect(() => {
-        const websocket = new WebSocket('ws://127.0.0.1:8080/ws/' + path);
+        const websocket = new WebSocket('ws://38.242.252.198:8080/ws/' + path);
         websocket.onmessage = (event) => {
             setVal(event.data);
             websocket.close();
