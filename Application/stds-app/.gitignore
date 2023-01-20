@@ -31,3 +31,4 @@ yarn-error.log*
 /android
 
 .package-lock.json
+/resources/android
