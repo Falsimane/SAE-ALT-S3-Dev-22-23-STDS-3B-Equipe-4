@@ -6,6 +6,7 @@ import CardContent from "@mui/material/CardContent";
 import * as React from "react";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
+import PDF from "./PDF";
 
 export default function CardBoxMaintenance(props: { titre:string ; pdfimg: string}) {
 
@@ -16,7 +17,6 @@ export default function CardBoxMaintenance(props: { titre:string ; pdfimg: strin
         <Box sx={{ display: "flex", justifyContent: "center", marginTop: 5 }}>
             <Box sx={{ width: "80%" }}>
                 
-
 
                 <Card sx={{ backgroundColor: "#E6E6E6", height: 80}}>
                     <CardActionArea sx={{height: '100%'}}>
