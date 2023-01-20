@@ -6,7 +6,8 @@ import CardContent from "@mui/material/CardContent";
 import * as React from "react";
 import CircleIcon from "@mui/icons-material/Circle";
 import {useHistory} from "react-router";
-
+import {useContext} from "react";
+import STDSDatasContext from "../utils/mqtt/STDSDatasContext";
 
 
 export default function CardBoxPuissance(){
@@ -16,9 +17,13 @@ export default function CardBoxPuissance(){
         history.push("/puissance");
     }
 
+    const datas = useContext(STDSDatasContext);
+
+    const valPuissance = datas.niveau;
+
     const colorDot= "#F49229";
 
-    let valPuissance= 85;
+    
    
     let imageVal;
     
@@ -41,7 +46,7 @@ export default function CardBoxPuissance(){
             imageVal = "max-.png";
             break;
         case (valPuissance > 80):
-            imageVal = "max.png";
+            imageVal = "max+.png";
             break;
         default:
             imageVal = "min-.png"

@@ -7,11 +7,22 @@ import * as React from "react";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import pdfNoticeUtilisation from "../documents/STDS_notice_utilisation.pdf";
+import pdfManuelService from "../documents/STDS_manuel_service.pdf";
+
 
 export default function CardBoxMaintenance(props: { titre:string ; pdfimg: string}) {
 
     const openPdfNotice = () => {
-        window.open(pdfNoticeUtilisation);
+        switch (props.titre){
+            case "Notice d'utilisation" :
+                window.open(pdfNoticeUtilisation);
+                break;
+
+            case "Manuel de service" :
+                window.open(pdfNoticeUtilisation);
+                break;
+                
+        }
     }
     
 
