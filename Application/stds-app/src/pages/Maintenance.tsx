@@ -25,7 +25,7 @@ export default function Maintenance() {
                 <IonRefresher slot="fixed" onIonRefresh={refresh}>
                     <IonRefresherContent></IonRefresherContent>
                 </IonRefresher>
-                <Box sx={{ display: "flex", justifyContent: "center", marginTop: 5 , marginBottom: 10}}>
+                <Box sx={{ display: "flex", justifyContent: "center", marginBottom: 10}}>
                     <Card sx={{ backgroundColor: "#E6E6E6", height: 150, width: "80%"}}>
 
                         <CardActionArea sx={{height: '100%'}}>

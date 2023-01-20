@@ -30,7 +30,7 @@ export default function CardBoxTemperature(){
     }
 
     return (
-        <Box sx={{ display: "flex", justifyContent: "center", marginTop: 5}}>
+        <Box sx={{ display: "flex", justifyContent: "center"}}>
             <Box sx={{ width: "90%"}}>
                 <Typography
                     sx={{
