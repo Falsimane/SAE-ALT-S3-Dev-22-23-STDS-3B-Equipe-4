@@ -7,6 +7,7 @@ import Divider from "@mui/material/Divider";
 import CircleIcon from "@mui/icons-material/Circle";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import CardBoxTemperature from "../components/CardBoxTemperature";
+import BarChart from "../components/BarChart";
 
 export default function Temperature() {
     const refresh = (e: CustomEvent) => {
@@ -23,7 +24,7 @@ export default function Temperature() {
                 </IonRefresher>
 
                 <Box sx={{ height:"20%", width: "90%", backgroundColor:"#E6E6E6", marginLeft: "5%", marginTop: 3, borderRadius:1}}>
-
+                    <BarChart />
                 </Box>
 
                 <Box sx={{ height:"7%", width: "80%", backgroundColor:"#E6E6E6",  margin:"10%", borderRadius:3, display:"flex", alignItems:"center"}}>
