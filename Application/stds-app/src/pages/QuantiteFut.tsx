@@ -4,9 +4,6 @@ import {IonContent, IonPage, IonRefresher, IonRefresherContent} from "@ionic/rea
 import Header from "./Header";
 import * as React from "react";
 import Divider from '@mui/material/Divider';
-import CardActionArea from "@mui/material/CardActionArea";
-import CardContent from "@mui/material/CardContent";
-import Card from "@mui/material/Card";
 import STDSDatasContext from "../utils/mqtt/STDSDatasContext";
 import {useContext} from "react";
 import InformationsEtat from "../components/InformationsEtat";
@@ -31,7 +28,7 @@ export default function QuantiteFut() {
         nombreApres90 = 10-(100-pourcentageQuantite);
         radiusLiquideQuantiteTop += nombreApres90;
     } else if (pourcentageQuantite === 1){
-        calculPourcentage = 1.1/90;
+        calculPourcentage = 1.1/90*100;
     }
     return (
         <IonPage id="quantitefut-page">
@@ -43,21 +40,23 @@ export default function QuantiteFut() {
                     <IonRefresherContent></IonRefresherContent>
                 </IonRefresher>
 
-                <InformationsEtat mesure={"Q"} nombre={pourcentageQuantite}/>
+                <InformationsEtat mesure={"Quantité"} nombre={pourcentageQuantite}/>
 
-                        <Card sx={{ backgroundColor: "#E6E6E6", height: 120, width: "90%", marginLeft: "5%", marginTop:5}}>
-                            <CardActionArea sx={{height: '100%'}}>
-                                <CardContent sx={{display: "flex", alignItems: "center", height: "100%", padding : 0}}>
-                                    <Box sx={{ display: "flex", alignItems: "end", height: 100, marginTop: 0.5, justifyContent: "center", width: "50%"}}>
-                                        <Box sx={{marginBottom: 0.6, position: "absolute", backgroundColor: "#FFD335", borderTopRightRadius : radiusLiquideQuantiteTop, borderTopLeftRadius : radiusLiquideQuantiteTop, width: 56, height: 0.9*calculPourcentage}}/>
+                        <Box sx={{ backgroundColor: "#E6E6E6", height: 120, width: "90%", marginLeft: "5%", marginTop:5}}>
+                                <Box sx={{display: "flex", alignItems: "center", height: "100%", padding : 0}}>
+
+                                    <Box sx={{ display: "flex", alignItems: "end", height: 100, marginTop: 1.5, justifyContent: "center", width: "50%"}}>
+                                        <Box sx={{marginBottom: 0.8, position: "absolute", backgroundColor: "#FFD335", borderTopRightRadius : radiusLiquideQuantiteTop, borderTopLeftRadius : radiusLiquideQuantiteTop, width: 57, height: 0.9*calculPourcentage}}/>
                                         <Box sx={{position: "absolute"}}>
                                             <img src={require('../images/fut-bierre.png')} alt=""/>
                                         </Box>
-                                        <Typography sx={{zIndex: 1, position: "absolute", bottom: 44, fontWeight: 'bold', textAlign: "center"}}>{pourcentageQuantite}%</Typography>
+                                        <Typography sx={{zIndex: 1, position: "relative", bottom: 40, fontWeight: 'bold', textAlign: "center"}}>{pourcentageQuantite}%</Typography>
                                     </Box>
-                                    <Divider sx = {{ color:"blue"} } orientation="vertical" variant="middle" />
+
+                                    <Divider sx = {{ color:"blue", height: 100} } orientation="vertical" variant="middle" />
+
                                     <Box sx={{display:"flex", justifyContent: "center", width: "50%"}}>
-                                        <Box sx={{width: 95, height: 100}}>
+                                        <Box sx={{width: 110, height: 100}}>
                                             <Box sx={{ width: "100%", height: "50%", display: "flex", alignItems:"center", justifyContent:"left"}}>
                                                 <Box id={"pinte-bierre"} sx={{height: 30}}>
                                                     <img src={require('../images/pinte-bierre.png')} alt=""/>
@@ -77,9 +76,9 @@ export default function QuantiteFut() {
 
                                         </Box>
                                     </Box>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
+
+                                </Box>
+                        </Box>
                
                 </IonContent>
         </IonPage>

@@ -1,11 +1,11 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import {IonContent, IonHeader, IonPage, IonRefresher, IonRefresherContent} from "@ionic/react";
+import {IonContent, IonPage, IonRefresher, IonRefresherContent} from "@ionic/react";
 import Header from "./Header";
 import * as React from "react";
-import CircleIcon from "@mui/icons-material/Circle";
-import Divider from '@mui/material/Divider';
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import InformationsEtat from "../components/InformationsEtat";
+import {useContext} from "react";
+import STDSDatasContext from "../utils/mqtt/STDSDatasContext";
 
 export default function Puissance() {
     const refresh = (e: CustomEvent) => {
@@ -14,16 +14,10 @@ export default function Puissance() {
         }, 3000);
     };
 
-
-    let valPuissance= 85;
+    const datas = useContext(STDSDatasContext);
+    const valPuissance = datas.puissance;
    
-    let imageVal
-  
-    let calculPuissance = valPuissance;
-    let radiusLiquideQuantiteTop = 0;
-    let nombreApres90 = 0;
-    
-    
+    let imageVal;
 
     switch (true) {
         case (valPuissance < 10):
@@ -51,61 +45,28 @@ export default function Puissance() {
 
     return (
         <IonPage id="puissance-page">
-            <IonHeader>
                 <Header page={"Puissance"} dimensionsTitre={110}/>
-            </IonHeader>
             <IonContent fullscreen>
                 <IonRefresher slot="fixed" onIonRefresh={refresh}>
                     <IonRefresherContent></IonRefresherContent>
                 </IonRefresher>
 
-                    <Box sx={{ height:"20%", width: "80%", backgroundColor:"#E6E6E6", margin:"10%", borderRadius:3}}>
+                    <Box sx={{ height:"20%", width: "80%", backgroundColor:"#E6E6E6", margin:"10%", borderRadius:3}}/>
 
-                    </Box>
+                    <InformationsEtat mesure={"Puissance"} nombre={valPuissance}/>
 
-                    <Box sx={{ height:"7%", width: "80%", backgroundColor:"#E6E6E6",  margin:"10%", borderRadius:3, display:"flex", alignItems:"center"}}>
+                    <Box sx={{ height:"40%", width: "80%", backgroundColor:"#E6E6E6", margin:"10%", borderRadius:3, marginTop: "15%",  display:"flex",  justifyContent:"center", alignItems:"center"}}>
+                        <Box sx={{display: "flex" ,height:100, width:175 ,alignItems: "center"}}>
+                            <img src={require('../images/' + imageVal)} alt={""}/>
+                        </Box>
 
-                        <Typography sx={{fontWeight:"bold",paddingLeft:2}}>
-                            ETAT
-                        </Typography>
-                    
+                        <Box sx={{display: "flex"}}>
 
+                            <Typography sx={{fontWeight:"bold", fontSize:30 , height:50, width:80}}>
+                                {valPuissance} W
+                            </Typography>
 
-                        <Divider sx = {{ color:"blue",paddingLeft:2} } orientation="vertical" variant="middle" />
-
-                       
-
-                        <CircleIcon sx={{ color: "#ED1C24" , marginLeft: 2,  marginRight: 1,  left :"30%"}} fontSize = "medium"/>
-
-
-                        <Typography sx={{fontWeight:"bold",paddingLeft:2, fontSize:12}}>
-                            Puissance correcte
-                        </Typography>
-
-                        <InfoOutlinedIcon sx={{marginLeft: 1, color:"blue" }}/>
-                        
-
-                    </Box>
-
-                                <Box sx={{ height:"40%", width: "80%", backgroundColor:"#E6E6E6", margin:"10%", borderRadius:3, marginTop: "15%",  display:"flex",  justifyContent:"center", alignItems:"center"}}>
-
-
-                                
-                                <Box sx={{display: "flex" ,height:100, width:175 ,alignItems: "center"}}>
-
-                                    <img src={require('../images/' + imageVal)}/>
-                                </Box>
-
-                                <Box sx={{display: "flex"}}>
-
-                                    <Typography sx={{fontWeight:"bold", fontSize:30 , height:50, width:80}}>
-                                        {valPuissance} W
-                                    </Typography>
-
-                                </Box>
-                        
-
-
+                        </Box>
                     </Box>
 
                     

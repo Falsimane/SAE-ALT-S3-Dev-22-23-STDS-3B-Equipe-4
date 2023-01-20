@@ -6,8 +6,7 @@ import CardContent from "@mui/material/CardContent";
 import * as React from "react";
 import CircleIcon from "@mui/icons-material/Circle";
 import {useHistory} from "react-router";
-import { fontWeight } from "@mui/system";
-import Grid from '@mui/material/Grid';
+
 
 
 export default function CardBoxPuissance(){
@@ -21,11 +20,7 @@ export default function CardBoxPuissance(){
 
     let valPuissance= 85;
    
-    let imageVal
-  
-    let calculPuissance = valPuissance;
-    let radiusLiquideQuantiteTop = 0;
-    let nombreApres90 = 0;
+    let imageVal;
     
     
 
@@ -81,7 +76,7 @@ export default function CardBoxPuissance(){
                                
                                 <Box sx={{display: "flex" ,height:140, width:80 ,alignItems: "center"}}>
 
-                                    <img src={require('../images/' + imageVal)}  />
+                                    <img src={require('../images/' + imageVal)} alt={""} />
 
                                 </Box>
 

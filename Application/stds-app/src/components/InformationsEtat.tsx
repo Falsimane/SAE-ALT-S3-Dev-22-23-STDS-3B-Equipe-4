@@ -6,8 +6,23 @@ import Divider from "@mui/material/Divider";
 import CircleIcon from "@mui/icons-material/Circle";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import Card from "@mui/material/Card";
+import Dialog from '@mui/material/Dialog';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import Box from "@mui/material/Box";
 
 export default function InformationsEtat(props: { mesure:string, nombre: number}) {
+
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     let msgVert = "";
     let msgOrange = "";
@@ -17,7 +32,7 @@ export default function InformationsEtat(props: { mesure:string, nombre: number}
     let texteEtat = "";
 
     switch (props.mesure){
-        case "Q":
+        case "Quantité":
             msgVert = "Quantité élevée";
             msgOrange = "Quantité intermédiaire";
             msgRouge = "Quantité faible"
@@ -32,15 +47,48 @@ export default function InformationsEtat(props: { mesure:string, nombre: number}
                 texteEtat = "Quantité élevée";
             }
             break;
-    }
+        case "Puissance":
+            msgVert = "Puissance correcte";
+            msgOrange = "Puissance faible";
+            msgRouge = "Problème critique"
 
-
-    const openInformationsEtat = () => {
+            if (props.nombre >= 70 || props.nombre === 0){
+                colorDot = "#ED1C24";
+                texteEtat = msgRouge;
+            } else if(props.nombre < 60){
+                colorDot = "#F49229";
+                texteEtat = msgOrange;
+            } else {
+                texteEtat = msgVert;
+            }
+            break;
     }
 
     return (
+        <div>
+            <Dialog
+                open={open}
+                onClose={handleClose}
+            >
+                <DialogTitle sx={{textAlign: "center", fontWeight: "bold", display: "flex", justifyContent: "center"}}>
+                    <InfoOutlinedIcon sx={{ color:"blue", marginRight: 1}}/>
+                    <Typography sx={{fontWeight: "bold"}}>Informations</Typography>
+                </DialogTitle>
+                <DialogContent>
+                    <DialogContentText sx={{}}>
+                        <Box sx={{display: "flex", marginBottom: 1}}><CircleIcon sx={{ color: "#22B04B", marginRight: 2}} fontSize = "small"/><Typography sx={{fontWeight: "bold"}}>{msgVert}</Typography></Box>
+                        <Box sx={{display: "flex", marginBottom: 1}}><CircleIcon sx={{ color: "#F49229", marginRight: 2}} fontSize = "small"/><Typography sx={{fontWeight: "bold"}}>{msgOrange}</Typography></Box>
+                        <Box sx={{display: "flex", marginBottom: 1}}><CircleIcon sx={{ color: "#ED1C24", marginRight: 2}} fontSize = "small"/><Typography sx={{fontWeight: "bold"}}>{msgRouge}</Typography></Box>
+                    </DialogContentText>
+                </DialogContent>
+            </Dialog>
+
+
+
+
+
         <Card sx={{ backgroundColor: "#E6E6E6", height: 40, width: "80%", marginLeft: "10%", marginTop: 5}}>
-            <CardActionArea onClick={openInformationsEtat} sx={{height: '100%'}}>
+            <CardActionArea onClick={handleClickOpen} sx={{height: '100%'}}>
                 <CardContent sx={{display: "flex", alignItems: "center", height: "100%", padding : 0}}>
 
                     <Typography sx={{fontWeight:"bold",paddingLeft:"4%"}}>
@@ -64,5 +112,6 @@ export default function InformationsEtat(props: { mesure:string, nombre: number}
                 </CardContent>
             </CardActionArea>
         </Card>
+        </div>
     );
 }
