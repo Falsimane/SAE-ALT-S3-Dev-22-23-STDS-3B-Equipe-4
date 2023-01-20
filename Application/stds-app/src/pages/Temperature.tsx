@@ -21,7 +21,7 @@ export default function Temperature() {
                 </IonRefresher>
 
                 <Box sx={{ height:"20%", width: "90%", backgroundColor:"#E6E6E6", marginLeft: "5%", marginTop: 3, borderRadius:1}}>
-                    <BarChart />
+                    <BarChart/>
                 </Box>
 
                 <InformationsEtat mesure={"Température"} nombre={0} nombre2={0}/>

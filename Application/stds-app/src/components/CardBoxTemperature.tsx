@@ -16,13 +16,10 @@ export default function CardBoxTemperature(props: {title: string}){
                         fontWeight: "bold",
                         fontSize: 20,
                         marginBottom: 1
-                    }}
-                >
-                    {" "}
-                    {props.title}{" "}
+                    }}>
+                
                 </Typography>
-
-
+                
                 <Card sx={{ backgroundColor: "#E6E6E6", height: 120 }}>
                     <CardActionArea sx={{height: '100%'}}>
                         <CardContent>
