@@ -36,10 +36,10 @@ export default function InformationsEtat(props: { mesure:string, nombre: number,
             msgOrange = "Température légèrement élevée";
             msgRouge = "Température trop élevée"
 
-            if (props.nombre >= 70 || props.nombre === 0){
+            if (props.nombre > 30 || props.nombre2 > 30){
                 colorDot = "#ED1C24";
                 texteEtat = msgRouge;
-            } else if(props.nombre < 60){
+            } else if(props.nombre > 20 || props.nombre2 > 20){
                 colorDot = "#F49229";
                 texteEtat = msgOrange;
             } else {
