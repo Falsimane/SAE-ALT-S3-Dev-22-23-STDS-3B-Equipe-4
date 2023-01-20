@@ -8,11 +8,10 @@ import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import Card from "@mui/material/Card";
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Box from "@mui/material/Box";
 
-export default function InformationsEtat(props: { mesure:string, nombre: number}) {
+export default function InformationsEtat(props: { mesure:string, nombre: number, nombre2: number}) {
 
     const [open, setOpen] = React.useState(false);
 
@@ -32,6 +31,21 @@ export default function InformationsEtat(props: { mesure:string, nombre: number}
     let texteEtat = "";
 
     switch (props.mesure){
+        case "Température":
+            msgVert = "Température ideale";
+            msgOrange = "Température légèrement élevée";
+            msgRouge = "Température trop élevée"
+
+            if (props.nombre >= 70 || props.nombre === 0){
+                colorDot = "#ED1C24";
+                texteEtat = msgRouge;
+            } else if(props.nombre < 60){
+                colorDot = "#F49229";
+                texteEtat = msgOrange;
+            } else {
+                texteEtat = msgVert;
+            }
+            break;
         case "Quantité":
             msgVert = "Quantité élevée";
             msgOrange = "Quantité intermédiaire";
@@ -75,11 +89,15 @@ export default function InformationsEtat(props: { mesure:string, nombre: number}
                     <Typography sx={{fontWeight: "bold"}}>Informations</Typography>
                 </DialogTitle>
                 <DialogContent>
-                    <DialogContentText sx={{}}>
-                        <Box sx={{display: "flex", marginBottom: 1}}><CircleIcon sx={{ color: "#22B04B", marginRight: 2}} fontSize = "small"/><Typography sx={{fontWeight: "bold"}}>{msgVert}</Typography></Box>
+                    <DialogContent sx={{}}>
+                        <Box sx={{display: "flex", marginBottom: 1}}>
+                            <CircleIcon sx={{ color: "#22B04B", marginRight: 2}} fontSize = "small"/>
+                            <Typography sx={{fontWeight: "bold"}}>{msgVert}
+                            </Typography>
+                        </Box>
                         <Box sx={{display: "flex", marginBottom: 1}}><CircleIcon sx={{ color: "#F49229", marginRight: 2}} fontSize = "small"/><Typography sx={{fontWeight: "bold"}}>{msgOrange}</Typography></Box>
                         <Box sx={{display: "flex", marginBottom: 1}}><CircleIcon sx={{ color: "#ED1C24", marginRight: 2}} fontSize = "small"/><Typography sx={{fontWeight: "bold"}}>{msgRouge}</Typography></Box>
-                    </DialogContentText>
+                    </DialogContent>
                 </DialogContent>
             </Dialog>
 

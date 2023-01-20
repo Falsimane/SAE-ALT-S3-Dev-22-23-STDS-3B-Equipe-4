@@ -40,7 +40,7 @@ export default function QuantiteFut() {
                     <IonRefresherContent></IonRefresherContent>
                 </IonRefresher>
 
-                <InformationsEtat mesure={"Quantité"} nombre={pourcentageQuantite}/>
+                <InformationsEtat mesure={"Quantité"} nombre={pourcentageQuantite} nombre2={0}/>
 
                         <Box sx={{ backgroundColor: "#E6E6E6", height: 120, width: "90%", marginLeft: "5%", marginTop:5}}>
                                 <Box sx={{display: "flex", alignItems: "center", height: "100%", padding : 0}}>
