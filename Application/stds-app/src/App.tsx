@@ -1,5 +1,5 @@
 import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
+import {IonApp, IonRouterOutlet, setupIonicReact} from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import Puissance from './pages/Puissance';
@@ -75,24 +75,47 @@ const AppMediaQuery = () => {
     }
 }
 
-const App: React.FC = () => (
-    <IonApp>
-        <STDSDatasProvider>
-            <IonReactRouter>
-                <IonRouterOutlet>
-                    <Route path="/" exact={true}>
-                        <Redirect to="/home" />
-                    </Route>
-                    <Route path="/puissance" exact={true} component={Puissance} />
-                    <Route path="/quantite" exact={true} component={QuantiteFut} />
-                    <Route path="/temperature" exact={true} component={Temperature} />
-                    <Route path="/home" component={AppMediaQuery} />
-                    <Route path="/maintenance-preventive" exact={true} component={MaintenancePreventive} />
-                    <Route path="/maintenance-curative" exact={true} component={MaintenanceCurative} />
-                </IonRouterOutlet>
-            </IonReactRouter>
-        </STDSDatasProvider>
-    </IonApp>
-);
+const App = () => {
+    const isMobileOrTablet = useMediaQuery('(max-width: 768px)');
+
+    return (
+        <IonApp>
+            <STDSDatasProvider>
+                <IonReactRouter>
+                    <IonRouterOutlet>
+                        <Route path="/" exact={true}>
+                            <Redirect to="/home"/>
+                        </Route>
+                        <Route path="/puissance" exact={true} component={Puissance}/>
+                        <Route path="/quantite" exact={true} component={QuantiteFut}/>
+                        <Route path="/temperature" exact={true} component={Temperature}/>
+                        <Route path="/maintenance-preventive" exact={true} component={MaintenancePreventive}/>
+                        <Route path="/maintenance-curative" exact={true} component={MaintenanceCurative}/>
+                        {isMobileOrTablet ?
+                            <Route path="/home" exact={true}>
+                                <Swiper
+                                    className="mySwiper"
+                                    pagination={true} modules={[Pagination]}
+                                >
+                                    <SwiperSlide>
+                                        <Home/>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <Maintenance/>
+                                    </SwiperSlide>
+                                </Swiper>
+                            </Route>
+                            :
+                            <>
+                                <Route path="/home" exact={true} component={Home}/>
+                                <Route path="/maintenance" exact={true} component={Maintenance}/>
+                            </>
+                        }
+                    </IonRouterOutlet>
+                </IonReactRouter>
+            </STDSDatasProvider>
+        </IonApp>
+    );
+};
 
 export default App;
