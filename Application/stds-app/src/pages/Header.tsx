@@ -45,7 +45,7 @@ export default function Header(props: {page:string; dimensionsTitre:number}) {
     return (
 
         <IonHeader className="ion-no-border">
-            <div className="Header">
+            <Box sx={{marginBottom: 3}}>
                 <AppBar sx={{position: "static", backgroundColor: "#ffbe76"}}>
                     <Toolbar>
                         {(selectedAccueil ||selectedMaintenance) ?
@@ -126,7 +126,7 @@ export default function Header(props: {page:string; dimensionsTitre:number}) {
                     <MenuItem onClick={openAccueil} sx={{fontSize: 20}} selected={selectedAccueil}>Accueil</MenuItem>
                     <MenuItem onClick={openMaintenance} sx={{fontSize: 20}} selected={selectedMaintenance}>Maintenance</MenuItem>
                 </Menu>
-            </div>
+            </Box>
         </IonHeader>
     )
 }

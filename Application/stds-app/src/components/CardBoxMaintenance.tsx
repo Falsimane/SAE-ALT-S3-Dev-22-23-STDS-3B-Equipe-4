@@ -11,9 +11,14 @@ import {useHistory} from "react-router";
 //import pdfManuelService from "../documents/STDS_manuel_service.pdf";
 
 
-export default function CardBoxMaintenance(props: { titre:string ; pdfimg: string}) {
+export default function CardBoxMaintenance(props: { titre:string ; pdfimg: string, isGamme:boolean}) {
 
     const history = useHistory();
+    let marginbot = 4;
+
+    if(props.isGamme){
+        marginbot = 1;
+    }
 
     const openPdfNotice = () => {
         switch (props.titre){
@@ -33,13 +38,16 @@ export default function CardBoxMaintenance(props: { titre:string ; pdfimg: strin
                 history.push("/maintenance-curative");
                 break;
 
+            case "Gamme 1":
+                break;
+
                 
         }
     }
     
 
     return (
-        <Box sx={{ display: "flex", justifyContent: "center", marginTop: 5 }}>
+        <Box sx={{ display: "flex", justifyContent: "center", marginBottom: marginbot }}>
             <Box sx={{ width: "80%" }}>
 
                 <Card sx={{ backgroundColor: "#E6E6E6", height: 80}}>
