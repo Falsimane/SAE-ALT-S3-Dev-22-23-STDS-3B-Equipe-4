@@ -40,9 +40,9 @@ export default function CardBoxTemperature(){
                         <CardContent sx={{display: "flex", alignItems: "center", height: "100%", padding : 0}}>    
                             <Box sx={{marginLeft: '15%', textAlign:'center'}}>
                                 <HalfDonut value={datas.temp1} width={100} valueColor={getColorTemp(datas.temp1)}/>
-                                <Typography>Fût</Typography>
+                                <Typography>Fût {datas.temp1}C°</Typography>
                             </Box> 
-                            <CircleIcon sx={{ color: getColorTemp(datas.temp1)}} />
+                            <CircleIcon sx={{ color: getColorTemp(datas.temp1), position: "absolute", right: 5}} />
                         </CardContent>
                     </CardActionArea>
                 </Card>
@@ -52,9 +52,10 @@ export default function CardBoxTemperature(){
                         <CardContent sx={{display: "flex", alignItems: "center", height: "100%", padding : 0}}>                          
                             <Box sx={{marginLeft: '15%'}}>
                                 <HalfDonut value={datas.temp2} width={100} valueColor={getColorTemp(datas.temp2)}/>
-                                <Typography>Ambiante</Typography>
+                                <Typography>Ambiante {datas.temp2}C°</Typography>
                             </Box>           
-                            <CircleIcon sx={{ color: getColorTemp(datas.temp1)}} />
+
+                            <CircleIcon sx={{ color: getColorTemp(datas.temp1), position: "absolute", right: 5}} />
                         </CardContent>
                     </CardActionArea>
                 </Card>

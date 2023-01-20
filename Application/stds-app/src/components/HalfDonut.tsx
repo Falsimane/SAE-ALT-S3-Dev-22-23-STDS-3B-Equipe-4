@@ -42,7 +42,7 @@ export default function HalfDonut(props: { valueColor?: string; emptyColor?: str
     }
 
     return (
-        <Box width={props.width?props.width:'100%'} height={props.height?props.height:'100%'} sx={{backgroundColor:'rgba(0,0,0,0.1)'}}>
+        <Box width={props.width?props.width:'100%'} height={props.height?props.height:'100%'}>
         <Doughnut data={data} options={options} updateMode={'resize'}/>
         </Box>
 );
