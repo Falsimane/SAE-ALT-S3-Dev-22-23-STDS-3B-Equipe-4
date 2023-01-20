@@ -25,22 +25,22 @@ export default function CardBoxPuissance(){
     
 
     switch (true) {
-        case (valPuissance < 20):
+        case (valPuissance < 10):
             imageVal = "min-.png"
             break;
-        case (valPuissance <= 40 && valPuissance > 20):
+        case (valPuissance <= 20 && valPuissance > 10):
             imageVal = "min+.png"
             break;
-        case (valPuissance <= 60 && valPuissance > 40):
+        case (valPuissance <= 40 && valPuissance > 20):
             imageVal = "medium-.png";
             break;
-        case (valPuissance <= 80 && valPuissance > 60):
+        case (valPuissance <= 60 && valPuissance > 40):
             imageVal ="medium+.png";
             break;
-        case (valPuissance <= 100 && valPuissance > 80):
+        case (valPuissance <= 80 && valPuissance > 60):
             imageVal = "max-.png";
             break;
-        case (valPuissance > 100):
+        case (valPuissance > 80):
             imageVal = "max.png";
             break;
         default:
