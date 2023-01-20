@@ -30,41 +30,34 @@ export default function CardBoxTemperature(){
     }
 
     return (
-        <Box sx={{ display: "flex", justifyContent: "center"}}>
-            <Box sx={{ width: "90%"}}>
-                <Typography
-                    sx={{
-                        textAlign: "left",
-                        fontWeight: "bold",
-                        fontSize: 20,
-                        marginBottom: 1
-                    }}
-                >
+        <Box sx={{width: '90%', margin: 'auto'}}>
+            <Typography sx={{textAlign: "left",fontWeight: "bold",fontSize: 20,marginBottom: 1}}>
                     Températures
-                </Typography>
-
-
-                <Card sx={{ backgroundColor: "#E6E6E6", height: 120 }}>
+            </Typography>
+            <Box sx={{display:'flex', justifyContent:'space-between'}}>
+                <Card sx={{ backgroundColor: "#E6E6E6", height: 120,width: "48%" }}>
                     <CardActionArea onClick={openPage} sx={{height: '100%'}}>
-                        <CardContent sx={{display: "flex", alignItems: "center", height: "100%", padding : 0}}>
-                            
-                                
-                                <Box sx={{marginLeft: '15%', textAlign:'center'}}>
+                        <CardContent sx={{display: "flex", alignItems: "center", height: "100%", padding : 0}}>    
+                            <Box sx={{marginLeft: '15%', textAlign:'center'}}>
                                 <HalfDonut value={datas.temp1} width={100} valueColor={getColorTemp(datas.temp1)}/>
-                                <Typography>Température fût</Typography>
-                                </Box>
-
-                                <Box sx={{marginLeft: '15%'}}>
-                                <HalfDonut value={datas.temp2} width={100} valueColor={getColorTemp(datas.temp2)}/>
-                                <Typography>Température ambiante</Typography>
-                                </Box>
-                                
-                            
-                            <CircleIcon sx={{ color: getColorTemp(datas.temp1), position: "absolute", right: 30}} />
+                                <Typography>Fût</Typography>
+                            </Box> 
+                            <CircleIcon sx={{ color: getColorTemp(datas.temp1)}} />
                         </CardContent>
                     </CardActionArea>
                 </Card>
 
+                <Card sx={{ backgroundColor: "#E6E6E6", height: 120,width: "48%" }}>
+                    <CardActionArea onClick={openPage} sx={{height: '100%'}}>
+                        <CardContent sx={{display: "flex", alignItems: "center", height: "100%", padding : 0}}>                          
+                            <Box sx={{marginLeft: '15%'}}>
+                                <HalfDonut value={datas.temp2} width={100} valueColor={getColorTemp(datas.temp2)}/>
+                                <Typography>Ambiante</Typography>
+                            </Box>           
+                            <CircleIcon sx={{ color: getColorTemp(datas.temp1)}} />
+                        </CardContent>
+                    </CardActionArea>
+                </Card>
             </Box>
         </Box>
     );
