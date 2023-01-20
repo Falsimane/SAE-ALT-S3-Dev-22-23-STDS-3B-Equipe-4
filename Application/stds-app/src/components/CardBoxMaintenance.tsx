@@ -6,7 +6,6 @@ import CardContent from "@mui/material/CardContent";
 import * as React from "react";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
-// @ts-ignore
 import pdfNoticeUtilisation from "../documents/STDS_notice_utilisation.pdf";
 
 export default function CardBoxMaintenance(props: { titre:string ; pdfimg: string}) {
