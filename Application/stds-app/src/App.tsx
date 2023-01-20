@@ -34,6 +34,8 @@ import Temperature from "./pages/Temperature";
 import QuantiteFut from "./pages/QuantiteFut";
 import STDSDatasProvider from "./utils/mqtt/STDSDatasProvider";
 import {Pagination} from "swiper";
+import MaintenancePreventive from "./pages/MaintenancePreventive";
+import MaintenanceCurative from "./pages/MaintenanceCurative";
 
 setupIonicReact();
 
@@ -65,6 +67,8 @@ const AppMediaQuery = () => {
                     <Route path="/maintenance" exact={true} component={Maintenance} />
                     <Route path="/quantite" exact={true} component={QuantiteFut} />
                     <Route path="/temperature" exact={true} component={Temperature} />
+                    <Route path="/maintenance-preventive" exact={true} component={MaintenancePreventive} />
+                    <Route path="/maintenance-curative" exact={true} component={MaintenanceCurative} />
                 </IonRouterOutlet>
             </IonReactRouter>
         );
@@ -83,6 +87,8 @@ const App: React.FC = () => (
                     <Route path="/quantite" exact={true} component={QuantiteFut} />
                     <Route path="/temperature" exact={true} component={Temperature} />
                     <Route path="/home" component={AppMediaQuery} />
+                    <Route path="/maintenance-preventive" exact={true} component={MaintenancePreventive} />
+                    <Route path="/maintenance-curative" exact={true} component={MaintenanceCurative} />
                 </IonRouterOutlet>
             </IonReactRouter>
         </STDSDatasProvider>

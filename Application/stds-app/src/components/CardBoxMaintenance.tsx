@@ -7,10 +7,13 @@ import * as React from "react";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import pdfNoticeUtilisation from "../documents/STDS_notice_utilisation.pdf";
+import {useHistory} from "react-router";
 //import pdfManuelService from "../documents/STDS_manuel_service.pdf";
 
 
 export default function CardBoxMaintenance(props: { titre:string ; pdfimg: string}) {
+
+    const history = useHistory();
 
     const openPdfNotice = () => {
         switch (props.titre){
@@ -21,6 +24,15 @@ export default function CardBoxMaintenance(props: { titre:string ; pdfimg: strin
             case "Manuel de service" :
                // window.open(pdfManuelService);
                 break;
+
+            case "Maintenance préventive" :
+                    history.push("/maintenance-preventive");
+                break;
+
+            case "Maintenance curative" :
+                history.push("/maintenance-curative");
+                break;
+
                 
         }
     }
