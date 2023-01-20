@@ -28,10 +28,12 @@ import {useMediaQuery} from "@mui/material";
 import {Swiper, SwiperSlide} from "swiper/react";
 
 import 'swiper/css';
+import "swiper/css/pagination";
 import './theme/App.css';
 import Temperature from "./pages/Temperature";
 import QuantiteFut from "./pages/QuantiteFut";
 import STDSDatasProvider from "./utils/mqtt/STDSDatasProvider";
+import {Pagination} from "swiper";
 
 setupIonicReact();
 
@@ -40,7 +42,10 @@ const AppMediaQuery = () => {
 
     if (isMobileOrTablet) {
         return (
-            <Swiper className="mySwiper">
+            <Swiper
+                className="mySwiper"
+                pagination={true} modules={[Pagination]}
+            >
                 <SwiperSlide>
                     <Home/>
                 </SwiperSlide>

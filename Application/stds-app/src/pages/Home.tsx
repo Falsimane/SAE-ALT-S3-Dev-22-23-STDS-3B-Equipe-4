@@ -9,7 +9,9 @@ import Header from "./Header";
 import CardBox from "../components/CardBox";
 import CardBoxPageQuantite from "../components/CardBoxPageQuantite";
 import CardBoxPagePuissance from "../components/CardBoxPagePuissance";
+import CardBoxPageTemperature from "../components/CardBoxPageTemperature";
 import React from "react";
+
 
 const Home: React.FC = () => {
 
@@ -30,7 +32,7 @@ const Home: React.FC = () => {
             <IonRefresherContent></IonRefresherContent>
           </IonRefresher>
 
-          <CardBox colordot={colordotTemp} title={"Temperature"} />
+          <CardBoxPageTemperature/>
 
           <CardBoxPageQuantite/>
 
