@@ -50,72 +50,36 @@ export default function CardBoxMaintenance(props: { titre:string ; pdfimg: strin
                 if(props.typeGamme === "preventif"){
                     window.open(gammePreventive1);
                 }
-                break;
-
-            case "Gamme 2":
-                if(props.typeGamme === "preventif"){
-                    window.open(gammePreventive2);
-                }
-                break;
-
-            case "Gamme 3":
-                if(props.typeGamme === "preventif"){
-                    window.open(gammePreventive2);
-                }
-                break;
-
-            case "Gamme 4":
-                if(props.typeGamme === "preventif"){
-                    window.open(gammePreventive2);
-                }
-                break;
-            case "Gamme 5":
-                if(props.typeGamme === "preventif"){
-                     window.open(gammePreventive2);
-                }
-                break;
-
-            case "Gamme 6":
-                if(props.typeGamme === "preventif"){
-                    window.open(gammePreventive2);
-                }
-                break;
-            case "Gamme 1":
-                if(props.typeGamme === "curative"){
+                if(props.typeGamme === "curatif"){
                     window.open(gammeCurative1);
                 }
                 break;
-    
+
             case "Gamme 2":
-                if(props.typeGamme === "curative"){
+                if(props.typeGamme === "preventif"){
+                    window.open(gammePreventive2);
+                }
+                if(props.typeGamme === "curatif"){
                     window.open(gammeCurative2);
                 }
                 break;
 
             case "Gamme 3":
-                if(props.typeGamme === "curative"){
-                    window.open(gammeCurative3);
-                }
+                window.open(gammeCurative3);
                 break;
             
 
             case "Gamme 4":
-                if(props.typeGamme === "curative"){
-                    window.open(gammeCurative4);
-                }
+                window.open(gammeCurative4);
                 break;
             
             case "Gamme 5":
-                if(props.typeGamme === "curative"){
-                    window.open(gammeCurative5);
-                    }
-                    break;
+                window.open(gammeCurative5);
+                break;
                 
     
             case "Gamme 6":
-                if(props.typeGamme === "curative"){
-                    window.open(gammeCurative6);
-                    }
+                window.open(gammeCurative6);
                 break;
 
 
