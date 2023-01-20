@@ -1,5 +1,5 @@
 import { Redirect, Route } from 'react-router-dom';
-import {IonApp, IonRouterOutlet, setupIonicReact} from '@ionic/react';
+import {IonApp, IonContent, IonPage, IonRouterOutlet, setupIonicReact} from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import Puissance from './pages/Puissance';
@@ -39,42 +39,6 @@ import MaintenanceCurative from "./pages/MaintenanceCurative";
 
 setupIonicReact();
 
-const AppMediaQuery = () => {
-    const isMobileOrTablet = useMediaQuery('(max-width: 768px)');
-
-    if (isMobileOrTablet) {
-        return (
-            <Swiper
-                className="mySwiper"
-                pagination={true} modules={[Pagination]}
-            >
-                <SwiperSlide>
-                    <Home/>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <Maintenance/>
-                </SwiperSlide>
-            </Swiper>
-        )
-    } else {
-        return (
-            <IonReactRouter>
-                <IonRouterOutlet>
-                    <Route path="/home" exact={true}>
-                        <Home />
-                    </Route>
-                    <Route path="/puissance" exact={true} component={Puissance} />
-                    <Route path="/maintenance" exact={true} component={Maintenance} />
-                    <Route path="/quantite" exact={true} component={QuantiteFut} />
-                    <Route path="/temperature" exact={true} component={Temperature} />
-                    <Route path="/maintenance-preventive" exact={true} component={MaintenancePreventive} />
-                    <Route path="/maintenance-curative" exact={true} component={MaintenanceCurative} />
-                </IonRouterOutlet>
-            </IonReactRouter>
-        );
-    }
-}
-
 const App = () => {
     const isMobileOrTablet = useMediaQuery('(max-width: 768px)');
 
@@ -93,17 +57,21 @@ const App = () => {
                         <Route path="/maintenance-curative" exact={true} component={MaintenanceCurative}/>
                         {isMobileOrTablet ?
                             <Route path="/home" exact={true}>
-                                <Swiper
-                                    className="mySwiper"
-                                    pagination={true} modules={[Pagination]}
-                                >
-                                    <SwiperSlide>
-                                        <Home/>
-                                    </SwiperSlide>
-                                    <SwiperSlide>
-                                        <Maintenance/>
-                                    </SwiperSlide>
-                                </Swiper>
+                                <IonPage>
+                                    <IonContent>
+                                        <Swiper
+                                            className="mySwiper"
+                                            pagination={true} modules={[Pagination]}
+                                        >
+                                            <SwiperSlide>
+                                                <Home/>
+                                            </SwiperSlide>
+                                            <SwiperSlide>
+                                                <Maintenance/>
+                                            </SwiperSlide>
+                                        </Swiper>
+                                    </IonContent>
+                                </IonPage>
                             </Route>
                             :
                             <>
