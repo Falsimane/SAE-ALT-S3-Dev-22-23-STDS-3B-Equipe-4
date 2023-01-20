@@ -19,7 +19,7 @@ export default function CardBoxMaintenance(props: { titre:string ; pdfimg: strin
                 break;
 
             case "Manuel de service" :
-                window.open(pdfNoticeUtilisation);
+                window.open(pdfManuelService);
                 break;
                 
         }
