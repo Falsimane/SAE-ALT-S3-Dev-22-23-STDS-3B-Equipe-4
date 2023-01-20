@@ -23,8 +23,9 @@ export default function MaintenancePreventive() {
 
 
 
-                <CardBoxMaintenance titre="Gamme 1" pdfimg = {"visible"} typeGamme={"preventif"}/>
+                <CardBoxMaintenance titre="Gamme 1" pdfimg = {"visible"} typeGamme={"preventif"} />
                 <CardBoxMaintenance titre="Gamme 2" pdfimg = {"visible"} typeGamme={"preventif"}/>
+               
                 <br/>
                 <br/>
             </IonContent>

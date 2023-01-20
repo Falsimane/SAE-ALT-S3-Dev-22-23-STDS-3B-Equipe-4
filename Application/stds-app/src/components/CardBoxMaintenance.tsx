@@ -11,6 +11,12 @@ import pdfNoticeUtilisation from "../documents/STDS_notice_utilisation.pdf";
 import pdfManuelService from "../documents/STDS_manuel_service.pdf";
 import gammePreventive1 from "../documents/gammes/gamme_preventive_1.pdf";
 import gammePreventive2 from "../documents/gammes/gamme_preventive_2.pdf";
+import gammeCurative1 from "../documents/gammes/gamme_curative_1.pdf";
+import gammeCurative2 from "../documents/gammes/gamme_curative_2.pdf";
+import gammeCurative3 from "../documents/gammes/gamme_curative_3.pdf";
+import gammeCurative4 from "../documents/gammes/gamme_curative_4.pdf";
+import gammeCurative5 from "../documents/gammes/gamme_curative_5.pdf";
+import gammeCurative6 from "../documents/gammes/gamme_curative_6.pdf";
 
 
 export default function CardBoxMaintenance(props: { titre:string ; pdfimg: string, typeGamme:string}) {
@@ -44,13 +50,43 @@ export default function CardBoxMaintenance(props: { titre:string ; pdfimg: strin
                 if(props.typeGamme === "preventif"){
                     window.open(gammePreventive1);
                 }
+                if(props.typeGamme === "curatif"){
+                    window.open(gammeCurative1);
+                }
                 break;
 
             case "Gamme 2":
                 if(props.typeGamme === "preventif"){
                     window.open(gammePreventive2);
                 }
+                if(props.typeGamme === "curatif"){
+                    window.open(gammeCurative2);
+                }
                 break;
+
+            case "Gamme 3":
+                window.open(gammeCurative3);
+                break;
+            
+
+            case "Gamme 4":
+                window.open(gammeCurative4);
+                break;
+            
+            case "Gamme 5":
+                window.open(gammeCurative5);
+                break;
+                
+    
+            case "Gamme 6":
+                window.open(gammeCurative6);
+                break;
+
+
+
+            
+            
+
 
                 
         }

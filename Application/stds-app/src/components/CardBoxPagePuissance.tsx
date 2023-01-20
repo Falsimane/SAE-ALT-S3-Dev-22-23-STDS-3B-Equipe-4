@@ -21,8 +21,17 @@ export default function CardBoxPuissance(){
 
     const valPuissance = datas.puissance;
 
-    const colorDot= "#F49229";
-
+    let colorDot= "#22B04B";
+   
+   
+    if (valPuissance >= 70 || valPuissance === 0){
+        colorDot = "#ED1C24";
+        
+    } else if(valPuissance < 60){
+        colorDot = "#F49229";
+        
+    }
+    
     
    
     let imageVal;
