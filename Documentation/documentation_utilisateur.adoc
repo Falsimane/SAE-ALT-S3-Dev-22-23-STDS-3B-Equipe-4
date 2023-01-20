@@ -10,6 +10,7 @@
 * Avoir une version de docker qui fonctionne correctement (https://www.docker.com[disponible ici]).
 * Pouvoir décompresser un fichier au format `.zip`.
 * Avoir les ports 8080 et 8086 ouverts.
+* Avoir une version de node.js et npm qui fonctionne (https://nodejs.org/en/[site ici]). Sur Linux, exécuter la commande : `sudo apt-get install nodejs npm`
 
 === 2. Téléchargement
 
