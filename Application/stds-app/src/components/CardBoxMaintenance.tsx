@@ -18,7 +18,7 @@ export default function CardBoxMaintenance(props: { titre:string ; pdfimg: strin
     const history = useHistory();
     let marginbot = 4;
 
-    if(props.typeGamme != ""){
+    if(props.typeGamme !== ""){
         marginbot = 1;
     }
 
