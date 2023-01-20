@@ -6,17 +6,19 @@ import CardContent from "@mui/material/CardContent";
 import * as React from "react";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
-import pdfNoticeUtilisation from "../documents/STDS_notice_utilisation.pdf";
 import {useHistory} from "react-router";
+import pdfNoticeUtilisation from "../documents/STDS_notice_utilisation.pdf";
 import pdfManuelService from "../documents/STDS_manuel_service.pdf";
+import gammePreventive1 from "../documents/gammes/gamme_preventive_1.pdf";
+import gammePreventive2 from "../documents/gammes/gamme_preventive_2.pdf";
 
 
-export default function CardBoxMaintenance(props: { titre:string ; pdfimg: string, isGamme:boolean}) {
+export default function CardBoxMaintenance(props: { titre:string ; pdfimg: string, typeGamme:string}) {
 
     const history = useHistory();
     let marginbot = 4;
 
-    if(props.isGamme){
+    if(props.typeGamme != ""){
         marginbot = 1;
     }
 
@@ -39,6 +41,15 @@ export default function CardBoxMaintenance(props: { titre:string ; pdfimg: strin
                 break;
 
             case "Gamme 1":
+                if(props.typeGamme === "preventif"){
+                    window.open(gammePreventive1);
+                }
+                break;
+
+            case "Gamme 2":
+                if(props.typeGamme === "preventif"){
+                    window.open(gammePreventive2);
+                }
                 break;
 
                 

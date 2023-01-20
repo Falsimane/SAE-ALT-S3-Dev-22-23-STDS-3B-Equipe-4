@@ -23,10 +23,10 @@ export default function MaintenanceCurative() {
 
 
 
-                <CardBoxMaintenance titre="Gamme 1" pdfimg = {"visible"} isGamme={true} />
-                <CardBoxMaintenance titre="Gamme 2" pdfimg = {"visible"} isGamme={true}/>
-                <CardBoxMaintenance titre="Gamme 3" pdfimg = {"visible"} isGamme={true}/>
-                <CardBoxMaintenance titre="Gamme 4" pdfimg = {"visible"} isGamme={true}/>
+                <CardBoxMaintenance titre="Gamme 1" pdfimg = {"visible"} typeGamme={"curatif"} />
+                <CardBoxMaintenance titre="Gamme 2" pdfimg = {"visible"} typeGamme={"curatif"}/>
+                <CardBoxMaintenance titre="Gamme 3" pdfimg = {"visible"} typeGamme={"curatif"}/>
+                <CardBoxMaintenance titre="Gamme 4" pdfimg = {"visible"} typeGamme={"curatif"}/>
                 <br/>
                 <br/>
             </IonContent>

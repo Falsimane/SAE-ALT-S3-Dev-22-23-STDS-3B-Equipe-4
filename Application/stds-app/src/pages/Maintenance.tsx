@@ -60,10 +60,10 @@ export default function Maintenance() {
 
 
 
-                <CardBoxMaintenance titre="Notice d'utilisation" pdfimg = {"visible"} isGamme={false}/>
-                <CardBoxMaintenance titre="Manuel de service" pdfimg = {"visible"} isGamme={false} />
-                <CardBoxMaintenance titre="Maintenance préventive" pdfimg = {"hidden"} isGamme={false}/>
-                <CardBoxMaintenance titre="Maintenance curative" pdfimg = {"hidden"} isGamme={false}/>
+                <CardBoxMaintenance titre="Notice d'utilisation" pdfimg = {"visible"} typeGamme={""}/>
+                <CardBoxMaintenance titre="Manuel de service" pdfimg = {"visible"} typeGamme={""} />
+                <CardBoxMaintenance titre="Maintenance préventive" pdfimg = {"hidden"} typeGamme={""}/>
+                <CardBoxMaintenance titre="Maintenance curative" pdfimg = {"hidden"} typeGamme={""}/>
                 <br/>
                 <br/>
             </IonContent>
