@@ -8,7 +8,6 @@ import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import Card from "@mui/material/Card";
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Box from "@mui/material/Box";
 
@@ -75,11 +74,15 @@ export default function InformationsEtat(props: { mesure:string, nombre: number}
                     <Typography sx={{fontWeight: "bold"}}>Informations</Typography>
                 </DialogTitle>
                 <DialogContent>
-                    <DialogContentText sx={{}}>
-                        <Box sx={{display: "flex", marginBottom: 1}}><CircleIcon sx={{ color: "#22B04B", marginRight: 2}} fontSize = "small"/><Typography sx={{fontWeight: "bold"}}>{msgVert}</Typography></Box>
+                    <DialogContent sx={{}}>
+                        <Box sx={{display: "flex", marginBottom: 1}}>
+                            <CircleIcon sx={{ color: "#22B04B", marginRight: 2}} fontSize = "small"/>
+                            <Typography sx={{fontWeight: "bold"}}>{msgVert}
+                            </Typography>
+                        </Box>
                         <Box sx={{display: "flex", marginBottom: 1}}><CircleIcon sx={{ color: "#F49229", marginRight: 2}} fontSize = "small"/><Typography sx={{fontWeight: "bold"}}>{msgOrange}</Typography></Box>
                         <Box sx={{display: "flex", marginBottom: 1}}><CircleIcon sx={{ color: "#ED1C24", marginRight: 2}} fontSize = "small"/><Typography sx={{fontWeight: "bold"}}>{msgRouge}</Typography></Box>
-                    </DialogContentText>
+                    </DialogContent>
                 </DialogContent>
             </Dialog>
 
