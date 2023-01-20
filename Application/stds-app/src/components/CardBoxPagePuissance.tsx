@@ -19,7 +19,7 @@ export default function CardBoxPuissance(){
 
     const datas = useContext(STDSDatasContext);
 
-    const valPuissance = datas.niveau;
+    const valPuissance = datas.puissance;
 
     const colorDot= "#F49229";
 
