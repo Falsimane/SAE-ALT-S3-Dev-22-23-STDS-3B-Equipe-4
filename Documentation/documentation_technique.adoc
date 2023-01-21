@@ -36,7 +36,7 @@ Pour la version IOS :
 . Exécuter la commande `cordova-res android --skip-config --copy` pour générer les ressources Android automatiquement (logo et page de chargement de l'application).
 . Exécuter la commande `ionic cap copy`.
 . Exécuter la commande `ionic cap sync`.
-. Pour lancer Android Studio (facultatif si le projet est déjà ouvert dans Android Studio), exécuter la commande `ionic cap open android`
+. Pour lancer Android Studio (facultatif si le projet est déjà ouvert dans Android Studio), exécuter la commande `ionic cap open android`.
 
 === 3.b Build le projet en version IOS
 
@@ -45,4 +45,4 @@ Pour la version IOS :
 . Exécuter la commande `cordova-res ios --skip-config --copy` pour générer les ressources Android automatiquement (logo et page de chargement de l'application).
 . Exécuter la commande `ionic cap copy`.
 . Exécuter la commande `ionic cap sync`.
-. Pour lancer Xcode (facultatif si le projet est déjà ouvert dans Xcode), exécuter la commande `ionic cap open ios`
+. Pour lancer Xcode (facultatif si le projet est déjà ouvert dans Xcode), exécuter la commande `ionic cap open ios`.
