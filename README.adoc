@@ -1,4 +1,4 @@
-# SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4
+= SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4
 v1, 2023-01-18 : Initial readme
 :icons: font
 :experimental:
@@ -18,40 +18,97 @@ N'ayant pas la compétence nécessaire pour concevoir la partie applicative du p
 
 == II. Acteurs de l'équipe projet 
 
-[cols="1,2,2,5",options=header]
+[options="header,footer"]
 |===
-| Nom - Prénom  | Rôle         |  Tâches              |               
-| Nolan Jacquemont | Product Owner| Définit le produit et veille à ce que celui-ci réponde au besoin du département GIM.  |
-| Thomas Falsimagne | Scrum Master | Réalise la répartition des tâches et s'assure de la bonne coopération des différents membres de l'équipe. |
-| Alex Jolas | Développeur FRONT-END | S'occupe du développement de l'interface FRONT-END de l'application. |
-| James Grasser | Développeur FRONT-END| S'occupe du développement de l'interface FRONT-END de l'application. |
-| Bryce Fuertes | Développeur FRONT-END | S'occupe du développement de l'interface FRONT-END de l'application. |
+| Nom - Prénom  | Rôle         |  Tâches
+| Nolan Jacquemont | Product Owner| Définit le produit et veille à ce que celui-ci réponde au besoin du département GIM.
+| Thomas Falsimagne | Scrum Master | Réalise la répartition des tâches et s'assure de la bonne coopération des différents membres de l'équipe.
+| Alex Jolas | Développeur FRONT-END | S'occupe du développement de l'interface FRONT-END de l'application.
+| James Grasser | Développeur FRONT-END| S'occupe du développement de l'interface FRONT-END de l'application.
+| Bryce Fuertes | Développeur FRONT-END | S'occupe du développement de l'interface FRONT-END de l'application.
 |===
 
-== III. Suivi des backlogs
+== III. Suivi du projet
 
-[cols="1,2,2,5",options=header]
+[options="header,footer"]
 |===
-| Date    | Nom         |  Lien                             | Retour
-| 16/01/2023 | BACKLOG PRODUIT| https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/issues | 
-| 16/01/2023 | SPRINT 1 | https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/milestone/2 | 
+| Date    | Nom         |  Lien |                             Retour
+| 16/01/2023 | BACKLOG PRODUIT| https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/issues |
+| 16/01/2023 | SPRINT 1 | https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/milestone/2 |
 | 16/01/2023 | SPRINT 2 | https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/milestone/3 |
+| 21/01/2023 | User Stories | https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/blob/main/Documentation/UserStories.adoc |
+| 21/01/2023 | Documentation technique | https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/blob/main/Documentation/documentation_technique.adoc |
 |===
 
 
 == IV. Releases  
 
-=== 1. Release sprint 1 
+=== 1. Release sprint 1
+
+[options="header,footer"]
+|===
+| Date |  Lien | Retour
+| ??/01/2023 | |
+|===
 
 
-=== 2. Release sprint 2 
 
 
-== V. Compte rendu 
+=== 2. Release sprint 2
 
-=== 1. Review sprint 1
+[options="header,footer"]
+|===
+| Date |  Lien | Retour
+| ??/01/2023 | |
+|===
 
-=== 2. Review sprint 2
+
+== V. Sprint Review
+
+=== 1. Sprint 1
+
+==== 1.1. User Stories réalisées
+
+NOTE: Les user stories sont disponibles dans le fichier UserStories.adoc présent dans le tableau de suivi du projet.
+
+[options="header,footer"]
+|===
+| User Story | Nom de l'US| Retour
+| 1 | Consulter la température de la bière à l’intérieur du fût.
+| Cette user story a été réalisée et testée.
+| 2 | Consulter le niveau de la tireuse à bière.|Cette user story a été réalisée et testée.
+| 3 | Consulter la puissance de la tireuse à bière.|Cette user story a été réalisée et testée.
+| 10 | Consulter l’état de la température.|Cette user story a été réalisée et testée.
+| 11 | Consulter l’état du niveau de la bière.|Cette user story a été réalisée et testée.
+| 12 | Consulter l’état de la puissance de la bière.|Cette user story a été réalisée et testée.
+|===
+
+==== 1.2. Difficultés rencontrées
+
+[options="header,footer"]
+|===
+| US | Description de la difficulté | Solution
+| 1 | La difficulté a été de trouver comment récupérer les données arrivant du broker MQTT en entrée, pour les envoyer vers un WebSocket en sortie. | La solution a été de déployer un node-red pour pouvoir pousser les données récupérer du broker vers un WebSocket, qui, nativement, n'est pas implémenté par le client.
+
+| 2 |  |
+| 3 |  |
+| 10 |  |
+| 11 |  |
+| 12 |  |
+|===
+
+
+==== 1.3 Retour équipe projet
+
+Ce premier sprint a été pour nous assez compliqué au départ, chaque membre de l'équipe ayant des compétences différentes, et ne connaissant pas forcément les technologies qui nous permettent maintenant de développer l'application. Il nous a donc fallu dans un premier temps faire quelques heures de formation, afin de pouvoir nous lancer réellement dans le projet. Cependant, nous terminons sur une bonne note. +
+
+Effectivement, nous avons pu réaliser les user stories que nous avions définies pour le sprint 1. Nous sommes donc satisfaits de notre travail et sommes prêts à attaquer le sprint 2.
+
+Vous trouverez toutes les indications dans le tableau de suivi de projet pour suivre notre avancée et pouvoir essayer notre application. La documentation technique vous permettra de comprendre comment l'application fonctionne et comment vous pouvez l'utiliser.
+
+==== 1.4. Retour utilisateur
+
+=== 2. Sprint 2
 
 
 
