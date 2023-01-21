@@ -12,10 +12,12 @@
 * Avoir git.
 
 Pour la version Android :
+
 * Avoir Java et Gradle, configurés proprement (variables d'environnement bien définies).
 * Avoir Android Studio, configuré proprement (variables d'environnement bien définies, https://developer.android.com/studio[disponible ici]).
 
 Pour la version IOS :
+
 * Avoir Xcode (https://apps.apple.com/fr/app/xcode/id497799835[disponible ici])
 
 === 2. Installation du projet et lancement du serveur local de test node.js
