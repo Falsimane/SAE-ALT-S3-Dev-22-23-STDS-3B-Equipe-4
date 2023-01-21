@@ -25,7 +25,6 @@ L’objectif de ce document est de présenter les user stories auxquelles nous d
 |    3     |  1
 |    4     | 2
 |    6     | 2
-|    8     | 2
 |    10    | 1
 |   11    | 1
 |   12    | 1
@@ -38,6 +37,7 @@ L’objectif de ce document est de présenter les user stories auxquelles nous d
 | User Story | Sprint
 |    5     | 2
 |    7     | 2
+|    8     | 2
 |    9     | 2
 |===
 
