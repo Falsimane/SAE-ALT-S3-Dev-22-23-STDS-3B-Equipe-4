@@ -10,9 +10,11 @@
 * Avoir node.js installé, npm et npx doivent fonctionner correctement (https://nodejs.org/en/[disponible ici]). Sur Linux, exécuter la commande : `sudo apt-get install nodejs npm`.
 * Avoir un IDE adapté au développement React (ex. IntelliJ, Visual Studio Code).
 * Avoir git.
+
 Pour la version Android :
 * Avoir Java et Gradle, configurés proprement (variables d'environnement bien définies).
 * Avoir Android Studio, configuré proprement (variables d'environnement bien définies, https://developer.android.com/studio[disponible ici]).
+
 Pour la version IOS :
 * Avoir Xcode (https://apps.apple.com/fr/app/xcode/id497799835[disponible ici])
 
