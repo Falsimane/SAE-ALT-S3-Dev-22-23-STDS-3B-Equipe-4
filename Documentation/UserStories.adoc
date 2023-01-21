@@ -37,7 +37,6 @@ L’objectif de ce document est de présenter les user stories auxquelles nous d
 |    5     | 1
 |    7     | 1
 |    9     | 1
-|    10     |   1
 |===
 
 ==== US d'importance moyenne
