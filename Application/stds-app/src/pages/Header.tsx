@@ -131,7 +131,7 @@ export default function Header(props: {page:string; dimensionsTitre:number}) {
         )
     }
     return (
-        <IonHeader>
+        <IonHeader class="ion-no-border">
             <HeaderPage page={props.page} dimensionsTitre={props.dimensionsTitre}/>
         </IonHeader>
     )
