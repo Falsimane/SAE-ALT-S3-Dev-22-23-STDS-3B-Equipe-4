@@ -42,7 +42,7 @@
 
 image::ressources/install_android.jpg["Capture d'écran pop-up d'installation de l'application"]
 
-* Ignorer les éventuels avertissements de sécurité (l'application n'étant pas installée depuis le Google PlayStore, des alertes peuvent apparaître)
+* Ignorer les éventuels avertissements de sécurité (l'application n'étant pas installée depuis le Google PlayStore, des alertes peuvent apparaître).
 
 === 4. Lancement
 
