@@ -41,7 +41,7 @@ Pour la version IOS :
 === 3.b Build le projet en version IOS
 
 . Installer Ionic `npm i -g @ionic/cli`.
-. Installer ios-sip `npm install -g ios-sim`
+. Installer ios-sim `npm install -g ios-sim`
 . Installer ios-deplou `brew install ios-deploy`
 . Installer cordova-res `npm install -g cordova-res`.
 . Exécuter la commande `cordova-res ios --skip-config --copy` pour générer les ressources Android automatiquement (logo et page de chargement de l'application).
