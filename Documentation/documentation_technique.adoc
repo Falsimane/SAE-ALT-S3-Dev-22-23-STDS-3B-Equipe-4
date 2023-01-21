@@ -1,0 +1,44 @@
+# Documentation technique
+:icons: font
+:experimental:
+:toc:
+
+== I. Mise en place d'un environnement de développement
+
+=== 1. Prérequis
+
+* Avoir node.js installé, npm et npx doivent fonctionner correctement (https://nodejs.org/en/[disponible ici]). Sur Linux, exécuter la commande : `sudo apt-get install nodejs npm`.
+* Avoir un IDE adapté au développement React (ex. IntelliJ, Visual Studio Code).
+* Avoir git.
+Pour la version Android :
+* Avoir Java et Gradle, configurés proprement (variables d'environnement bien définies).
+* Avoir Android Studio, configuré proprement (variables d'environnement bien définies, https://developer.android.com/studio[disponible ici]).
+Pour la version IOS :
+* Avoir Xcode (https://apps.apple.com/fr/app/xcode/id497799835[disponible ici])
+
+=== 2. Installation du projet et lancement du serveur local de test node.js
+
+. Cloner le projet : `git clone Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4`.
+. Ouvrir le projet dans l'IDE de son choix. Le code de l'application se trouve dans Application/stds-app.
+. Ouvrir un terminal à la racine du projet. Se déplacer dans Application/stds-app `cd .\Application\stds-app\`.
+. Exécuter la commande `npm install`. Celle-ci installera toutes les dépendences node.js nécessaires dans le projet.
+. Pour lancer un serveur local de test, accessible depuis un navigateur, exécuter la commande `npm run start`. 
+. Accéder à la page web sur l'adresse `localhost:3000`. A chaque modification du code, la page sera automatiquement actualisée.
+
+=== 3.a Build le projet en version Android
+
+. Installer Ionic `npm i -g @ionic/cli`.
+. Installer cordova-res `npm install -g cordova-res`.
+. Exécuter la commande `cordova-res android --skip-config --copy` pour générer les ressources Android automatiquement (logo et page de chargement de l'application).
+. Exécuter la commande `ionic cap copy`.
+. Exécuter la commande `ionic cap sync`.
+. Pour lancer Android Studio (facultatif si le projet est déjà ouvert dans Android Studio), exécuter la commande `ionic cap open android`
+
+=== 3.b Build le projet en version IOS
+
+. Installer Ionic `npm i -g @ionic/cli`.
+. Installer cordova-res `npm install -g cordova-res`.
+. Exécuter la commande `cordova-res ios --skip-config --copy` pour générer les ressources Android automatiquement (logo et page de chargement de l'application).
+. Exécuter la commande `ionic cap copy`.
+. Exécuter la commande `ionic cap sync`.
+. Pour lancer Xcode (facultatif si le projet est déjà ouvert dans Xcode), exécuter la commande `ionic cap open ios`
