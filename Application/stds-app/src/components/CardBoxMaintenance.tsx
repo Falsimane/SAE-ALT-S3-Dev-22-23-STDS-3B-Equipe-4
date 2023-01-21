@@ -7,16 +7,6 @@ import * as React from "react";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import {useHistory} from "react-router";
-import pdfNoticeUtilisation from "../documents/STDS_notice_utilisation.pdf";
-import pdfManuelService from "../documents/STDS_manuel_service.pdf";
-import gammePreventive1 from "../documents/gammes/gamme_preventive_1.pdf";
-import gammePreventive2 from "../documents/gammes/gamme_preventive_2.pdf";
-import gammeCurative1 from "../documents/gammes/gamme_curative_1.pdf";
-import gammeCurative2 from "../documents/gammes/gamme_curative_2.pdf";
-import gammeCurative3 from "../documents/gammes/gamme_curative_3.pdf";
-import gammeCurative4 from "../documents/gammes/gamme_curative_4.pdf";
-import gammeCurative5 from "../documents/gammes/gamme_curative_5.pdf";
-import gammeCurative6 from "../documents/gammes/gamme_curative_6.pdf";
 
 
 export default function CardBoxMaintenance(props: { titre:string ; pdfimg: string, typeGamme:string}) {
@@ -30,14 +20,6 @@ export default function CardBoxMaintenance(props: { titre:string ; pdfimg: strin
 
     const openPdfNotice = () => {
         switch (props.titre){
-            case "Notice d'utilisation" :
-                window.open(pdfNoticeUtilisation);
-                break;
-
-            case "Manuel de service" :
-                window.open(pdfManuelService);
-                break;
-
             case "Maintenance préventive" :
                     history.push("/maintenance-preventive");
                 break;
@@ -46,49 +28,49 @@ export default function CardBoxMaintenance(props: { titre:string ; pdfimg: strin
                 history.push("/maintenance-curative");
                 break;
 
+            case "Notice d'utilisation" :
+                history.push("/pdf/notice-utilisation")
+                break;
+
+            case "Manuel de service" :
+                history.push("/pdf/manuel-service")
+                break;
+
             case "Gamme 1":
                 if(props.typeGamme === "preventif"){
-                    window.open(gammePreventive1);
+                    history.push("/pdf/gamme-01")
                 }
                 if(props.typeGamme === "curatif"){
-                    window.open(gammeCurative1);
+                    history.push("/pdf/gamme-11")
                 }
                 break;
 
             case "Gamme 2":
                 if(props.typeGamme === "preventif"){
-                    window.open(gammePreventive2);
+                    history.push("/pdf/gamme-02")
                 }
                 if(props.typeGamme === "curatif"){
-                    window.open(gammeCurative2);
+                    history.push("/pdf/gamme-12")
                 }
                 break;
 
             case "Gamme 3":
-                window.open(gammeCurative3);
+                history.push("/pdf/gamme-13")
                 break;
             
 
             case "Gamme 4":
-                window.open(gammeCurative4);
+                history.push("/pdf/gamme-14")
                 break;
             
             case "Gamme 5":
-                window.open(gammeCurative5);
+                history.push("/pdf/gamme-15")
                 break;
-                
-    
+
             case "Gamme 6":
-                window.open(gammeCurative6);
+                history.push("/pdf/gamme-16")
                 break;
 
-
-
-            
-            
-
-
-                
         }
     }
     

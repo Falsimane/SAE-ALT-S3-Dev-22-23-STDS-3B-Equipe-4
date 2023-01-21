@@ -36,6 +36,7 @@ import STDSDatasProvider from "./utils/mqtt/STDSDatasProvider";
 import {Pagination} from "swiper";
 import MaintenancePreventive from "./pages/MaintenancePreventive";
 import MaintenanceCurative from "./pages/MaintenanceCurative";
+import Pdf from "./pages/Pdf";
 
 setupIonicReact();
 
@@ -55,6 +56,9 @@ const App = () => {
                         <Route path="/temperature" exact={true} component={Temperature}/>
                         <Route path="/maintenance-preventive" exact={true} component={MaintenancePreventive}/>
                         <Route path="/maintenance-curative" exact={true} component={MaintenanceCurative}/>
+                        <Route path="/pdf">
+                            <Route path="/pdf/:id" exact={true} component={Pdf}/>
+                        </Route>
                         {isMobileOrTablet ?
                             <Route path="/home" exact={true}>
                                 <IonPage>
