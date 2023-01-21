@@ -58,7 +58,7 @@ Pour la version IOS :
 . Installer ios-sim `npm install -g ios-sim`.
 . Installer ios-deplou `brew install ios-deploy`
 . Installer cordova-res `npm install -g cordova-res`.
-. Exécuter la commande `ionic cap add ios`
+. Exécuter la commande `npx cap add ios`
 . Exécuter la commande `cordova-res ios --skip-config --copy` pour générer les ressources IOS automatiquement (logo et page de chargement de l'application).
 . Exécuter la commande `ionic cap copy ios`.
 . Exécuter la commande `ionic cap update`.
