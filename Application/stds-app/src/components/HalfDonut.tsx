@@ -20,7 +20,7 @@ export default function HalfDonut(props: { valueColor?: string; emptyColor?: str
                     props.valueBorderColor,
                     props.emptyBorderColor,
                 ],
-                borderWidth: 1
+                borderWidth: 3
             }
         ]
     }

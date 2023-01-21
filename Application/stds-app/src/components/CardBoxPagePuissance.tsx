@@ -6,12 +6,13 @@ import CardContent from "@mui/material/CardContent";
 import * as React from "react";
 import CircleIcon from "@mui/icons-material/Circle";
 import {useHistory} from "react-router";
-import {useContext} from "react";
+import {useContext, useEffect, useState} from "react";
 import STDSDatasContext from "../utils/mqtt/STDSDatasContext";
+import {Grow} from "@mui/material";
 
 
 export default function CardBoxPuissance(){
-
+    const [showImage, setShowImage] = useState(false)
     const history = useHistory();
     const openPage = () => {
         history.push("/puissance");
@@ -60,8 +61,10 @@ export default function CardBoxPuissance(){
         default:
             imageVal = "min-.png"
             break;
-    }   
-
+    }
+    useEffect(() => {
+        setShowImage(true)
+    }, [])
     
 
     return (
@@ -86,7 +89,8 @@ export default function CardBoxPuissance(){
 
                             <Box sx={{ display: "flex", alignItems: "start", marginTop: 0.5, justifyContent: "center"}}>
 
-                            <Box sx={{ display: "flex", alignItems: "center", height: 250, width: 200, marginBottom:0.5 ,justifyContent: "center"}}>
+                                <Grow in={showImage} timeout={1000} style={{ transformOrigin: '10% 10%' }}>
+                                <Box sx={{ display: "flex", alignItems: "center", height: 250, width: 200, marginBottom:0.5 ,justifyContent: "center"}}>
                                
                                 <Box sx={{display: "flex" ,height:140, width:80 ,alignItems: "center"}}>
 
@@ -104,6 +108,7 @@ export default function CardBoxPuissance(){
 
                                 
                             </Box>
+                                </Grow>
 
 
                             </Box>
