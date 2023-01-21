@@ -24,3 +24,26 @@
 === 4. Lancement
 
 * Exécuter la commande `docker compose up`. 
+
+== II.A Installation de l'application Android
+
+=== 1. Prérequis
+
+* Avoir un téléphone Android, à partir de la version 5.0, capable d'installer des APK (Google PlayStore permet de les installer).
+* Avoir 20 Mo d'espace de stockage libre.
+
+=== 2. Téléchargement
+
+* Télécharger le https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/raw/main/Application/STDS%20App%20-%20APK%20build/app-debug.apk[fichier APK].
+
+=== 3. Installation
+
+* Exécuter le fichier, puis cliquer sur installer, comme ceci :
+
+image::ressources/install_android.jpg["Capture d'écran pop-up d'installation de l'application"]
+
+* Ignorer les éventuels avertissements de sécurité (l'application n'étant pas installée depuis le Google PlayStore, des alertes peuvent apparaître).
+
+=== 4. Lancement
+
+* L'application se lancera ensuite comme toute application, elle sera également visible dans la liste des applications du téléphone.
