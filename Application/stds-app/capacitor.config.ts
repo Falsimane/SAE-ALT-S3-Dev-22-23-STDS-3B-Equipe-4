@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
+  appId: 'fr.iut-blagnac.stds-app',
   appName: 'STDS App',
   webDir: 'build',
   bundledWebRuntime: false
