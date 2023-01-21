@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'fr.iut-blagnac.stds-app',
+  appId: 'fr.iutblagnac.stdsapp',
   appName: 'STDS App',
   webDir: 'build',
   bundledWebRuntime: false
