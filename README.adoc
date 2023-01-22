@@ -48,7 +48,7 @@ N'ayant pas la compétence nécessaire pour concevoir la partie applicative du p
 [options="header,footer"]
 |===
 | Date |  Lien | Retour
-| ??/01/2023 | |
+| 22/01/2023 | https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/releases/tag/V1.0|
 |===
 
 
