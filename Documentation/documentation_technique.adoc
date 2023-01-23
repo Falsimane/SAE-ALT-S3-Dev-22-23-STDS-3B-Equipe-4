@@ -11,6 +11,18 @@
 |===
 | Nom de la technologie | Type de la technologie | Utilité
 | Docker | Plateforme permettant de lancer des applications dans des conteneurs logiciels | Docker nous permet de créer un package simple comprenant les différents services nécessaires au Backend
+| Node-RED | Outil de développement basé sur une programmation visuelle, permettant de connecter des périphériques matériels, des API ou des services en ligne dans le cadre de l'Internet des objets | Node-RED nous permet deux choses : rediriger les données MQTT des capteurs de la tireuse à bière vers une base de données InfluxDB, mais également de rediriger ces données via des connexions WebSocket, obligatoires avec l'usage de technologies web.
+| InfluxDB | Système de gestion de base de données (SGBD) orientée séries temporelles hautes performances | InfluxDB nous permet de stocker un historique des données envoyées MQTT envoyées par les capteurs de la tireuse.
+|===
+
+=== 2. Technologies du Frontend
+
+[options="header,footer"]
+|===
+| Nom de la technologie | Type de la technologie | Utilité
+| Ionic | Framework permettant la création d'applications mobiles à partir de technologies web telles que React, Angular, VueJS | Ionic nous permet de facilement build des applications mobiles pour Android et IOS, en simplement quelques commandes.
+| React (TypeScript) | Framework JavaScript permettant de simplifier la création d'application web | React nous permet de créer notre application mobile à la manière d'une application web.
+| Material UI | Librairie de composants React, mettant à disposition de nombreuses possibilités simplifiées de fonctionnalités | Material UI est la librairie graphique la plus utilisée dans notre projet, elle nous permet de designer simplement tous les composants dont nous avons besoin
 |===
 
 == II. Mise en place d'un environnement de développement

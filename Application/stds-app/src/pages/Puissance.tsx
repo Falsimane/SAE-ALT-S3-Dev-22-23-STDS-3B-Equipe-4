@@ -62,7 +62,7 @@ export default function Puissance() {
 
                         <Box sx={{display: "flex"}}>
 
-                            <Typography sx={{fontWeight:"bold", fontSize:30 , height:50, width:80}}>
+                            <Typography sx={{fontWeight:"bold", fontSize:30 , height:50, width:80, color:"black"}}>
                                 {valPuissance} W
                             </Typography>
 

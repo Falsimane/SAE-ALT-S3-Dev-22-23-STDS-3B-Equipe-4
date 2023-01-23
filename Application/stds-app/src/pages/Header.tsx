@@ -20,12 +20,13 @@ function HeaderPage(props: {page:string; dimensionsTitre:number}) {
     const isPhoneOrTablet = useMediaQuery('(max-width: 768px)');
     const selectedAccueil = props.page === 'Accueil';
     const selectedMaintenance = props.page === 'Maintenance';
-    
-    
+    const selectedParam = props.page === 'Paramètres';
+
+
     const openParam = () => {
         history.push("/parametres");
     }
-    
+
     const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
     };
@@ -69,12 +70,12 @@ function HeaderPage(props: {page:string; dimensionsTitre:number}) {
                                 sx={{position: "absolute", left: '2s%', mr: 2, zIndex: 1}}
                             >
                                 <ArrowBackIosNew sx={{color: "#000", fontSize: 40}}/>
-                                
+
                             </IconButton>
                         )
                     }
 
-                    
+
                     <Typography
                         variant="h6"
                         noWrap
@@ -86,27 +87,30 @@ function HeaderPage(props: {page:string; dimensionsTitre:number}) {
                             fontSize: 32,
                             position: "relative",
                             textAlign: "center",
-                            
+
                             width: '100%'
-                            
+
                         }}
                     >
                         STDS
                     </Typography>
 
-                    
-                    <Box sx= {{width: 70,position: "absolute", right: '2%', mr: 2, zIndex: 1}}>
-                        <CardActionArea onClick={openParam}>
-                            <SettingsIcon sx={{color:"#000", width:80, height:40}}>
+                    {!selectedParam && (
+                        <IconButton onClick={openParam} sx={{
+                            position: "absolute",
+                            right: '2%',
+                            zIndex: 1
+                        }}>
+                            <SettingsIcon sx={{color:"#000", width:40, height:40}}>
                             </SettingsIcon>
-                        </CardActionArea>
-                    </Box>
+                        </IconButton>
+                    )}
 
                 </Toolbar>
-                
-                
+
+
             </AppBar>
-            
+
 
             <Box sx={{
                 display: "flex",
@@ -125,7 +129,7 @@ function HeaderPage(props: {page:string; dimensionsTitre:number}) {
                 {props.page}
             </Box>
 
-            
+
 
             <Menu
                 id="simple-menu"

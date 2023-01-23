@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
 import 'react-pdf/dist/esm/Page/TextLayer.css';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import Typography from "@mui/material/Typography";
@@ -19,6 +18,7 @@ import PdfGammeCurative4 from "../documents/gammes/gamme_curative_4.pdf";
 import PdfGammeCurative5 from "../documents/gammes/gamme_curative_5.pdf";
 import PdfGammeCurative6 from "../documents/gammes/gamme_curative_6.pdf";
 import '../theme/Pdf.css';
+import PDF from "react-pdf-js";
 
 export default function Pdf() {
 
@@ -32,7 +32,7 @@ export default function Pdf() {
     const [numPages, setNumPages] = useState(1);
     const [pageNumber, setPageNumber] = useState(1);
 
-    function onDocumentLoadSuccess({ numPages } : {numPages:any}) {
+    const onDocumentLoadSuccess = (numPages : any) =>{
         setNumPages(numPages);
     }
 
@@ -103,10 +103,11 @@ export default function Pdf() {
                             <Typography sx={{width: "100%", fontWeight: "bold"}}> {pageNumber} / {numPages}</Typography>
                             <Button onClick={openPageSuiv} disabled={pageNumber >= numPages} sx={{backgroundColor: "rgba(0,0,0,0.05)", marginRight: 3, width: "100%", fontWeight: "bold"}}>Suivant</Button>
                         </Box>
-                        <Document file={pdf} onLoadSuccess={onDocumentLoadSuccess} sx={{width: "20%"}}>
-                            <Page pageNumber={pageNumber}/>
-                        </Document>
-                </Box>
+                        <PDF file={pdf}
+                             page={pageNumber}
+                             onDocumentComplete={onDocumentLoadSuccess}
+                        />
+                    </Box>
             </Box>
             </IonContent>
         </IonPage>
