@@ -19,7 +19,12 @@ function HeaderPage(props: {page:string; dimensionsTitre:number}) {
     const isPhoneOrTablet = useMediaQuery('(max-width: 768px)');
     const selectedAccueil = props.page === 'Accueil';
     const selectedMaintenance = props.page === 'Maintenance';
-
+    
+    
+    const openParam = () => {
+        history.push("/parametres");
+    }
+    
     const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
     };
@@ -90,7 +95,7 @@ function HeaderPage(props: {page:string; dimensionsTitre:number}) {
 
                     
                     <Box sx= {{width: 70,position: "absolute", right: '2%', mr: 2, zIndex: 1}}>
-                        <CardActionArea onClick={}>
+                        <CardActionArea onClick={openParam}>
                             <img src={require('../images/parametres.png')} alt={""}/>
                         </CardActionArea>
                     </Box>
