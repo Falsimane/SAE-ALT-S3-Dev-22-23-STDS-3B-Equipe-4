@@ -16,7 +16,9 @@ const getData = (_measurement: any, _range: string) => {
     async function iterateRows(): Promise<Map<String, any>> {
         for await (const {values, tableMeta} of queryClient.iterateRows(query)) {
             const o = tableMeta.toObject(values)
-            tableOfCompleteData.set(o._time, o._value);
+            let date = new Date(o._time);
+            let hours = String(date.getHours());
+            tableOfCompleteData.set(hours, o._value);
         }
         return tableOfCompleteData;
     }
