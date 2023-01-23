@@ -9,7 +9,12 @@ import {useContext} from "react";
 import STDSDatasContext from "../utils/mqtt/STDSDatasContext";
 import Switch from '@mui/material/Switch';
 import {IonToggle} from "@ionic/react";
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
+import { height } from "dom7";
 export default function Puissance() {
+
+
     const refresh = (e: CustomEvent) => {
         setTimeout(() => {
             e.detail.complete();
@@ -24,6 +29,10 @@ export default function Puissance() {
     const toggleDarkModeHandler = () => {
         document.body.classList.toggle("dark");
       };
+
+    const portList = [
+    { label: '8080'},{ label: '8086'},];
+
 
     return (
         <IonPage id="puissance-page">
@@ -64,30 +73,42 @@ export default function Puissance() {
 
                 </Box>
 
-                <Box sx={{display: "flex", justifyContent: "center",}}>
+
+
+                <Typography sx={{
+                        fontWeight: "bold",
+                        fontSize: 20,
+                        position: "relative",
+                        jusitifyContent:"center",
+                        marginTop:4
+                        }}>
+
+                        Choix du serveur :
+
+                    </Typography>
+
+                <Box sx={{display: "flex", justifyContent:'center'}}>
 
                     
 
+                
                 <Card sx={{width:"80%",height:50,display:"flex", alignItems:"center", marginTop: 2}}>
 
                     
                     <Typography sx={{
                         fontWeight: "bold",
-                        fontSize: 20,
+                        fontSize: 15,
                         position: "relative",
                         jusitifyContent:"center",
-                        marginLeft:'2%'
+                        marginLeft:'2%',
+                        marginRight:'4%'
                         }}>
 
-                        Thème Sombre
+                        IP/Nom de domaine :
 
                     </Typography>
                         
-                    <IonToggle
-                    slot="end"
-                    name="darkMode"
-                    onIonChange={toggleDarkModeHandler}
-                    color="warning"/>
+                    <TextField id="standard-basic" label="Standard" variant="standard" />
                             
                         
 
@@ -95,36 +116,40 @@ export default function Puissance() {
                 
                 </Box>
 
-                <Box sx={{display: "flex", justifyContent: "center"}}>
+                <Box sx={{display: "flex", justifyContent:'center'}}>
 
                     
 
-                <Card sx={{width:"80%",height:50,display:"flex", alignItems:"center", marginTop: 2}}>
+                
+                    <Card sx={{width:"60%",height:70,display:"flex", alignItems:"center", marginTop: 2}}>
 
-                    
-                    <Typography sx={{
+    
+                        <Typography sx={{
                         fontWeight: "bold",
-                        fontSize: 20,
-                        position: "relative",
+                        fontSize: 15,
                         jusitifyContent:"center",
-                        marginLeft:'2%'
+                        marginLeft:'2%',
+                        marginRight:'%'
                         }}>
 
-                        Thème Sombre
+                        Port :
 
-                    </Typography>
-                        
-                    <IonToggle
-                    slot="end"
-                    name="darkMode"
-                    onIonChange={toggleDarkModeHandler}
-                    color="warning"/>
-                            
-                        
+                        </Typography>
+        
+                        <Autocomplete
+                            disablePortal
+                            id="combo-box-demo"
+                            options={portList}
+                            sx={{ width: 200, height: 50 ,marginLeft:'15%'}}
+                            renderInput={(params) => <TextField {...params} label="Port" sx={{ lineHeight:0}}/>}/>
 
-                </Card>
-                
+            
+        
+
+                    </Card>
+
                 </Box>
+             
             </IonContent>
         </IonPage>
     );
