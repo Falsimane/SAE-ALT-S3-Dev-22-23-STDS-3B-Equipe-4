@@ -35,6 +35,7 @@
     "react-doc-viewer": "0.1.5",
     "react-dom": "^18.2.0",
     "react-pdf": "^6.2.2",
+    "react-pdf-js": "^5.1.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^5.0.0",
