@@ -15,6 +15,16 @@
 | InfluxDB | Système de gestion de base de données (SGBD) orientée séries temporelles hautes performances | InfluxDB nous permet de stocker un historique des données envoyées MQTT envoyées par les capteurs de la tireuse.
 |===
 
+=== 2. Technologies du Frontend
+
+[options="header,footer"]
+|===
+| Nom de la technologie | Type de la technologie | Utilité
+| Ionic | Framework permettant la création d'applications mobiles à partir de technologies web telles que React, Angular, VueJS | Ionic nous permet de facilement build des applications mobiles pour Android et IOS, en simplement quelques commandes.
+| React (TypeScript) | Framework JavaScript permettant de simplifier la création d'application web | React nous permet de créer notre application mobile à la manière d'une application web.
+| Material UI | Librairie de composants React, mettant à disposition de nombreuses possibilités simplifiées de fonctionnalités | Material UI est la librairie graphique la plus utilisée dans notre projet, elle nous permet de designer simplement tous les composants dont nous avons besoin
+|===
+
 == II. Mise en place d'un environnement de développement
 
 === 1. Prérequis
