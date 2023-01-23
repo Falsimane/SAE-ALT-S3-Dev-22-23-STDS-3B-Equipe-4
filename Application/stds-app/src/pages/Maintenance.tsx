@@ -9,18 +9,52 @@ import * as React from "react";
 import Header from "./Header";
 import CardBoxMaintenance from "../components/CardBoxMaintenance";
 import {IonContent} from "@ionic/react";
-
-
-
+import {useContext} from "react";
+import STDSDatasContext from "../utils/mqtt/STDSDatasContext";
+import {useHistory} from "react-router";
 export default function Maintenance() {
+    const history = useHistory();
+    const datas = useContext(STDSDatasContext);
+    const diagnostique = datas.diag2 
+
+    const openPdfDiag = () => {
+
+        switch (diagnostique){
+            case "Température élevée de la bière !" :
+                history.push("/pdf/gamme-01")
+                break
+    
+            case "Temperature idéale de la bière !" :
+                break
+    
+            case "Capteur de température déconnecté !" :
+                history.push("/pdf/gamme-03")
+                break
+    
+            case "Capteur de température déconnecté !" :
+                history.push("/pdf/gamme-04")
+                break
+    
+            case "Temperature élevée de la bière !" :
+                history.push("/pdf/gamme-05")
+                break
+    
+            case "Temperature élevée de la bière !" :
+                history.push("/pdf/gamme-06")
+                break
+
+        }
+    }
+
+
     return (
         <IonContent fullscreen>
             <Header page={"Maintenance"} dimensionsTitre={130}/>
             <Box sx={{ display: "flex", justifyContent: "center", marginBottom: 10}}>
                 <Card sx={{ backgroundColor: "#E6E6E6", height: 150, width: "80%"}}>
 
-                    <CardActionArea sx={{height: '100%'}}>
-                        <CardContent sx= {{ height:"100%" , padding : 0}}>
+                    <CardActionArea sx={{height: '100%'}} >
+                        <CardContent sx= {{ height:"100%" , padding : 0}} onClick={openPdfDiag}> 
 
                             <Box sx={{height: "50%", display:"flex", alignItems:"center"}}>
 
