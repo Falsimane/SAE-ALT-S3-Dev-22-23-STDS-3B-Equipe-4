@@ -41,7 +41,7 @@ export default function CardBoxPuissance(){
 
     switch (true) {
         case (valPuissance <= 0):
-            imageVal = "PuissanceError.png"
+            imageVal = "puissanceError.png"
             break;
         case (valPuissance <= 20 && valPuissance > 0):
             imageVal = "min-.png"
