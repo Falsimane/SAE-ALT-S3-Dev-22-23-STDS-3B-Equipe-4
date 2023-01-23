@@ -12,6 +12,7 @@ import {useMediaQuery} from "@mui/material";
 import {ArrowBackIosNew} from "@mui/icons-material";
 import {IonHeader} from "@ionic/react";
 import CardActionArea from "@mui/material/CardActionArea";
+import SettingsIcon from '@mui/icons-material/Settings';
 
 function HeaderPage(props: {page:string; dimensionsTitre:number}) {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -43,7 +44,7 @@ function HeaderPage(props: {page:string; dimensionsTitre:number}) {
     return (
         <Box sx={{marginBottom: 3}}>
             <AppBar sx={{position: "static", backgroundColor: "#ffbe76"}}>
-                <Toolbar sx={{backgroundColor:"red"}}>
+                <Toolbar >
                     {(selectedAccueil || selectedMaintenance) ?
                         (
                             isPhoneOrTablet ? ( <></>
@@ -96,7 +97,8 @@ function HeaderPage(props: {page:string; dimensionsTitre:number}) {
                     
                     <Box sx= {{width: 70,position: "absolute", right: '2%', mr: 2, zIndex: 1}}>
                         <CardActionArea onClick={openParam}>
-                            <img src={require('../images/parametres.png')} alt={""}/>
+                            <SettingsIcon sx={{color:"#000", width:80, height:40}}>
+                            </SettingsIcon>
                         </CardActionArea>
                     </Box>
 

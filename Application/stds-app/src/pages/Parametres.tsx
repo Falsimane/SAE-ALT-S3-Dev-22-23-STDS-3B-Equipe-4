@@ -1,5 +1,6 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import Card from "@mui/material/Card";
 import {IonContent, IonPage, IonRefresher, IonRefresherContent} from "@ionic/react";
 import Header from "./Header";
 import * as React from "react";
@@ -23,6 +24,18 @@ export default function Puissance() {
                     <IonRefresherContent></IonRefresherContent>
                 </IonRefresher>
 
+                <Box sx={{ display: "flex" ,justifyContent: "center"}}>
+                    <Card sx={{width:"80%",height:50, justifyItems:"center"}}>
+                        <Typography sx={{
+                            fontWeight: "bold",
+                            fontSize: 20,
+                            position: "relative",
+                            jusitifyContent:"center"
+                            }}>
+                            Thème Sombre
+                        </Typography>
+                    </Card>
+                </Box>
             </IonContent>
         </IonPage>
     );
