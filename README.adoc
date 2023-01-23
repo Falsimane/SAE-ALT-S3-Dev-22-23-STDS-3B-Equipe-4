@@ -106,7 +106,23 @@ Effectivement, nous avons pu réaliser les user stories que nous avions définie
 
 Vous trouverez toutes les indications dans le tableau de suivi de projet pour suivre notre avancée et pouvoir essayer notre application. La documentation technique vous permettra de comprendre comment l'application fonctionne et comment vous pouvez l'utiliser.
 
-==== 1.4. Retour utilisateur
+==== 1.4. Retour sprint semaine 3 EP
+
+Documentation technique : o k (à versionner, dater, mettre nom équipe)
+Manque doc ustilisateur
+
+Backlog produit  : vous avez fait le backlog produit dans un doc appelé Users stories (TB) mais je dois retrouver ces users stories dans Github (cf. Vidéo) avec les critères, les tâches liées ...
+Backlog de sprint :  je dois avoir une colonne avec les US traités dans le sprint puis 3 ou 4 colonnes (A faire, en cours, validation, terminé par ex) avec les issues (tâches) liées aux US. C'est un sprintBoard, le votre ne montre que les issues par les US liées. cf vidéo
+
+ Cahier de tests à revoir (reprendre ce qui est fait dans les Users stories) avec une colonne validation, dans votre readme j'ai juste la liste des US notée validé.
+
+J'ai une release à la fin du premier sprint c'est bien.
+
+Continuez ainsi ... je devrais aussi avoir le balcklog sprint 2 (liste des US que vous allez traiter cette semaine).
+
+CR ok
+
+
 
 === 2. Sprint 2
 
