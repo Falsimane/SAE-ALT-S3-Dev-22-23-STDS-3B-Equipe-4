@@ -11,6 +11,7 @@ import {useHistory} from "react-router";
 import {useMediaQuery} from "@mui/material";
 import {ArrowBackIosNew} from "@mui/icons-material";
 import {IonHeader} from "@ionic/react";
+import CardActionArea from "@mui/material/CardActionArea";
 
 function HeaderPage(props: {page:string; dimensionsTitre:number}) {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -37,7 +38,7 @@ function HeaderPage(props: {page:string; dimensionsTitre:number}) {
     return (
         <Box sx={{marginBottom: 3}}>
             <AppBar sx={{position: "static", backgroundColor: "#ffbe76"}}>
-                <Toolbar>
+                <Toolbar sx={{backgroundColor:"red"}}>
                     {(selectedAccueil || selectedMaintenance) ?
                         (
                             isPhoneOrTablet ? ( <></>
@@ -59,12 +60,15 @@ function HeaderPage(props: {page:string; dimensionsTitre:number}) {
                                 edge="start"
                                 color="inherit"
                                 onClick={() => history.goBack()}
-                                sx={{position: "absolute", left: '2%', mr: 2, zIndex: 1}}
+                                sx={{position: "absolute", left: '2s%', mr: 2, zIndex: 1}}
                             >
                                 <ArrowBackIosNew sx={{color: "#000", fontSize: 40}}/>
+                                
                             </IconButton>
                         )
                     }
+
+                    
                     <Typography
                         variant="h6"
                         noWrap
@@ -76,13 +80,26 @@ function HeaderPage(props: {page:string; dimensionsTitre:number}) {
                             fontSize: 32,
                             position: "relative",
                             textAlign: "center",
+                            
                             width: '100%'
+                            
                         }}
                     >
                         STDS
                     </Typography>
+
+                    
+                    <Box sx= {{width: 70,position: "absolute", right: '2%', mr: 2, zIndex: 1}}>
+                        <CardActionArea onClick={}>
+                            <img src={require('../images/parametres.png')} alt={""}/>
+                        </CardActionArea>
+                    </Box>
+
                 </Toolbar>
+                
+                
             </AppBar>
+            
 
             <Box sx={{
                 display: "flex",
@@ -100,6 +117,8 @@ function HeaderPage(props: {page:string; dimensionsTitre:number}) {
             }}>
                 {props.page}
             </Box>
+
+            
 
             <Menu
                 id="simple-menu"
