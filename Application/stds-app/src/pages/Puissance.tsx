@@ -20,23 +20,29 @@ export default function Puissance() {
     let imageVal;
 
     switch (true) {
-        case (valPuissance < 10):
+        case (valPuissance <= 0):
+            imageVal = "puissanceError.png"
+            break;
+        case (valPuissance <= 20 && valPuissance > 0):
             imageVal = "min-.png"
             break;
-        case (valPuissance <= 20 && valPuissance > 10):
+        case (valPuissance <= 30 && valPuissance > 20):
             imageVal = "min+.png"
             break;
-        case (valPuissance <= 40 && valPuissance > 20):
+        case (valPuissance <= 40 && valPuissance > 30):
             imageVal = "medium-.png";
             break;
-        case (valPuissance <= 60 && valPuissance > 40):
+        case (valPuissance <= 50 && valPuissance > 40):
             imageVal ="medium+.png";
             break;
-        case (valPuissance <= 80 && valPuissance > 60):
+        case (valPuissance <= 60 && valPuissance > 50):
             imageVal = "max-.png";
             break;
+        case (valPuissance <= 80 && valPuissance > 60):
+                imageVal = "max+.png";
+                break;
         case (valPuissance > 80):
-            imageVal = "max+.png";
+            imageVal = "Surpuissance.png";
             break;
         default:
             imageVal = "min-.png"
