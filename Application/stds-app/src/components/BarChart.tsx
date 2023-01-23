@@ -11,38 +11,78 @@ export default function BarChart(){
     const fetchData = () => {
         getData("T1", "24h").then(function (pfResponse) {
             setDataSet(pfResponse);
-            console.log(pfResponse);
+
         });
     }
 
-
+    const options = {
+        plugins: {
+            legend: {
+                display:false,
+                position: 'top' as const,
+            },
+            title: {
+                display: true,
+                text: 'Historique de la température' as const,
+            },
+        },
+        scales: {
+            x: {
+                type: 'linear' as const,
+                offset: false,
+                grid: {
+                    offset: false,
+                }
+            }
+        }
+    };
 
 
     const data = {
-        labels: ['00', '06', '12', '18'],
         datasets: [{
-            label: 'My First Dataset',
-            data: [65, 59, 80, 81],
+            data: [
+                {x: 0, y:25},
+                {x: 1, y:28},
+                {x: 2, y:29},
+                {x: 3, y:30},
+                {x: 4, y:25},
+                {x: 5, y:25},
+                {x: 6, y:19},
+                {x: 7, y:26},
+                {x: 8, y:25},
+                {x: 9, y:28},
+                {x: 10, y:29},
+                {x: 11, y:30},
+                {x: 12, y:25},
+                {x: 13, y:25},
+                {x: 14, y:19},
+                {x: 15, y:26},
+                {x: 16, y:29},
+                {x: 17, y:30},
+                {x: 18, y:25},
+                {x: 19, y:25},
+                {x: 20, y:19},
+                {x: 21, y:26},
+                {x: 22, y:26},
+                {x: 23, y:26},
+                {x: 24, y:26}
+            ],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-                'rgba(255, 205, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(201, 203, 207, 0.2)'
+                '#FF0000'
             ],
             borderColor: [
-                'rgb(255, 99, 132)',
-                'rgb(255, 159, 64)',
-                'rgb(255, 205, 86)',
-                'rgb(75, 192, 192)'
-                ]
-        }]
+                '#FFFFFF'
+            ],
+            borderWidth: 1,
+            barPercentage: 1,
+            categoryPercentage: 24,
+            barThickness: 10,
+            tension: 0.1
+        }],
     };
 
     return (
-        <Bar data={data} />
+        <Bar data={data} options={options}/>
     );
 }
 
