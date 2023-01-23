@@ -1,7 +1,17 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
-import {IonContent, IonPage, IonRefresher, IonRefresherContent} from "@ionic/react";
+import {
+    IonButton,
+    IonContent,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonPage,
+    IonRefresher,
+    IonRefresherContent,
+    IonTextarea
+} from "@ionic/react";
 import Header from "./Header";
 import * as React from "react";
 import {useContext} from "react";
@@ -9,6 +19,7 @@ import {IonToggle} from "@ionic/react";
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import ColorModeContext from "../utils/colormode/ColorModeContext";
+import {Button, Grid} from "@mui/material";
 export default function Puissance() {
 
     const refresh = (e: CustomEvent) => {
@@ -24,10 +35,6 @@ export default function Puissance() {
         setChecked(!checked);
     };
 
-    const portList = [
-        { label: '8080'},{ label: '8086'},];
-
-
     return (
         <IonPage id="puissance-page">
             <Header page={"Paramètres"} dimensionsTitre={110}/>
@@ -36,79 +43,39 @@ export default function Puissance() {
                     <IonRefresherContent></IonRefresherContent>
                 </IonRefresher>
 
-                <Box sx={{display: "flex", justifyContent: "center",}}>
-
-
-
-                    <Card sx={{width:"80%",height:50,display:"flex", alignItems:"center", marginTop: 2}}>
-
-
-                        <Typography sx={{
-                            fontWeight: "bold",
-                            fontSize: 20,
-                            position: "relative",
-                            jusitifyContent:"center",
-                            marginLeft:'2%'
-                        }}>
-                            Thème Sombre
-                        </Typography>
-
-                        <IonToggle
-                            slot="end"
-                            name="darkMode"
-                            onIonChange={toggleDarkModeHandler}
-                            color="medium"
-                            checked={checked}
-                        />
-                    </Card>
-
+                <Box sx={{width: "100%", display:"flex", justifyContent:"center", alignItems:"center"}}>
+                    <IonList style={{
+                        maxWidth: 700,
+                        width: "100%",
+                    }}>
+                        <IonItem>
+                            <IonLabel>Thème Sombre</IonLabel>
+                            <IonToggle
+                                slot="end"
+                                name="darkMode"
+                                onIonChange={toggleDarkModeHandler}
+                                color="tertiary"
+                                checked={checked}
+                                style={{
+                                    width: 60,
+                                    m: 'auto',
+                                }}
+                            />
+                        </IonItem>
+                        <IonItem>
+                            <IonLabel>Adresse du serveur :</IonLabel>
+                            <IonTextarea placeholder="127.0.0.1" rows={1} wrap="soft" style={{
+                                height: 40,
+                                m: 'auto',
+                            }}/>
+                            <IonButton slot="end" color="tertiary" size="default" style={{
+                                height: 35,
+                                width: 60,
+                                m: 'auto',
+                            }}>Valider</IonButton>
+                        </IonItem>
+                    </IonList>
                 </Box>
-
-
-
-                <Typography sx={{
-                    fontWeight: "bold",
-                    fontSize: 20,
-                    position: "relative",
-                    jusitifyContent:"center",
-                    marginleft: 2,
-                    marginTop: 4
-                }}>
-
-                    Choix du serveur :
-
-                </Typography>
-
-                <Box sx={{display: "flex", justifyContent:'center'}}>
-
-
-
-                    <Card sx={{width:"90%",height:50,display:"flex", alignItems:"center", marginTop: 2}}>
-
-
-                        <Typography sx={{
-                            fontWeight: "bold",
-                            fontSize: 15,
-                            position: "relative",
-                            jusitifyContent:"center",
-                            marginLeft:'2%',
-                            marginRight:'4%'
-                        }}>
-
-                            IP/Nom de domaine :
-
-                        </Typography>
-
-                        <TextField id="DomaineName" label="Domaine" variant="standard" />
-
-
-
-                    </Card>
-
-                </Box>
-
-               
-
             </IonContent>
         </IonPage>
     );
