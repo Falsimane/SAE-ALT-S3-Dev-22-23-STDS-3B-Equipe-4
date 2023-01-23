@@ -14,8 +14,6 @@ export default function BarChart(){
             console.log(pfResponse);
         });
     }
-    fetchData();
-
 
 
 
