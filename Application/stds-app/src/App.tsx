@@ -31,6 +31,7 @@ import 'swiper/css';
 import "swiper/css/pagination";
 import './theme/App.css';
 import Temperature from "./pages/Temperature";
+import Parametres from "./pages/Parametres";
 import QuantiteFut from "./pages/QuantiteFut";
 import STDSDatasProvider from "./utils/mqtt/STDSDatasProvider";
 import {Pagination} from "swiper";
@@ -56,6 +57,7 @@ const App = () => {
                         <Route path="/temperature" exact={true} component={Temperature}/>
                         <Route path="/maintenance-preventive" exact={true} component={MaintenancePreventive}/>
                         <Route path="/maintenance-curative" exact={true} component={MaintenanceCurative}/>
+                        <Route path="/parametres" exact={true} component={Parametres}/>
                         <Route path="/pdf">
                             <Route path="/pdf/:id" exact={true} component={Pdf}/>
                         </Route>
