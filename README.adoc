@@ -114,7 +114,7 @@ Manque doc ustilisateur
 Backlog produit  : vous avez fait le backlog produit dans un doc appelé Users stories (TB) mais je dois retrouver ces users stories dans Github (cf. Vidéo) avec les critères, les tâches liées ...
 Backlog de sprint :  je dois avoir une colonne avec les US traités dans le sprint puis 3 ou 4 colonnes (A faire, en cours, validation, terminé par ex) avec les issues (tâches) liées aux US. C'est un sprintBoard, le votre ne montre que les issues par les US liées. cf vidéo
 
-Manque cahier de tests (reprendre ce qui est fait dans les Users stories) avec une colonne validation.
+ Cahier de tests à revoir (reprendre ce qui est fait dans les Users stories) avec une colonne validation, dans votre readme j'ai juste la liste des US notée validé.
 
 J'ai une release à la fin du premier sprint c'est bien.
 
