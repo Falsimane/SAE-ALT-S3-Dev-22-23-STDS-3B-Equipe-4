@@ -31,17 +31,26 @@ export default function Maintenance() {
                 history.push("/pdf/gamme-03")
                 break
     
-            case "Capteur de température déconnecté !" :
+            case "Capteur de température ambiante déconnecté !" :
                 history.push("/pdf/gamme-04")
                 break
     
-            case "Temperature élevée de la bière !" :
+            case "Wattmètre déconnecté !" :
                 history.push("/pdf/gamme-05")
                 break
     
-            case "Temperature élevée de la bière !" :
+            case "Le fût est bientôt vide, pensez à le à le recharger !" :
                 history.push("/pdf/gamme-06")
                 break
+
+            case "Le fût est plein !" :
+                history.push("/pdf/gamme-06")
+                break
+
+            case "MQTT 2 déconnecté" :
+                history.push("/pdf/gamme-06")
+                break
+
 
         }
     }
