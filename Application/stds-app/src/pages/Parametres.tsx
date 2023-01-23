@@ -57,7 +57,7 @@ export default function Puissance() {
                             slot="end"
                             name="darkMode"
                             onIonChange={toggleDarkModeHandler}
-                            color="warning"
+                            color="medium"
                             checked={checked}
                         />
                     </Card>
@@ -71,7 +71,8 @@ export default function Puissance() {
                     fontSize: 20,
                     position: "relative",
                     jusitifyContent:"center",
-                    marginTop:4
+                    marginleft: 2,
+                    marginTop: 4
                 }}>
 
                     Choix du serveur :
@@ -82,8 +83,7 @@ export default function Puissance() {
 
 
 
-
-                    <Card sx={{width:"80%",height:50,display:"flex", alignItems:"center", marginTop: 2}}>
+                    <Card sx={{width:"90%",height:50,display:"flex", alignItems:"center", marginTop: 2}}>
 
 
                         <Typography sx={{
@@ -99,7 +99,7 @@ export default function Puissance() {
 
                         </Typography>
 
-                        <TextField id="standard-basic" label="Standard" variant="standard" />
+                        <TextField id="DomaineName" label="Domaine" variant="standard" />
 
 
 
@@ -107,39 +107,7 @@ export default function Puissance() {
 
                 </Box>
 
-                <Box sx={{display: "flex", justifyContent:'center'}}>
-
-
-
-
-                    <Card sx={{width:"60%",height:70,display:"flex", alignItems:"center", marginTop: 2}}>
-
-
-                        <Typography sx={{
-                            fontWeight: "bold",
-                            fontSize: 15,
-                            jusitifyContent:"center",
-                            marginLeft:'2%',
-                            marginRight:'%'
-                        }}>
-
-                            Port :
-
-                        </Typography>
-
-                        <Autocomplete
-                            disablePortal
-                            id="combo-box-demo"
-                            options={portList}
-                            sx={{ width: 200, height: 50 ,marginLeft:'15%'}}
-                            renderInput={(params) => <TextField {...params} label="Port" sx={{ lineHeight:0}}/>}/>
-
-
-
-
-                    </Card>
-
-                </Box>
+               
 
             </IonContent>
         </IonPage>
