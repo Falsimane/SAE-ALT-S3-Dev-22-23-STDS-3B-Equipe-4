@@ -50,7 +50,7 @@ export default function QuantiteFut() {
                                         <Box sx={{position: "absolute"}}>
                                             <img src={require('../images/fut-bierre.png')} alt=""/>
                                         </Box>
-                                        <Typography sx={{zIndex: 1, position: "relative", bottom: 40, fontWeight: 'bold', textAlign: "center"}}>{pourcentageQuantite}%</Typography>
+                                        <Typography sx={{zIndex: 1, position: "relative", bottom: 40, fontWeight: 'bold', textAlign: "center",color:"black"}}>{pourcentageQuantite}%</Typography>
                                     </Box>
 
                                     <Divider sx = {{ color:"blue", height: 100} } orientation="vertical" variant="middle" />
@@ -61,7 +61,7 @@ export default function QuantiteFut() {
                                                 <Box id={"pinte-bierre"} sx={{height: 30}}>
                                                     <img src={require('../images/pinte-bierre.png')} alt=""/>
                                                 </Box>
-                                                <Typography sx={{marginLeft: 2, fontWeight: "bold", paddingTop: 1}}>
+                                                <Typography sx={{marginLeft: 2, fontWeight: "bold", paddingTop: 1,color:"black"}}>
                                                     x {nombreVerre/2}
                                                 </Typography>
                                             </Box>
@@ -69,7 +69,7 @@ export default function QuantiteFut() {
                                                 <Box id={"verre-bierre"} sx={{height: 30}}>
                                                     <img src={require('../images/verre-bierre.png')} alt=""/>
                                                 </Box>
-                                                <Typography sx={{marginLeft: 2, fontWeight: "bold", paddingTop: 2}}>
+                                                <Typography sx={{marginLeft: 2, fontWeight: "bold", paddingTop: 2, color:"black"}}>
                                                     x {nombreVerre}
                                                 </Typography>
                                             </Box>
