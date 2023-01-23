@@ -11,7 +11,6 @@ import {useHistory} from "react-router";
 import {useMediaQuery} from "@mui/material";
 import {ArrowBackIosNew} from "@mui/icons-material";
 import {IonHeader} from "@ionic/react";
-import CardActionArea from "@mui/material/CardActionArea";
 import SettingsIcon from '@mui/icons-material/Settings';
 
 function HeaderPage(props: {page:string; dimensionsTitre:number}) {

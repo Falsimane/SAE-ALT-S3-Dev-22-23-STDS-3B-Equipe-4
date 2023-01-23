@@ -29,7 +29,17 @@ export default function CardBoxMaintenance(props: { titre:string ; pdfimg: strin
                 break;
 
             case "Notice d'utilisation" :
-                history.push("/pdf/notice-utilisation")
+                fetch('SamplePDF.pdf').then(response => {
+                    response.blob().then(blob => {
+                        // Creating new object of PDF file
+                        const fileURL = window.URL.createObjectURL(blob);
+                        // Setting various property values
+                        let alink = document.createElement('a');
+                        alink.href = fileURL;
+                        alink.download = 'SamplePDF.pdf';
+                        alink.click();
+                    })
+                })
                 break;
 
             case "Manuel de service" :
