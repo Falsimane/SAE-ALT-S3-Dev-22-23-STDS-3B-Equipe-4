@@ -98,7 +98,7 @@ export default function CardBoxPuissance(){
                                 <Grow in={showImage} timeout={1000} style={{ transformOrigin: '10% 10%' }}>
                                 <Box sx={{ display: "flex", alignItems: "center", height: 250, width: 200, marginBottom:0.5 ,justifyContent: "center"}}>
                                
-                                <Box sx={{display: "flex" ,height:140, width:80 ,alignItems: "center"}}>
+                                <Box sx={{display: "flex" ,height:120, width:80 ,alignItems: "center"}}>
 
                                     <img src={require('../images/' + imageVal)} alt={""} />
 

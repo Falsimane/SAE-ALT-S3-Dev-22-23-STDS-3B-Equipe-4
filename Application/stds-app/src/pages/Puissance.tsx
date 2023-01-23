@@ -21,7 +21,7 @@ export default function Puissance() {
 
     switch (true) {
         case (valPuissance <= 0):
-            imageVal = "puissanceError.png"
+            imageVal = "PuissanceError.png"
             break;
         case (valPuissance <= 20 && valPuissance > 0):
             imageVal = "min-.png"
