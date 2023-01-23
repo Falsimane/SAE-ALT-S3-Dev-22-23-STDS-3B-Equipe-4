@@ -18,6 +18,7 @@ import PdfGammeCurative3 from "../documents/gammes/gamme_curative_3.pdf";
 import PdfGammeCurative4 from "../documents/gammes/gamme_curative_4.pdf";
 import PdfGammeCurative5 from "../documents/gammes/gamme_curative_5.pdf";
 import PdfGammeCurative6 from "../documents/gammes/gamme_curative_6.pdf";
+import '../theme/Pdf.css';
 
 export default function Pdf() {
 
@@ -98,15 +99,15 @@ export default function Pdf() {
                 <Box sx={{ display: "flex", justifyContent: "center", marginBottom: 3}}>
                     <Box>
                         <Box sx={{display: "flex", alignItems: "center", textAlign: "center", marginTop: 5, marginBottom: 5}}>
-                            <Button onClick={openPagePrec} sx={{marginLeft: 3, backgroundColor: "rgba(0,0,0,0.05)", width: "100%", fontWeight: "bold"}}>Précédent</Button>
+                            <Button onClick={openPagePrec} disabled={pageNumber <= 1} sx={{marginLeft: 3, backgroundColor: "rgba(0,0,0,0.05)", width: "100%", fontWeight: "bold"}}>Précédent</Button>
                             <Typography sx={{width: "100%", fontWeight: "bold"}}> {pageNumber} / {numPages}</Typography>
-                            <Button onClick={openPageSuiv} sx={{backgroundColor: "rgba(0,0,0,0.05)", marginRight: 3, width: "100%", fontWeight: "bold"}}>Suivant</Button>
+                            <Button onClick={openPageSuiv} disabled={pageNumber >= numPages} sx={{backgroundColor: "rgba(0,0,0,0.05)", marginRight: 3, width: "100%", fontWeight: "bold"}}>Suivant</Button>
                         </Box>
-                        <Document file={pdf} onLoadSuccess={onDocumentLoadSuccess}>
+                        <Document file={pdf} onLoadSuccess={onDocumentLoadSuccess} sx={{width: "20%"}}>
                             <Page pageNumber={pageNumber}/>
                         </Document>
-                    </Box>
                 </Box>
+            </Box>
             </IonContent>
         </IonPage>
     );
