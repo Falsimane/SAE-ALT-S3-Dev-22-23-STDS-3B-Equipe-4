@@ -24,13 +24,9 @@ export default function BarChart(){
         labels: labels,
         datasets: [
             {
-                label: 'Température',
                 data: dataSet,
             }
         ],
-        barPercentage: 1,
-        categoryPercentage: 24,
-        barThickness: 10,
         };
 
     const options = {
@@ -61,8 +57,14 @@ export default function BarChart(){
                 grid: {
                     offset: false,
                 },
+                ticks: {
+                    beginAtZero: true,
+                    stepSize: 4,
+                    maxTicksLimit: 24,
+                },
             },
         },
+        barThickness: 10,
         backgroundColor: '#FF0000',
     };
 
