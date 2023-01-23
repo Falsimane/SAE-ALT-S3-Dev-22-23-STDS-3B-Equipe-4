@@ -1,12 +1,9 @@
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Card from "@mui/material/Card";
 import {
-    IonButton,
     IonContent,
     IonItem,
     IonLabel,
-    IonList,
+    IonList, IonListHeader,
     IonPage,
     IonRefresher,
     IonRefresherContent,
@@ -16,10 +13,9 @@ import Header from "./Header";
 import * as React from "react";
 import {useContext} from "react";
 import {IonToggle} from "@ionic/react";
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
 import ColorModeContext from "../utils/colormode/ColorModeContext";
-import {Button, Grid} from "@mui/material";
+import {IconButton} from "@mui/material";
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 export default function Puissance() {
 
     const refresh = (e: CustomEvent) => {
@@ -48,31 +44,31 @@ export default function Puissance() {
                         maxWidth: 700,
                         width: "100%",
                     }}>
+                        <IonListHeader>
+                            <IonLabel>Choix du thème</IonLabel>
+                        </IonListHeader>
                         <IonItem>
                             <IonLabel>Thème Sombre</IonLabel>
                             <IonToggle
-                                slot="end"
                                 name="darkMode"
                                 onIonChange={toggleDarkModeHandler}
                                 color="tertiary"
+                                slot="end"
                                 checked={checked}
-                                style={{
-                                    width: 60,
-                                    m: 'auto',
-                                }}
                             />
                         </IonItem>
+                        <IonListHeader>
+                            <IonLabel>Paramétrage de la tireuse</IonLabel>
+                        </IonListHeader>
                         <IonItem>
                             <IonLabel>Adresse du serveur :</IonLabel>
-                            <IonTextarea placeholder="127.0.0.1" rows={1} wrap="soft" style={{
+                            <IonTextarea placeholder="127.0.0.1" rows={1} wrap="soft"/>
+                            <IconButton color="primary" sx={{
                                 height: 40,
-                                m: 'auto',
-                            }}/>
-                            <IonButton slot="end" color="tertiary" size="default" style={{
-                                height: 35,
-                                width: 60,
-                                m: 'auto',
-                            }}>Valider</IonButton>
+                                width: 40,
+                            }} >
+                                <CheckCircleOutlineIcon fontSize="large" />
+                            </IconButton>
                         </IonItem>
                     </IonList>
                 </Box>
