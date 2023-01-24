@@ -51,10 +51,10 @@ export default function InformationsEtat(props: { mesure:string, nombre: number,
             msgOrange = "Quantité intermédiaire";
             msgRouge = "Quantité faible"
 
-            if (props.nombre <= 20){
+            if (props.nombre <= 10){
                 colorDot = "#ED1C24";
                 texteEtat = "Quantité faible";
-            } else if(props.nombre <= 50){
+            } else if(props.nombre <= 20){
                 colorDot = "#F49229";
                 texteEtat = "Quantité intermédiaire";
             } else {
