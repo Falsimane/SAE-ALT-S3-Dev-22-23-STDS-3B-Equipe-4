@@ -64,12 +64,12 @@ export default function InformationsEtat(props: { mesure:string, nombre: number,
         case "Puissance":
             msgVert = "Puissance correcte";
             msgOrange = "Puissance faible";
-            msgRouge = "Problème critique"
+            msgRouge = "Puissance trop importante"
 
-            if (props.nombre >= 70 || props.nombre === 0){
+            if (props.nombre >= 70){
                 colorDot = "#ED1C24";
                 texteEtat = msgRouge;
-            } else if(props.nombre < 60){
+            } else if(props.nombre < 0){
                 colorDot = "#F49229";
                 texteEtat = msgOrange;
             } else {
