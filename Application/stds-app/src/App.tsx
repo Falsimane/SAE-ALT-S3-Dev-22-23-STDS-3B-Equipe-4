@@ -48,9 +48,9 @@ const App = () => {
 
     return (
         <IonApp>
-            <STDSDatasProvider>
-                <ColorModeProvider>
-                    <ServerAddressProvider>
+            <ServerAddressProvider>
+                <STDSDatasProvider>
+                    <ColorModeProvider>
                         <IonReactRouter>
                             <IonRouterOutlet>
                                 <Route path="/" exact={true}>
@@ -91,9 +91,9 @@ const App = () => {
                                 }
                             </IonRouterOutlet>
                         </IonReactRouter>
-                    </ServerAddressProvider>
-                </ColorModeProvider>
-            </STDSDatasProvider>
+                    </ColorModeProvider>
+                </STDSDatasProvider>
+            </ServerAddressProvider>
         </IonApp>
     );
 };

@@ -5,8 +5,8 @@ import Box from "@mui/material/Box";
 import CardBoxTemperature from "../components/CardBoxTemperature";
 import BarChart from "../components/BarChart";
 import InformationsEtat from "../components/InformationsEtat";
-import Button from "../components/RefreshButton";
-import Switch from "../components/SwitchButtonChart";
+import Button from "../components/ButtonHistory/RefreshButton";
+import Switch from "../components/ButtonHistory/TodaySwitchButton";
 
 export default function Temperature() {
     const refresh = (e: CustomEvent) => {
@@ -14,6 +14,7 @@ export default function Temperature() {
             e.detail.complete();
         }, 3000);
     };
+
     return (
         <IonPage id="temperature-page">
                 <Header page={"Température"} dimensionsTitre={130}/>
@@ -22,12 +23,7 @@ export default function Temperature() {
                     <IonRefresherContent></IonRefresherContent>
                 </IonRefresher>
 
-                <Box sx={{ height:"20%", width: "90%", backgroundColor:"#FFFFFF", marginLeft: "5%", marginTop: 3, borderRadius:1}}>
-                    <Button title={'Rafraîchir'} color={'dark'}/>
-                    <Switch title={'Hier'} color={'dark'}/>
-                    <Switch title={'Aujourd\'hui'} color={'dark'}/>
-                    <BarChart />
-                </Box>
+                <BarChart />
 
                 <InformationsEtat mesure={"Température"} nombre={0} nombre2={0}/>
 

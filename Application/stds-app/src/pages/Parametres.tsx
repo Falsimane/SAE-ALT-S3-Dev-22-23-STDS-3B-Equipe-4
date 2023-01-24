@@ -84,6 +84,9 @@ export default function Puissance() {
                     text: "Valider",
                     handler: () => {
                         updateServerAddress(stateServerAddress);
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 2500);
                         present({
                             message: "Adresse du serveur modifiée : " + stateServerAddress,
                             duration: 2000,
