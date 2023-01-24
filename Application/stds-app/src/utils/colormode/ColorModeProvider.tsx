@@ -3,10 +3,16 @@ import ColorMode from "./ColorMode";
 import ColorModeContext from "./ColorModeContext";
 
 const ColorModeProvider = (props: {children: React.ReactNode}) => {
-    const [colorMode, setColorMode] = React.useState<ColorMode>(window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    const localStorageColorMode = localStorage.getItem("colorMode");
+    const [colorMode, setColorMode] = React.useState<ColorMode>(
+        localStorageColorMode ?
+        localStorageColorMode as ColorMode
+        :
+        window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
 
     const toggleColorMode = () => {
         setColorMode(colorMode === "light" ? "dark" : "light");
+        localStorage.setItem("colorMode", colorMode === "light" ? "dark" : "light")
     }
 
     React.useEffect(() => {
