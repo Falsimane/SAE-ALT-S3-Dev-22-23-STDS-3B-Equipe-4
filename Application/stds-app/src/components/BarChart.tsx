@@ -15,7 +15,7 @@ export default function BarChart(props: { measurement: string, labelX: string, l
     let [labels, setLabels] = React.useState<String[]>([]);
 
     const fetchDataYesterday = () => {
-        getData("T1", "1d").then(value => {
+        getData(props.measurement, "1d").then(value => {
             let labels = Array.from(value.keys());
             setLabels(labels);
             setData(Array.from(value.values()));
