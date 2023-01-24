@@ -18,14 +18,11 @@ import PdfGammeCurative4 from "../documents/gammes/gamme_curative_4.pdf";
 import PdfGammeCurative5 from "../documents/gammes/gamme_curative_5.pdf";
 import PdfGammeCurative6 from "../documents/gammes/gamme_curative_6.pdf";
 import '../theme/Pdf.css';
-// @ts-ignore
-import {pdfjs} from "react-pdf";
-import { Viewer } from '@react-pdf-viewer/core';
-import '@react-pdf-viewer/core/lib/styles/index.css';
-import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
+import 'react-pdf/dist/esm/Page/TextLayer.css';
+import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 
 export default function Pdf() {
-    pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
     const refresh = (e: CustomEvent) => {
         setTimeout(() => {
@@ -37,7 +34,7 @@ export default function Pdf() {
     const [numPages, setNumPages] = useState(1);
     const [pageNumber, setPageNumber] = useState(1);
 
-    const onDocumentLoadSuccess = (numPages : any) =>{
+    function onDocumentLoadSuccess({ numPages } : {numPages:any}) {
         setNumPages(numPages);
     }
 
@@ -108,7 +105,9 @@ export default function Pdf() {
                             <Typography sx={{width: "100%", fontWeight: "bold"}}> {pageNumber} / {numPages}</Typography>
                             <Button onClick={openPageSuiv} disabled={pageNumber >= numPages} sx={{backgroundColor: "rgba(0,0,0,0.05)", marginRight: 3, width: "100%", fontWeight: "bold"}}>Suivant</Button>
                         </Box>
-                        <Viewer fileUrl={pdf}/>;
+                        <Document file={pdf} onLoadSuccess={onDocumentLoadSuccess} sx={{width: "20%"}}>
+                            <Page pageNumber={pageNumber}/>
+                        </Document>
                     </Box>
             </Box>
             </IonContent>

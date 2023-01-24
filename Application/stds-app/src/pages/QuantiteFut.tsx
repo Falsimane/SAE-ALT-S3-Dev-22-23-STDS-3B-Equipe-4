@@ -42,7 +42,13 @@ export default function QuantiteFut() {
 
                 <InformationsEtat mesure={"Quantité"} nombre={pourcentageQuantite} nombre2={0}/>
 
-                        <Box sx={{ backgroundColor: "#E6E6E6", height: 120, width: "90%", marginLeft: "5%", marginTop:5}}>
+                <Box>
+                    <Typography sx={{paddingTop: 3, paddingBottom: 3, fontWeight: "bold", textAlign: "center", fontSize: 35}}>
+                        {pourcentageQuantite/100*6} L
+                    </Typography>
+                </Box>
+
+                        <Box sx={{ backgroundColor: "#E6E6E6", height: 120, width: "90%", marginLeft: "5%"}}>
                                 <Box sx={{display: "flex", alignItems: "center", height: "100%", padding : 0}}>
 
                                     <Box sx={{ display: "flex", alignItems: "end", height: 100, marginTop: 1.5, justifyContent: "center", width: "50%"}}>
