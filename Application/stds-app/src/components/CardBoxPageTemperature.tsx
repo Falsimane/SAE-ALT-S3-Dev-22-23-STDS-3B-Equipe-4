@@ -43,24 +43,24 @@ export default function CardBoxTemperature(){
                     Températures
             </Typography>
             <Box sx={{display:'flex', justifyContent:'space-between'}}>
-                <Card sx={{ backgroundColor: "#E6E6E6", height: 120,width: "48%" }}>
+                <Card sx={{ backgroundColor: "#E6E6E6", width: "48%" }}>
                     <CardActionArea onClick={openPage} sx={{height: '100%'}}>
                         <CardContent sx={{display: "flex", alignItems: "center", height: "100%", padding : 0}}>
                             <Box sx={{marginLeft: '15%', textAlign:'center'}}>
                                 <HalfDonut value={(datas.temp2+10)*2} width={100} valueColor={getStateTemp2(datas.temp2).color}/>
-                                <Typography>Fût {datas.temp2}C°</Typography>
+                                <Typography>Fût <br/>{datas.temp2}C°</Typography>
                             </Box>
                             <CircleIcon sx={{ color: getStateTemp2(datas.temp2).color, position: "absolute", right: 5}} />
                         </CardContent>
                     </CardActionArea>
                 </Card>
 
-                <Card sx={{ backgroundColor: "#E6E6E6", height: 120,width: "48%" }}>
+                <Card sx={{ backgroundColor: "#E6E6E6", width: "48%" }}>
                     <CardActionArea onClick={openPage} sx={{height: '100%'}}>
                         <CardContent sx={{display: "flex", alignItems: "center", height: "100%", padding : 0}}>
                             <Box sx={{marginLeft: '15%'}}>
                                 <HalfDonut value={(datas.temp1+10)*2} width={100} valueColor={getStateTemp1(datas.temp1).color}/>
-                                <Typography>Ambiante {datas.temp1}C°</Typography>
+                                <Typography>Ambiante <br/>{datas.temp1}C°</Typography>
                             </Box>
 
                             <CircleIcon sx={{ color: getStateTemp1(datas.temp1).color, position: "absolute", right: 5}} />
