@@ -2,9 +2,11 @@ import React from "react";
 import {Chart, registerables} from 'chart.js';
 import {Bar} from "react-chartjs-2";
 import getData from "../utils/db/GetData";
-import Switch from "./SwitchButtonChart";
-import Refresh from "./RefreshButton";
+import Switch from "./ButtonHistory/TodaySwitchButton";
+import Refresh from "./ButtonHistory/RefreshButton";
 import { Box } from "@mui/material";
+import HierButton from "./ButtonHistory/HierSwitchButton";
+import TodayButton from "./ButtonHistory/TodaySwitchButton";
 
 Chart.register(...registerables);
 
@@ -21,9 +23,34 @@ export default function BarChart(){
         });
     };
 
-    React.useEffect(() => {
-        fetchDataYesterday();
-    }, []);
+    const numberOfHours = () => {
+        let date = new Date();
+        let hours = date.getHours();
+        return String(hours);
+    }
+
+    const fetchDataToday = () => {
+        getData("T1", numberOfHours()).then(value => {
+            let labels = Array.from(value.keys());
+            setLabels(labels);
+            setData(Array.from(value.values()));
+        });
+    }
+
+    /* Control the onClick event of the switch button */
+    const [checked, setChecked] = React.useState(false);
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setChecked(event.target.checked);
+
+        if (event.target.checked) {
+            fetchDataToday();
+        }
+        else {
+            fetchDataYesterday();
+        }
+    }
+
 
     const data = {
         labels: labels,
@@ -34,15 +61,6 @@ export default function BarChart(){
         ],
         };
 
-    const dateOfYesterday = () => {
-        let date = new Date();
-        date.setDate(date.getDate() - 1);
-        let day = date.getDate();
-        let month = date.getMonth() + 1;
-        let year = date.getFullYear();
-        return day + "/" + month + "/" + year;
-    };
-
     const options = {
         plugins: {
             legend: {
@@ -51,7 +69,7 @@ export default function BarChart(){
             },
             title: {
                 display: true,
-                text: dateOfYesterday(),
+                text: 'Historique de la température',
                 color: '#FF0000',
             },
         },
@@ -88,8 +106,8 @@ export default function BarChart(){
     return (
         <Box sx={{ height:"20%", width: "90%", backgroundColor:"#FFFFFF", marginLeft: "5%", marginTop: 3, borderRadius:1}}>
             <Refresh title={'Rafraîchir'} color={'dark'}/>
-            <Switch title={'Hier'} color={'dark'}/>
-            <Switch title={'Aujourd\'hui'} color={'dark'}/>
+            <HierButton color={'dark'} onChange={handleChange} />
+            <TodayButton color={'dark'} onChange={handleChange} />
             <Bar data={data} options={options}/>
         </Box>
     );
