@@ -1,4 +1,5 @@
 import {InfluxDB} from '@influxdata/influxdb-client'
+import React from "react";
 
 const getData = (_measurement: any, _range: string) => {
     const url = 'http://localhost:8086';

@@ -1,12 +1,9 @@
 import {IonContent, IonPage, IonRefresher, IonRefresherContent} from "@ionic/react";
 import Header from "./Header";
 import * as React from "react";
-import Box from "@mui/material/Box";
 import CardBoxTemperature from "../components/CardBoxTemperature";
 import BarChart from "../components/BarChart";
 import InformationsEtat from "../components/InformationsEtat";
-import Button from "../components/ButtonHistory/RefreshButton";
-import Switch from "../components/ButtonHistory/TodaySwitchButton";
 
 export default function Temperature() {
     const refresh = (e: CustomEvent) => {

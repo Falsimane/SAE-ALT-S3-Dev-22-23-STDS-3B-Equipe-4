@@ -2,7 +2,6 @@ import React from "react";
 import {Chart, registerables} from 'chart.js';
 import {Bar} from "react-chartjs-2";
 import getData from "../utils/db/GetData";
-import Switch from "./ButtonHistory/TodaySwitchButton";
 import Refresh from "./ButtonHistory/RefreshButton";
 import { Box } from "@mui/material";
 import HierButton from "./ButtonHistory/HierSwitchButton";
@@ -50,6 +49,13 @@ export default function BarChart(){
         fetchDataYesterday();
     }
 
+    const checkDarkMode = () => {
+            if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                return 'dark';
+            }
+        return 'warning';
+    }
+
 
     const data = {
         labels: labels,
@@ -58,10 +64,12 @@ export default function BarChart(){
                 data: dataSet,
             }
         ],
+        label: "Température",
         };
 
     const options = {
         plugins: {
+            responsive: true,
             legend: {
                 display: false,
                 position: 'top' as const,
@@ -80,6 +88,11 @@ export default function BarChart(){
                 grid: {
                     offset: false,
                 },
+                title: {
+                    display: true,
+                    text: 'Température (°C)',
+                    color: '#000000'
+                },
             },
             x: {
                 type: 'linear' as const,
@@ -95,6 +108,11 @@ export default function BarChart(){
                 },
                 min: 0,
                 max: 23,
+                title: {
+                    display: true,
+                    text: 'Heure',
+                    color: '#000000'
+                }
             },
         },
         barThickness: 6,
@@ -103,12 +121,15 @@ export default function BarChart(){
 
 
     return (
-        <Box sx={{ height:"20%", width: "90%", backgroundColor:"#FFFFFF", marginLeft: "5%", marginTop: 3, borderRadius:1}}>
-            <Refresh title={'Rafraîchir'} color={'dark'}/>
-            <HierButton color={'dark'} onChange={handleChangeYesterday} />
-            <TodayButton color={'dark'} onChange={handleChangeToday} />
+        <Box sx={{width: "95%", backgroundColor: "#FFFFFF", borderRadius: 2, marginRight:2, marginLeft:1.3}}>
+            <Box justifyContent="center" sx={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+                <Refresh title={'Rafraîchir'} color={checkDarkMode()}/>
+                <HierButton color={checkDarkMode()} onChange={handleChangeYesterday} />
+                <TodayButton color={checkDarkMode()} onChange={handleChangeToday} />
+        </Box>
             <Bar data={data} options={options}/>
         </Box>
+
     );
 }
 
