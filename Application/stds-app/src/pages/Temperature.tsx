@@ -20,7 +20,7 @@ export default function Temperature() {
                     <IonRefresherContent></IonRefresherContent>
                 </IonRefresher>
 
-                <BarChart />
+                <BarChart measurement={'T1'}  labelX={'Heure'} labelY={'Température °C'} title={'Historique de la température'}/>
 
                 <InformationsEtat mesure={"Température"} nombre={0} nombre2={0}/>
 

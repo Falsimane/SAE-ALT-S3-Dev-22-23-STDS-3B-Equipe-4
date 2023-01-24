@@ -9,7 +9,7 @@ import TodayButton from "./ButtonHistory/TodaySwitchButton";
 
 Chart.register(...registerables);
 
-export default function BarChart(){
+export default function BarChart(props: { measurement: string, labelX: string, labelY: string, title: string }) {
 
     let [dataSet, setData] = React.useState({});
     let [labels, setLabels] = React.useState<String[]>([]);
@@ -36,7 +36,7 @@ export default function BarChart(){
     }
 
     const fetchDataToday = () => {
-        getData("T1", numberOfHours()).then(value => {
+        getData(props.measurement, numberOfHours()).then(value => {
             let labels = Array.from(value.keys());
             setLabels(labels);
             setData(Array.from(value.values()));
@@ -63,7 +63,6 @@ export default function BarChart(){
                 data: dataSet,
             }
         ],
-        label: "Température",
         };
 
     const options = {
@@ -75,7 +74,7 @@ export default function BarChart(){
             },
             title: {
                 display: true,
-                text: 'Historique de la température',
+                text: props.title,
                 color: '#FF0000',
             },
         },
@@ -89,7 +88,7 @@ export default function BarChart(){
                 },
                 title: {
                     display: true,
-                    text: 'Température (°C)',
+                    text: props.labelY,
                     color: '#000000'
                 },
             },
@@ -109,7 +108,7 @@ export default function BarChart(){
                 max: 23,
                 title: {
                     display: true,
-                    text: 'Heure',
+                    text: props.labelX,
                     color: '#000000'
                 }
             },
