@@ -7,6 +7,7 @@ import CardBoxPageQuantite from "../components/CardBoxPageQuantite";
 import CardBoxPagePuissance from "../components/CardBoxPagePuissance";
 import CardBoxPageTemperature from "../components/CardBoxPageTemperature";
 import React from "react";
+import CardBoxPageCO2 from '../components/CardBoxPageCO2';
 
 
 const Home: React.FC = () => {
@@ -20,6 +21,8 @@ const Home: React.FC = () => {
         <CardBoxPageQuantite/>
 
         <CardBoxPagePuissance/>
+
+        <CardBoxPageCO2/>
       </IonContent>
   );
 };
