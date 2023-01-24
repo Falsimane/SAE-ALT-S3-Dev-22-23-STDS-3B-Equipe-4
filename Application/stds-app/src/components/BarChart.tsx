@@ -121,12 +121,17 @@ export default function BarChart(){
 
     return (
         <>
-            <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+            <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#ffffff'}}>
                 <Refresh title={'Rafraîchir'} color={'warning'}/>
                 <HierButton color={'warning'} onChange={handleChangeYesterday}/>
                 <TodayButton color={'warning'} onChange={handleChangeToday}/>
             </Box>
-            <Bar data={data} options={options}/></>
+
+            <Box sx={{paddingRight: 2, paddingLeft: 2, backgroundColor: '#ffffff'}}>
+                <Bar data={data} options={options}/>
+            </Box>
+
+            </>
 
 
 );
