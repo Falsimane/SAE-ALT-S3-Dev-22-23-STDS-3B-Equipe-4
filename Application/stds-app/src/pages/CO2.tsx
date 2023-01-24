@@ -6,6 +6,7 @@ import * as React from "react";
 import InformationsEtat from "../components/InformationsEtat";
 import {useContext} from "react";
 import STDSDatasContext from "../utils/mqtt/STDSDatasContext";
+import BarChart from "../components/BarChart";
 
 
 export default function CO2() {
@@ -31,9 +32,9 @@ export default function CO2() {
                     <IonRefresherContent></IonRefresherContent>
                 </IonRefresher>
 
-                    <Box sx={{ height:"20%", width: "80%", backgroundColor:"#E6E6E6", margin:"10%", borderRadius:3}}/>
+                <BarChart measurement={'co2'}  labelX={'Heure'} labelY={'Co2 (kg de carbone)'} title={'Historique du Co2'}/>
 
-                    <InformationsEtat mesure={"Puissance"} nombre={valCO2} nombre2={0}/>
+                <InformationsEtat mesure={"Puissance"} nombre={valCO2} nombre2={0}/>
 
                     <Box sx={{ height:"40%", width: "80%", backgroundColor:"#E6E6E6", margin:"10%", borderRadius:3, marginTop: "15%",  display:"flex",  justifyContent:"center", alignItems:"center"}}>
                         <Box sx={{display: "flex" ,height:80, width:150 ,alignItems: "center"}}>
