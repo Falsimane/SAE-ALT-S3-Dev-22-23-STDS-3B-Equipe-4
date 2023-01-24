@@ -39,6 +39,7 @@ import MaintenancePreventive from "./pages/MaintenancePreventive";
 import MaintenanceCurative from "./pages/MaintenanceCurative";
 import Pdf from "./pages/Pdf";
 import ColorModeProvider from "./utils/colormode/ColorModeProvider";
+import ServerAddressProvider from "./utils/serveraddress/ServerAddressProvider";
 
 setupIonicReact();
 
@@ -47,50 +48,52 @@ const App = () => {
 
     return (
         <IonApp>
-            <STDSDatasProvider>
-                <ColorModeProvider>
-                    <IonReactRouter>
-                        <IonRouterOutlet>
-                            <Route path="/" exact={true}>
-                                <Redirect to="/home"/>
-                            </Route>
-                            <Route path="/puissance" exact={true} component={Puissance}/>
-                            <Route path="/quantite" exact={true} component={QuantiteFut}/>
-                            <Route path="/temperature" exact={true} component={Temperature}/>
-                            <Route path="/maintenance-preventive" exact={true} component={MaintenancePreventive}/>
-                            <Route path="/maintenance-curative" exact={true} component={MaintenanceCurative}/>
-                            <Route path="/parametres" exact={true} component={Parametres}/>
-                            <Route path="/pdf">
-                                <Route path="/pdf/:id" exact={true} component={Pdf}/>
-                            </Route>
-                            {isMobileOrTablet ?
-                                <Route path="/home" exact={true}>
-                                    <IonPage>
-                                        <IonContent>
-                                            <Swiper
-                                                className="mySwiper"
-                                                pagination={true} modules={[Pagination]}
-                                            >
-                                                <SwiperSlide>
-                                                    <Home/>
-                                                </SwiperSlide>
-                                                <SwiperSlide>
-                                                    <Maintenance/>
-                                                </SwiperSlide>
-                                            </Swiper>
-                                        </IonContent>
-                                    </IonPage>
+            <ServerAddressProvider>
+                <STDSDatasProvider>
+                    <ColorModeProvider>
+                        <IonReactRouter>
+                            <IonRouterOutlet>
+                                <Route path="/" exact={true}>
+                                    <Redirect to="/home"/>
                                 </Route>
-                                :
-                                <>
-                                    <Route path="/home" exact={true} component={Home}/>
-                                    <Route path="/maintenance" exact={true} component={Maintenance}/>
-                                </>
-                            }
-                        </IonRouterOutlet>
-                    </IonReactRouter>
-                </ColorModeProvider>
-            </STDSDatasProvider>
+                                <Route path="/puissance" exact={true} component={Puissance}/>
+                                <Route path="/quantite" exact={true} component={QuantiteFut}/>
+                                <Route path="/temperature" exact={true} component={Temperature}/>
+                                <Route path="/maintenance-preventive" exact={true} component={MaintenancePreventive}/>
+                                <Route path="/maintenance-curative" exact={true} component={MaintenanceCurative}/>
+                                <Route path="/parametres" exact={true} component={Parametres}/>
+                                <Route path="/pdf">
+                                    <Route path="/pdf/:id" exact={true} component={Pdf}/>
+                                </Route>
+                                {isMobileOrTablet ?
+                                    <Route path="/home" exact={true}>
+                                        <IonPage>
+                                            <IonContent>
+                                                <Swiper
+                                                    className="mySwiper"
+                                                    pagination={true} modules={[Pagination]}
+                                                >
+                                                    <SwiperSlide>
+                                                        <Home/>
+                                                    </SwiperSlide>
+                                                    <SwiperSlide>
+                                                        <Maintenance/>
+                                                    </SwiperSlide>
+                                                </Swiper>
+                                            </IonContent>
+                                        </IonPage>
+                                    </Route>
+                                    :
+                                    <>
+                                        <Route path="/home" exact={true} component={Home}/>
+                                        <Route path="/maintenance" exact={true} component={Maintenance}/>
+                                    </>
+                                }
+                            </IonRouterOutlet>
+                        </IonReactRouter>
+                    </ColorModeProvider>
+                </STDSDatasProvider>
+            </ServerAddressProvider>
         </IonApp>
     );
 };
