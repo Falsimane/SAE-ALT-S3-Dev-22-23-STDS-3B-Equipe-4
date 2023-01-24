@@ -122,7 +122,7 @@ export default function BarChart(){
     return (
         <>
             <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#ffffff'}}>
-                <Refresh title={'Rafraîchir'} color={'warning'}/>
+                <Refresh title={'Rafraîchir'} color={'success'}/>
                 <HierButton color={'warning'} onChange={handleChangeYesterday}/>
                 <TodayButton color={'warning'} onChange={handleChangeToday}/>
             </Box>
