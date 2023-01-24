@@ -18,9 +18,14 @@ import PdfGammeCurative4 from "../documents/gammes/gamme_curative_4.pdf";
 import PdfGammeCurative5 from "../documents/gammes/gamme_curative_5.pdf";
 import PdfGammeCurative6 from "../documents/gammes/gamme_curative_6.pdf";
 import '../theme/Pdf.css';
-import PDF from "react-pdf-js";
+// @ts-ignore
+import {pdfjs} from "react-pdf";
+import { Viewer } from '@react-pdf-viewer/core';
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
 export default function Pdf() {
+    pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
     const refresh = (e: CustomEvent) => {
         setTimeout(() => {
@@ -103,10 +108,7 @@ export default function Pdf() {
                             <Typography sx={{width: "100%", fontWeight: "bold"}}> {pageNumber} / {numPages}</Typography>
                             <Button onClick={openPageSuiv} disabled={pageNumber >= numPages} sx={{backgroundColor: "rgba(0,0,0,0.05)", marginRight: 3, width: "100%", fontWeight: "bold"}}>Suivant</Button>
                         </Box>
-                        <PDF file={pdf}
-                             page={pageNumber}
-                             onDocumentComplete={onDocumentLoadSuccess}
-                        />
+                        <Viewer fileUrl={pdf}/>;
                     </Box>
             </Box>
             </IonContent>

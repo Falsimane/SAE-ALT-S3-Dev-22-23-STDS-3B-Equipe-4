@@ -18,6 +18,8 @@
     "@ionic/react-router": "^6.0.0",
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.5",
+    "@react-pdf-viewer/core": "^3.10.0",
+    "@react-pdf-viewer/default-layout": "^3.10.0",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^12.6.3",
