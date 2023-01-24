@@ -26,7 +26,7 @@ export default function BarChart(){
     const numberOfHours = () => {
         let date = new Date();
         let hours = date.getHours();
-        return String(hours);
+        return String(hours) + "h";
     }
 
     const fetchDataToday = () => {
@@ -40,15 +40,14 @@ export default function BarChart(){
     /* Control the onClick event of the switch button */
     const [checked, setChecked] = React.useState(false);
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChangeToday = (event: React.ChangeEvent<HTMLInputElement>) => {
         setChecked(event.target.checked);
+        fetchDataToday();
+    }
 
-        if (event.target.checked) {
-            fetchDataToday();
-        }
-        else {
-            fetchDataYesterday();
-        }
+    const handleChangeYesterday = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setChecked(event.target.checked);
+        fetchDataYesterday();
     }
 
 
@@ -106,8 +105,8 @@ export default function BarChart(){
     return (
         <Box sx={{ height:"20%", width: "90%", backgroundColor:"#FFFFFF", marginLeft: "5%", marginTop: 3, borderRadius:1}}>
             <Refresh title={'Rafraîchir'} color={'dark'}/>
-            <HierButton color={'dark'} onChange={handleChange} />
-            <TodayButton color={'dark'} onChange={handleChange} />
+            <HierButton color={'dark'} onChange={handleChangeYesterday} />
+            <TodayButton color={'dark'} onChange={handleChangeToday} />
             <Bar data={data} options={options}/>
         </Box>
     );
