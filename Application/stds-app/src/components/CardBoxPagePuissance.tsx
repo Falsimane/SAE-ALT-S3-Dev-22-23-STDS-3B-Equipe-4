@@ -25,10 +25,10 @@ export default function CardBoxPuissance(){
     let colorDot= "#22B04B";
    
    
-    if (valPuissance >= 70 || valPuissance === 0){
+    if (valPuissance >= 70){
         colorDot = "#ED1C24";
         
-    } else if(valPuissance < 60){
+    } else if(valPuissance < 0){
         colorDot = "#F49229";
         
     }
