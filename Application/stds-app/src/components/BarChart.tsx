@@ -2,6 +2,7 @@ import React from "react";
 import {Chart, registerables} from 'chart.js';
 import {Bar} from "react-chartjs-2";
 import getData from "../utils/db/GetData";
+import Button from "./Button";
 
 Chart.register(...registerables);
 
@@ -18,7 +19,9 @@ export default function BarChart(){
         });
     };
 
-    fetchData()
+    React.useEffect(() => {
+        fetchData();
+    }, []);
 
     const data = {
         labels: labels,
@@ -29,6 +32,17 @@ export default function BarChart(){
         ],
         };
 
+    /* Return the yesterday date in french format */
+
+    const dateOfYesterday = () => {
+        let date = new Date();
+        date.setDate(date.getDate() - 1);
+        let day = date.getDate();
+        let month = date.getMonth() + 1;
+        let year = date.getFullYear();
+        return day + "/" + month + "/" + year;
+    };
+
     const options = {
         plugins: {
             legend: {
@@ -37,7 +51,7 @@ export default function BarChart(){
             },
             title: {
                 display: true,
-                text: 'Historique de la température' as const,
+                text: dateOfYesterday(),
                 color: '#FF0000',
             },
         },
@@ -59,12 +73,14 @@ export default function BarChart(){
                 },
                 ticks: {
                     beginAtZero: true,
-                    stepSize: 4,
+                    stepSize: 6,
                     maxTicksLimit: 24,
                 },
+                min: 0,
+                max: 24,
             },
         },
-        barThickness: 10,
+        barThickness: 6,
         backgroundColor: '#FF0000',
     };
 
