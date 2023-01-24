@@ -2,6 +2,9 @@ import React from "react";
 import {Chart, registerables} from 'chart.js';
 import {Bar} from "react-chartjs-2";
 import getData from "../utils/db/GetData";
+import Switch from "./SwitchButtonChart";
+import Refresh from "./RefreshButton";
+import { Box } from "@mui/material";
 
 Chart.register(...registerables);
 
@@ -83,7 +86,12 @@ export default function BarChart(){
 
 
     return (
-        <Bar data={data} options={options} />
+        <Box sx={{ height:"20%", width: "90%", backgroundColor:"#FFFFFF", marginLeft: "5%", marginTop: 3, borderRadius:1}}>
+            <Refresh title={'Rafraîchir'} color={'dark'}/>
+            <Switch title={'Hier'} color={'dark'}/>
+            <Switch title={'Aujourd\'hui'} color={'dark'}/>
+            <Bar data={data} options={options}/>
+        </Box>
     );
 }
 
