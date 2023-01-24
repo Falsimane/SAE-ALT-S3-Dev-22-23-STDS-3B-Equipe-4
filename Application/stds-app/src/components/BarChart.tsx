@@ -22,6 +22,13 @@ export default function BarChart(){
         });
     };
 
+    /* launch fetchData of today just one time */
+
+
+    React.useEffect(() => {
+        fetchDataYesterday();
+    }, []);
+
     const numberOfHours = () => {
         let date = new Date();
         let hours = date.getHours();
@@ -36,7 +43,6 @@ export default function BarChart(){
         });
     }
 
-    /* Control the onClick event of the switch button */
     const [checked, setChecked] = React.useState(false);
 
     const handleChangeToday = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -47,13 +53,6 @@ export default function BarChart(){
     const handleChangeYesterday = (event: React.ChangeEvent<HTMLInputElement>) => {
         setChecked(event.target.checked);
         fetchDataYesterday();
-    }
-
-    const checkDarkMode = () => {
-            if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-                return 'dark';
-            }
-        return 'warning';
     }
 
 
@@ -121,16 +120,16 @@ export default function BarChart(){
 
 
     return (
-        <Box sx={{width: "95%", backgroundColor: "#FFFFFF", borderRadius: 2, marginRight:2, marginLeft:1.3}}>
-            <Box justifyContent="center" sx={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-                <Refresh title={'Rafraîchir'} color={checkDarkMode()}/>
-                <HierButton color={checkDarkMode()} onChange={handleChangeYesterday} />
-                <TodayButton color={checkDarkMode()} onChange={handleChangeToday} />
-        </Box>
-            <Bar data={data} options={options}/>
-        </Box>
+        <>
+            <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                <Refresh title={'Rafraîchir'} color={'warning'}/>
+                <HierButton color={'warning'} onChange={handleChangeYesterday}/>
+                <TodayButton color={'warning'} onChange={handleChangeToday}/>
+            </Box>
+            <Bar data={data} options={options}/></>
 
-    );
+
+);
 }
 
 
