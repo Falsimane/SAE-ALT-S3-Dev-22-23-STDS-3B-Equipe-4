@@ -10,7 +10,7 @@ import {useContext, useEffect, useState} from "react";
 import STDSDatasContext from "../utils/mqtt/STDSDatasContext";
 import {Grow, useTheme} from "@mui/material";
 import {checkNiveau} from "../utils/errors/checkErrors";
-import ErrorAlert from "./ErrorAlert";
+import ErrorAlert from "./Alert";
 import {getErrorColor} from "../utils/errors/ErrorUtils";
 
 export default function CardBoxTemperature(){

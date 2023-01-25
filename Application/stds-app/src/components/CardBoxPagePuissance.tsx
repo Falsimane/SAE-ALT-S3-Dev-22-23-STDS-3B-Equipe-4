@@ -11,7 +11,7 @@ import STDSDatasContext from "../utils/mqtt/STDSDatasContext";
 import {Grow, useTheme} from "@mui/material";
 import {checkPuissance} from "../utils/errors/checkErrors";
 import {getErrorColor} from "../utils/errors/ErrorUtils";
-import ErrorAlert from "./ErrorAlert";
+import {ErrorAlert} from "./Alert";
 
 
 export default function CardBoxPuissance(){

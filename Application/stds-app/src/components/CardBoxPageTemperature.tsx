@@ -6,8 +6,8 @@ import STDSDatasContext from "../utils/mqtt/STDSDatasContext";
 import HalfDonut from "./HalfDonut";
 import {Alert, Box, Card, CardActionArea, CardContent, Typography, useTheme} from "@mui/material";
 import {checkTemp} from "../utils/errors/checkErrors";
-import ErrorAlert from "./ErrorAlert";
 import {getErrorColor} from "../utils/errors/ErrorUtils";
+import ErrorAlert from "./Alert";
 
 export default function CardBoxTemperature(){
     const history = useHistory();

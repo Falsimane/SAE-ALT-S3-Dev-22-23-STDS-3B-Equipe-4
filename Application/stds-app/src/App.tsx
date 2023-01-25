@@ -40,9 +40,9 @@ import MaintenanceCurative from "./pages/MaintenanceCurative";
 import Pdf from "./pages/Pdf";
 import ColorModeProvider from "./utils/colormode/ColorModeProvider";
 import ServerAddressProvider from "./utils/serveraddress/ServerAddressProvider";
-import { Co2 } from '@mui/icons-material';
 import CO2 from './pages/CO2';
 import TemperatureInterieure from "./pages/TemperatureInterieure";
+import Autodiagnostic from "./pages/Autodiagnostic";
 
 setupIonicReact();
 
@@ -67,6 +67,7 @@ const App = () => {
                                 <Route path="/maintenance-preventive" exact={true} component={MaintenancePreventive}/>
                                 <Route path="/maintenance-curative" exact={true} component={MaintenanceCurative}/>
                                 <Route path="/parametres" exact={true} component={Parametres}/>
+                                <Route path="/autodiagnostic" exact={true} component={Autodiagnostic}/>
                                 <Route path="/pdf">
                                     <Route path="/pdf/:id" exact={true} component={Pdf}/>
                                 </Route>

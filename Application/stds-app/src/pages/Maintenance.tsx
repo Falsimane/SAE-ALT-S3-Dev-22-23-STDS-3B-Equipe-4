@@ -20,39 +20,7 @@ export default function Maintenance() {
     const theme = useTheme();
 
     const openPdfDiag = () => {
-
-        switch (diagnostique) {
-            case "Température élevée de la bière !" :
-                history.push("/pdf/gamme-01")
-                break
-
-            case "Temperature idéale de la bière !" :
-                break
-
-            case "Capteur de température déconnecté !" :
-                history.push("/pdf/gamme-03")
-                break
-
-            case "Capteur de température ambiante déconnecté !" :
-                history.push("/pdf/gamme-04")
-                break
-
-            case "Wattmètre déconnecté !" :
-                history.push("/pdf/gamme-05")
-                break
-
-            case "Le fût est bientôt vide, pensez à le à le recharger !" :
-                history.push("/pdf/gamme-06")
-                break
-
-            case "Le fût est plein !" :
-                history.push("/pdf/gamme-06")
-                break
-
-            case "MQTT 2 déconnecté" :
-                history.push("/pdf/gamme-06")
-                break
-        }
+        history.push("/autodiagnostic");
     }
 
     const color = diagnostique === "" ? theme.palette.success.light :
@@ -64,8 +32,8 @@ export default function Maintenance() {
             <Box sx={{ display: "flex", justifyContent: "center", marginBottom: 10}}>
                 <Card sx={{ backgroundColor: "#E6E6E6", height: 150, width: "80%"}}>
 
-                    <CardActionArea sx={{height: '100%'}} >
-                        <CardContent sx= {{ height:"100%" , padding : 0}} onClick={openPdfDiag}>
+                    <CardActionArea sx={{height: '100%'}} onClick={openPdfDiag} >
+                        <CardContent sx= {{ height:"100%" , padding : 0}} >
 
                             <Box sx={{height: "50%", display:"flex", alignItems:"center"}}>
 
