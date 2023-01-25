@@ -42,6 +42,7 @@ import ColorModeProvider from "./utils/colormode/ColorModeProvider";
 import ServerAddressProvider from "./utils/serveraddress/ServerAddressProvider";
 import { Co2 } from '@mui/icons-material';
 import CO2 from './pages/CO2';
+import TemperatureInterieure from "./pages/Temperature";
 
 setupIonicReact();
 
@@ -61,6 +62,7 @@ const App = () => {
                                 <Route path="/puissance" exact={true} component={Puissance}/>
                                 <Route path="/quantite" exact={true} component={QuantiteFut}/>
                                 <Route path="/temperature" exact={true} component={Temperature}/>
+                                <Route path="/TemperatureInterieure" exact={true} component={TemperatureInterieure}/>
                                 <Route path="/co2" exact={true} component={CO2}/>
                                 <Route path="/maintenance-preventive" exact={true} component={MaintenancePreventive}/>
                                 <Route path="/maintenance-curative" exact={true} component={MaintenanceCurative}/>
