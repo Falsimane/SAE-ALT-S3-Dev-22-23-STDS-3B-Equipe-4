@@ -13,6 +13,10 @@ export default function CardBoxTemperature(){
         history.push("/temperature");
     }
 
+    const openPageAmbiante = () => {
+        history.push("/temperature-interieure");
+    }
+
     const datas = useContext(STDSDatasContext);
 
     function getStateTemp1(temperature: number) {
@@ -56,7 +60,7 @@ export default function CardBoxTemperature(){
                 </Card>
 
                 <Card sx={{ backgroundColor: "#E6E6E6", width: "48%" }}>
-                    <CardActionArea onClick={openPage} sx={{height: '100%'}}>
+                    <CardActionArea onClick={openPageAmbiante} sx={{height: '100%'}}>
                         <CardContent sx={{display: "flex", alignItems: "center", height: "100%", padding : 0}}>
                             <Box sx={{marginLeft: '15%'}}>
                                 <HalfDonut value={(datas.temp1+10)*2} width={100} valueColor={getStateTemp1(datas.temp1).color}/>

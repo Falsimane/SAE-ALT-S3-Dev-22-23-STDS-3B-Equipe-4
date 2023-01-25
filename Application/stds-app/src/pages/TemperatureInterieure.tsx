@@ -16,9 +16,9 @@ export default function TemperatureInterieure() {
     };
 
     return (
-        <IonPage id="temperature-page">
+        <IonPage id="temperature-interieure">
             <Header page={"G" +
-                "TempératureIntérieure"} dimensionsTitre={130}/>
+                "temperature-interieure"} dimensionsTitre={130}/>
             <IonContent fullscreen>
                 <IonRefresher slot="fixed" onIonRefresh={refresh}>
                     <IonRefresherContent></IonRefresherContent>
@@ -27,9 +27,6 @@ export default function TemperatureInterieure() {
                 <BarChart measurement={'T2'}  labelX={'Heure'} labelY={'Température °C'} title={'Historique de la température'}/>
 
                 <InformationsEtat mesure={"Température"} nombre={temp1} nombre2={temp2}/>
-
-                <CardBoxTemperature title={"Intérieure"}/>
-                <CardBoxTemperature title={"Extérieure"}/>
 
             </IonContent>
         </IonPage>

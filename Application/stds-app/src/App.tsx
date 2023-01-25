@@ -62,7 +62,7 @@ const App = () => {
                                 <Route path="/puissance" exact={true} component={Puissance}/>
                                 <Route path="/quantite" exact={true} component={QuantiteFut}/>
                                 <Route path="/temperature" exact={true} component={Temperature}/>
-                                <Route path="/TemperatureInterieure" exact={true} component={TemperatureInterieure}/>
+                                <Route path="/temperature-interieure" exact={true} component={TemperatureInterieure}/>
                                 <Route path="/co2" exact={true} component={CO2}/>
                                 <Route path="/maintenance-preventive" exact={true} component={MaintenancePreventive}/>
                                 <Route path="/maintenance-curative" exact={true} component={MaintenanceCurative}/>
