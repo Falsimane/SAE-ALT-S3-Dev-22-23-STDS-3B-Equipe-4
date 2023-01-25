@@ -27,17 +27,13 @@ L’objectif de ce document est de présenter les user stories auxquelles nous d
 |    5     | 2
 |===
 
-==== US de haute importance
+==== US de moyenne importance
 
 [options="header,footer"]
 |===
 | User Story | Sprint
 |    6     | 2
-|    7     | 2
 |===
-
-==== US de moyenne importance
-
 
 == I. User Stories
 
@@ -146,74 +142,63 @@ L’objectif de ce document est de présenter les user stories auxquelles nous d
 
 - Les paramètres de l'application doivent être sauvegardés dans un fichier de configuration
 
-=== 5. Gestion du diagnostic de la tireuse à bière
+=== 5. Consultation de la température ambiante
 
 ==== 5.1 Description
-
-**En tant que** utilisateur   +
-**Je souhaite** pouvoir gérer le diagnostic de la tireuse à bière  +
-**Afin de** pouvoir la réparer
-
-==== 5.2 Critères d’acceptation :
-
-- Il doit être possible de consulter le diagnostic de la tireuse à bière
-- Un texte doit être affiché pour donner un aperçu du diagnostic de la tireuse à bière
-
-==== 5.3 Tâches correspondantes :
-
-- Récupérer le diagnostic de la tireuse à bière
-- Afficher le diagnostic de la tireuse à bière
-
-==== 5.4 Contraintes :
-
-- Le diagnostic de la tireuse à bière doit être récupéré via le flux MQTT
-
-=== 6. Consultation de la température ambiante
-
-==== 6.1 Description
 
 **En tant que** utilisateur   +
 **Je souhaite** pouvoir consulter la température ambiante  +
 **Afin de** pouvoir savoir si la température est idéale pour la bière
 
-==== 6.2 Critères d’acceptation :
+==== 5.2 Critères d’acceptation :
 
 - La température ambiante est affichée sur l'onglet "Température" de l'application
 - La température ambiante dispose d'un historique et d'un encadré pour afficher la température ambiante actuelle
 
-==== 6.3 Tâches correspondantes :
+==== 5.3 Tâches correspondantes :
 
 - Récupérer la température ambiante
 - Afficher la température ambiante
 - Afficher l'historique de la température ambiante
 
-==== 6.4 Contraintes :
+==== 5.4 Contraintes :
 
 - La température ambiante doit être récupérée via la base de données influxDB
 
-=== 7. Consultation de la quantité de CO2 dans l'air
+=== 6. Consultation de la quantité de CO2 dans l'air
 
-==== 7.1 Description
+==== 6.1 Description
 
 **En tant que** utilisateur   +
 **Je souhaite** pouvoir consulter la quantité de CO2 dans l'air  +
 **Afin de** pouvoir savoir si la quantité de CO2 est idéale pour la bière
 
-==== 7.2 Critères d’acceptation :
+==== 6.2 Critères d’acceptation :
 
 - La quantité de CO2 dans l'air est affichée sur l'onglet "CO2" de l'application
 - La quantité de CO2 dans l'air dispose d'un historique et d'un encadré pour afficher la quantité de CO2 dans l'air actuelle
 
-==== 7.3 Tâches correspondantes :
+==== 6.3 Tâches correspondantes :
 
 - Récupérer la quantité de CO2 dans l'air
 - Afficher la quantité de CO2 dans l'air
 - Afficher l'historique de la quantité de CO2 dans l'air
 
-==== 7.4 Contraintes :
+==== 6.4 Contraintes :
 
 - La quantité de CO2 dans l'air doit être récupérée via la base de données influxDB
 
+== II. Issues correspondantes
+
+[options="header,footer"]
+|===
+| n° US | ID ISSUE | LIEN
+| 1 | 15 | https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/issues/13
+| 2 | 16 | https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/issues/16
+| 3 | 18 | https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/issues/18
+| 4 | 29 | https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/issues/29
+| 5 | 32 | https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/issues/32
+| 6 | 31 | https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/issues/31
 
 
 
