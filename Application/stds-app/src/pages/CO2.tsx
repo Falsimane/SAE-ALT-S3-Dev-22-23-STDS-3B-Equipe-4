@@ -20,7 +20,7 @@ export default function CO2() {
     const datas = useContext(STDSDatasContext);
     const valCO2 = datas.co2;
    
-    let imageVal;
+   
 
     
 
