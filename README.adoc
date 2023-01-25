@@ -134,7 +134,7 @@ CR ok
 [options="header,footer"]
 |===
 | Date |  Nom | Lien | Retour
-| 25/01/2023 |  Backlog sprint |  https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/blob/main/Documentation/BacklogSprint2.adoc|
+| 25/01/2023 |  Backlog sprint (avec issues correspondantes) |  https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/blob/main/Documentation/BacklogSprint2.adoc|
 | 25/01/2023 |  Sprintboard |  https://github.com/users/Falsimane/projects/2/views/1|
 | 25/01/2023 |  Cahier de tests |  ?|
 |===
