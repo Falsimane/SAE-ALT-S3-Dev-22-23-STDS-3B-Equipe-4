@@ -4,8 +4,11 @@ import * as React from "react";
 import CardBoxTemperature from "../components/CardBoxTemperature";
 import BarChart from "../components/BarChart";
 import InformationsEtat from "../components/InformationsEtat";
+import STDSDatasContext from "../utils/mqtt/STDSDatasContext";
 
 export default function Temperature() {
+    const {temp1, temp2} = React.useContext(STDSDatasContext);
+
     const refresh = (e: CustomEvent) => {
         setTimeout(() => {
             e.detail.complete();
@@ -14,7 +17,7 @@ export default function Temperature() {
 
     return (
         <IonPage id="temperature-page">
-                <Header page={"Température"} dimensionsTitre={130}/>
+            <Header page={"Température"} dimensionsTitre={130}/>
             <IonContent fullscreen>
                 <IonRefresher slot="fixed" onIonRefresh={refresh}>
                     <IonRefresherContent></IonRefresherContent>
@@ -22,7 +25,7 @@ export default function Temperature() {
 
                 <BarChart measurement={'T1'}  labelX={'Heure'} labelY={'Température °C'} title={'Historique de la température'}/>
 
-                <InformationsEtat mesure={"Température"} nombre={0} nombre2={0}/>
+                <InformationsEtat mesure={"Température"} nombre={temp1} nombre2={temp2}/>
 
                 <CardBoxTemperature title={"Intérieure"}/>
                 <CardBoxTemperature title={"Extérieure"}/>

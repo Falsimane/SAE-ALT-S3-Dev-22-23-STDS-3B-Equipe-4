@@ -78,20 +78,20 @@ export default function InformationsEtat(props: { mesure:string, nombre: number,
             break;
 
         case "CO2":
-                msgVert = "Taux de CO2 faible";
-                msgOrange = "Taux de CO2 moyen";
-                msgRouge = "Taux de CO2 élevé"
-    
-                if (props.nombre >= 70){
-                    colorDot = "#ED1C24";
-                    texteEtat = msgRouge;
-                } else if(props.nombre < 0){
-                    colorDot = "#F49229";
-                    texteEtat = msgOrange;
-                } else {
-                    texteEtat = msgVert;
-                }
-                break;
+            msgVert = "Taux de CO2 faible";
+            msgOrange = "Taux de CO2 moyen";
+            msgRouge = "Taux de CO2 élevé"
+
+            if (props.nombre >= 70){
+                colorDot = "#ED1C24";
+                texteEtat = msgRouge;
+            } else if(props.nombre < 0){
+                colorDot = "#F49229";
+                texteEtat = msgOrange;
+            } else {
+                texteEtat = msgVert;
+            }
+            break;
     }
 
     return (
@@ -117,31 +117,31 @@ export default function InformationsEtat(props: { mesure:string, nombre: number,
 
 
 
-        <Card sx={{ backgroundColor: "#E6E6E6", height: 40, width: "80%", marginLeft: "10%", marginTop: 5}}>
-            <CardActionArea onClick={handleClickOpen} sx={{height: '100%'}}>
-                <CardContent sx={{display: "flex", alignItems: "center", height: "100%", padding : 0}}>
+            <Card sx={{ backgroundColor: "#E6E6E6", height: 40, width: "80%", marginLeft: "10%", marginTop: 5}}>
+                <CardActionArea onClick={handleClickOpen} sx={{height: '100%'}}>
+                    <CardContent sx={{display: "flex", alignItems: "center", height: "100%", padding : 0}}>
 
-                    <Typography sx={{fontWeight:"bold",paddingLeft:"4%"}}>
-                        ÉTAT
-                    </Typography>
-
-
-
-                    <Divider sx = {{ color:"blue",paddingLeft:"4%"} } orientation="vertical" variant="middle" />
+                        <Typography sx={{fontWeight:"bold",paddingLeft:"4%"}}>
+                            ÉTAT
+                        </Typography>
 
 
 
-                    <CircleIcon sx={{ color: colorDot , marginLeft: "3%",  marginRight: "1%",  left :"30%"}} fontSize = "small"/>
+                        <Divider sx = {{ color:"blue",paddingLeft:"4%"} } orientation="vertical" variant="middle" />
 
 
-                    <Typography sx={{fontWeight:"bold",paddingLeft:"3%", fontSize:12}}>
-                        {texteEtat}
-                    </Typography>
 
-                    <InfoOutlinedIcon sx={{position: "absolute", right: "15%", marginLeft: "10%", color:"blue" }}/>
-                </CardContent>
-            </CardActionArea>
-        </Card>
+                        <CircleIcon sx={{ color: colorDot , marginLeft: "3%",  marginRight: "1%",  left :"30%"}} fontSize = "small"/>
+
+
+                        <Typography sx={{fontWeight:"bold",paddingLeft:"3%", fontSize:12}}>
+                            {texteEtat}
+                        </Typography>
+
+                        <InfoOutlinedIcon sx={{position: "absolute", right: "3%", marginLeft: "10%", color:"blue" }}/>
+                    </CardContent>
+                </CardActionArea>
+            </Card>
         </div>
     );
 }
