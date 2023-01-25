@@ -10,7 +10,7 @@
 * Avoir une version de docker qui fonctionne correctement (https://www.docker.com[disponible ici]).
 * Pouvoir décompresser un fichier au format `.zip`.
 * Avoir les ports 8080 et 8086 ouverts.
-* * Avoir node.js installé, npm et npx doivent fonctionner correctement (https://nodejs.org/en/[disponible ici]). Sur Linux, exécuter la commande : `sudo apt-get install nodejs npm`.
+* Avoir node.js installé, npm et npx doivent fonctionner correctement (https://nodejs.org/en/[disponible ici]). Sur Linux, exécuter la commande : `sudo apt-get install nodejs npm`.
 
 === 2. Téléchargement
 
@@ -40,7 +40,17 @@
 
 * Exécuter le fichier, puis cliquer sur installer, comme ceci :
 
-image::ressources/install_android.jpg["Capture d'écran pop-up d'installation de l'application"]
+ifdef::env-github[]
+++++
+<p align="center">
+  <img height="50%" width="50%" src="ressources/install_android.jpg">
+</p>
+++++
+endif::[]
+
+ifndef::env-github[]
+image::ressources/install_android.jpg["Capture d'écran pop-up d'installation de l'application", align=center]
+endif::[]
 
 * Ignorer les éventuels avertissements de sécurité (l'application n'étant pas installée depuis le Google PlayStore, des alertes peuvent apparaître).
 
@@ -51,3 +61,52 @@ image::ressources/install_android.jpg["Capture d'écran pop-up d'installation de
 == II.B Installation de l'application IOS
 
 Malheureusement, la politique d'Apple vis-à-vis des applications non publiées sur l'AppStore ne nous permet pas de fournir une application au format .ipa comme, nous le pouvons avec la version Android .apk. Il faudra potentiellement envisager l'achat d'une licence développeur pour publier l'application sur l'AppStore.
+
+== III. Utilisation de l'application
+
+=== 1. Premier lancement
+
+Au premier lancement, l'application affichera une erreur : c'est normal. Il faut avant tout chose configurer l'adresse du serveur contenant le Backend. Pour cela :
+
+* Accéder à la page paramètres, en cliquant sur le rouage en haut à droite de la page :
+
+ifdef::env-github[]
+++++
+<p align="center">
+  <img src="ressources/accueil_vers_parametres.png">
+</p>
+++++
+endif::[]
+
+ifndef::env-github[]
+image::ressources/accueil_vers_parametres.png["Capture d'écran page d'accueil de l'application", align=center]
+endif::[]
+
+* Entrer l'adresse du serveur, puis valider : 
+
+ifdef::env-github[]
+++++
+<p align="center">
+  <img src="ressources/parametres_adresse.png">
+</p>
+++++
+endif::[]
+
+ifndef::env-github[]
+image::ressources/parametres_adresse.png["Capture d'écran page de paramètres de l'application", align=center]
+endif::[]
+
+* Si l'adresse entrée est correcte, et que le serveur est bien configuré, l'application devrait afficher un message de succès :
+
+ifdef::env-github[]
+++++
+<p align="center">
+  <img src="ressources/notification_connexion.png">
+</p>
+++++
+endif::[]
+
+ifndef::env-github[]
+image::ressources/notification_connexion.png["Capture d'écran page notification de connexion établie", align=center]
+endif::[]
+

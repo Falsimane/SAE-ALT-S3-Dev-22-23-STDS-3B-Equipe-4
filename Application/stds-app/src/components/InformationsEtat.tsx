@@ -76,6 +76,22 @@ export default function InformationsEtat(props: { mesure:string, nombre: number,
                 texteEtat = msgVert;
             }
             break;
+
+        case "CO2":
+                msgVert = "Taux de CO2 faible";
+                msgOrange = "Taux de CO2 moyen";
+                msgRouge = "Taux de CO2 élevé"
+    
+                if (props.nombre >= 70){
+                    colorDot = "#ED1C24";
+                    texteEtat = msgRouge;
+                } else if(props.nombre < 0){
+                    colorDot = "#F49229";
+                    texteEtat = msgOrange;
+                } else {
+                    texteEtat = msgVert;
+                }
+                break;
     }
 
     return (
