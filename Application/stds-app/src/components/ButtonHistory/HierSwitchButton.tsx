@@ -1,7 +1,7 @@
 import React from 'react';
 import { IonButton } from '@ionic/react';
 
-export default function HierButton(props: {color:string; onChange: any; selected: boolean}) {
+export default function HierButton(props: {onChange: any; selected: boolean}) {
 
     if (props.selected) {
             return (
