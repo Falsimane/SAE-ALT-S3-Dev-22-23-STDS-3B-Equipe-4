@@ -12,33 +12,35 @@ import {IonContent} from "@ionic/react";
 import {useContext} from "react";
 import STDSDatasContext from "../utils/mqtt/STDSDatasContext";
 import {useHistory} from "react-router";
+import {useTheme} from "@mui/material";
 export default function Maintenance() {
     const history = useHistory();
     const datas = useContext(STDSDatasContext);
-    const diagnostique = datas.diag2 
+    const diagnostique = datas.diag2
+    const theme = useTheme();
 
     const openPdfDiag = () => {
 
-        switch (diagnostique){
+        switch (diagnostique) {
             case "Température élevée de la bière !" :
                 history.push("/pdf/gamme-01")
                 break
-    
+
             case "Temperature idéale de la bière !" :
                 break
-    
+
             case "Capteur de température déconnecté !" :
                 history.push("/pdf/gamme-03")
                 break
-    
+
             case "Capteur de température ambiante déconnecté !" :
                 history.push("/pdf/gamme-04")
                 break
-    
+
             case "Wattmètre déconnecté !" :
                 history.push("/pdf/gamme-05")
                 break
-    
+
             case "Le fût est bientôt vide, pensez à le à le recharger !" :
                 history.push("/pdf/gamme-06")
                 break
@@ -50,11 +52,11 @@ export default function Maintenance() {
             case "MQTT 2 déconnecté" :
                 history.push("/pdf/gamme-06")
                 break
-
-
         }
     }
 
+    const color = diagnostique === "" ? theme.palette.success.light :
+        diagnostique === "MQTT 2 déconnecté" ? theme.palette.error.main : theme.palette.warning.main;
 
     return (
         <IonContent fullscreen>
@@ -63,11 +65,11 @@ export default function Maintenance() {
                 <Card sx={{ backgroundColor: "#E6E6E6", height: 150, width: "80%"}}>
 
                     <CardActionArea sx={{height: '100%'}} >
-                        <CardContent sx= {{ height:"100%" , padding : 0}} onClick={openPdfDiag}> 
+                        <CardContent sx= {{ height:"100%" , padding : 0}} onClick={openPdfDiag}>
 
                             <Box sx={{height: "50%", display:"flex", alignItems:"center"}}>
 
-                                <CircleIcon sx={{ color: "#ED1C24", margin : 2 }} fontSize = "medium"/>
+                                <CircleIcon sx={{ color: color, margin : 2 }} fontSize = "medium"/>
                                 <Typography sx = {{ fontSize: 18, fontWeight:"bold"}}> Autodiagnostic </Typography>
 
                             </Box>
@@ -76,8 +78,12 @@ export default function Maintenance() {
 
                                 <Box sx={{backgroundColor: "#CFCFCE", borderRadius: 2 , textAlign: "center",display:"flex", alignItems:"center", padding : 2, marginBottom: 2}}>
 
-                                    <Typography sx={{fontSize: 18,color:"#ED1C24" , fontWeight: "bold", textAlign:"center", width:"100%"}}>
-                                        Deconnexion réseau
+                                    <Typography color={color} sx={{fontSize: 18, fontWeight: "bold", textAlign:"center", width:"100%"}}>
+                                        {
+                                            diagnostique === "" ? "Pas de problème détecté" :
+                                                diagnostique === "MQTT 2 déconnecté" ? "Déconnexion Réseau" :
+                                                    "Problème(s) détecté(s)"
+                                        }
                                     </Typography>
 
                                 </Box>

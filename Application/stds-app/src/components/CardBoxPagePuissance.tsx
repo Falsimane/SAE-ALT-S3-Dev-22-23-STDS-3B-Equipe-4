@@ -8,37 +8,24 @@ import CircleIcon from "@mui/icons-material/Circle";
 import {useHistory} from "react-router";
 import {useContext, useEffect, useState} from "react";
 import STDSDatasContext from "../utils/mqtt/STDSDatasContext";
-import {Grow} from "@mui/material";
+import {Grow, useTheme} from "@mui/material";
+import {checkPuissance} from "../utils/errors/checkErrors";
+import {getErrorColor} from "../utils/errors/ErrorUtils";
+import ErrorAlert from "./ErrorAlert";
 
 
 export default function CardBoxPuissance(){
     const [showImage, setShowImage] = useState(false)
     const history = useHistory();
+    const theme = useTheme();
+    const datas = useContext(STDSDatasContext);
+    const puissanceError = checkPuissance(datas.puissance).puissance
+    const colorDot = getErrorColor(puissanceError.errorLevel, theme)
     const openPage = () => {
         history.push("/puissance");
     }
-
-    const datas = useContext(STDSDatasContext);
-
     const valPuissance = datas.puissance;
-
-    let colorDot= "#22B04B";
-   
-   
-    if (valPuissance >= 70){
-        colorDot = "#ED1C24";
-        
-    } else if(valPuissance < 0){
-        colorDot = "#F49229";
-        
-    }
-    
-    
-   
     let imageVal;
-    
-    
-
     switch (true) {
         case (valPuissance <= 0):
             imageVal = "puissanceError.png"
@@ -106,7 +93,7 @@ export default function CardBoxPuissance(){
 
                                 <Box sx={{display: "flex"}}>
 
-                                    <Typography sx={{fontWeight:"bold", fontSize:30 , height:50, width:80}}>
+                                    <Typography sx={{fontWeight:"bold", fontSize:30 , height:50, width:100}}>
                                         {valPuissance} W
                                     </Typography>
 
@@ -122,6 +109,8 @@ export default function CardBoxPuissance(){
                         </CardContent>
                     </CardActionArea>
                 </Card>
+
+                <ErrorAlert error={puissanceError} />
 
             </Box>
         </Box>

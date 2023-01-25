@@ -8,29 +8,21 @@ import CircleIcon from "@mui/icons-material/Circle";
 import {useHistory} from "react-router";
 import {useContext, useEffect, useState} from "react";
 import STDSDatasContext from "../utils/mqtt/STDSDatasContext";
-import {Grow} from "@mui/material";
+import {Grow, useTheme} from "@mui/material";
+import {checkNiveau} from "../utils/errors/checkErrors";
+import ErrorAlert from "./ErrorAlert";
+import {getErrorColor} from "../utils/errors/ErrorUtils";
 
 export default function CardBoxTemperature(){
     const [showImage, setShowImage] = useState(false)
-
     const history = useHistory();
-    const openPage = () => {
-        history.push("/quantite");
-    }
-
+    const theme = useTheme();
     const datas = useContext(STDSDatasContext);
-
+    const qteError = checkNiveau(datas.niveau).niveau
+    const colorDot = getErrorColor(qteError.errorLevel, theme)
     const pourcentageQuantite = datas.niveau;
     let calculPourcentage = pourcentageQuantite;
-
     let nombreVerre = Math.floor(6*pourcentageQuantite/100 * 4);
-
-    let colorDot= "#22B04B";
-    if (pourcentageQuantite <= 10){
-        colorDot = "#ED1C24";
-    } else if(pourcentageQuantite <= 20){
-        colorDot = "#F49229";
-    }
 
     let radiusLiquideQuantiteTop = 0;
     let nombreApres90 = 0;
@@ -39,6 +31,10 @@ export default function CardBoxTemperature(){
         radiusLiquideQuantiteTop += nombreApres90;
     } else if (pourcentageQuantite === 1){
         calculPourcentage = 1.1/90*100;
+    }
+
+    const openPage = () => {
+        history.push("/quantite");
     }
 
     useEffect(() => {
@@ -101,6 +97,8 @@ export default function CardBoxTemperature(){
                         </CardContent>
                     </CardActionArea>
                 </Card>
+
+                <ErrorAlert error={qteError} />
 
             </Box>
         </Box>

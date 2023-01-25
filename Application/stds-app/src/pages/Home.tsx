@@ -1,5 +1,5 @@
 import {
-  IonContent,
+    IonContent,
 } from '@ionic/react';
 import './Home.css';
 import Header from "./Header";
@@ -12,19 +12,21 @@ import CardBoxPageCO2 from '../components/CardBoxPageCO2';
 
 const Home: React.FC = () => {
 
-  return (
-      <IonContent fullscreen>
-        <Header page={"Accueil"} dimensionsTitre={90}/>
+    return (
+        <IonContent fullscreen>
+            <Header page={"Accueil"} dimensionsTitre={90}/>
 
-        <CardBoxPageTemperature/>
+            <CardBoxPageTemperature/>
 
-        <CardBoxPageQuantite/>
+            <CardBoxPageQuantite/>
 
-        <CardBoxPagePuissance/>
+            <CardBoxPagePuissance/>
 
-        <CardBoxPageCO2/>
-      </IonContent>
-  );
+            <CardBoxPageCO2/>
+            <br/>
+            <br/>
+        </IonContent>
+    );
 };
 
 export default Home;

@@ -4,33 +4,25 @@ import Card from "@mui/material/Card";
 import CardActionArea from "@mui/material/CardActionArea";
 import CardContent from "@mui/material/CardContent";
 import * as React from "react";
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import {useHistory} from "react-router";
 import CircleIcon from "@mui/icons-material/Circle";
 import {useContext, useEffect, useState} from "react";
 import STDSDatasContext from "../utils/mqtt/STDSDatasContext";
-import {Grow} from "@mui/material";
+import {Grow, useTheme} from "@mui/material";
+import {checkCO2} from "../utils/errors/checkErrors";
+import {getErrorColor} from "../utils/errors/ErrorUtils";
+import ErrorAlert from "./ErrorAlert";
 
 export default function CardBoxPageCO2() {
-
     const history = useHistory();
+    const theme = useTheme();
+    const datas = useContext(STDSDatasContext);
+    const co2Error = checkCO2(datas.co2).co2
+    const colorDot = getErrorColor(co2Error.errorLevel, theme)
     const openPage = () => {
         history.push("/co2");
     }
-
     const [showImage, setShowImage] = useState(false)
-    const datas = useContext(STDSDatasContext);
-
-    const valCO2 = datas.co2;
-
-
-    let colorDot= "#22B04B";
-    if (valCO2 <= 20){
-        colorDot = "#ED1C24";
-    } else if(valCO2 <= 50){
-        colorDot = "#F49229";
-    }
 
     useEffect(() => {
         setShowImage(true)
@@ -69,7 +61,7 @@ export default function CardBoxPageCO2() {
                                 <Box sx={{display: "flex", marginLeft:3}}>
 
                                     <Typography sx={{fontWeight:"bold", fontSize:30 , height:50, width:80}}>
-                                         {250} g
+                                         {datas.co2} g
                                     </Typography>
 
                         
@@ -89,6 +81,8 @@ export default function CardBoxPageCO2() {
                 </CardActionArea>
                 
             </Card>
+
+            <ErrorAlert error={co2Error} />
 
         </Box>
     </Box>

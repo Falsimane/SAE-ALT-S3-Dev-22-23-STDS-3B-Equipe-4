@@ -4,11 +4,17 @@ import CircleIcon from "@mui/icons-material/Circle";
 import {useHistory} from "react-router";
 import STDSDatasContext from "../utils/mqtt/STDSDatasContext";
 import HalfDonut from "./HalfDonut";
-import {Alert, Box, Card, CardActionArea, CardContent, Typography} from "@mui/material";
+import {Alert, Box, Card, CardActionArea, CardContent, Typography, useTheme} from "@mui/material";
+import {checkTemp} from "../utils/errors/checkErrors";
+import ErrorAlert from "./ErrorAlert";
+import {getErrorColor} from "../utils/errors/ErrorUtils";
 
 export default function CardBoxTemperature(){
-
     const history = useHistory();
+    const datas = useContext(STDSDatasContext);
+    const theme = useTheme();
+    const tempErrors = checkTemp(datas.temp1, datas.temp2);
+
     const openPage = () => {
         history.push("/temperature");
     }
@@ -17,28 +23,8 @@ export default function CardBoxTemperature(){
         history.push("/temperature-interieure");
     }
 
-    const datas = useContext(STDSDatasContext);
-
-    function getStateTemp1(temperature: number) {
-        if (temperature > 40) {
-            return { color: "#ED1C24", message: "Attention, la température ambiante est trop élevée !", alert : 'error'} as { color: string; message: string; alert: 'error' | 'warning' | 'info' | 'success'}
-        } else if (temperature > 30) {
-            return { color: "#FFC20A", message: "Attention, la température ambiante est legèrement trop élevée !", alert : 'warning'} as { color: string; message: string; alert: 'error' | 'warning' | 'info' | 'success'}
-        } else {
-            return { color: "#22B04B", message: "La température ambiante est bonne !", alert : 'success'} as { color: string; message: string; alert: 'error' | 'warning' | 'info' | 'success'}
-        }
-    }
-
-    function getStateTemp2(temperature: number) {
-        if (temperature > 10) {
-            return { color: "#ED1C24", message: "Attention, la bière est trop chaude !", alert : 'error'} as { color: string; message: string; alert: 'error' | 'warning' | 'info' | 'success'}
-        } else if (temperature >= 7) {
-            return { color: "#FFC20A", message: "Attention, la bière est légèrement trop chaude !", alert : 'warning'} as { color: string; message: string; alert: 'error' | 'warning' | 'info' | 'success'}
-        } else if (temperature >= -2) {
-            return { color: "#22B04B", message: "La bière est à bonne température !", alert : 'success'} as { color: string; message: string; alert: 'error' | 'warning' | 'info' | 'success'}
-        } else {
-            return { color: "#ED1C24", message: "Attention, la bière est trop froide !", alert : 'error' } as { color: string; message: string; alert: 'error' | 'warning' | 'info' | 'success'}
-        }
+    const getColor = (errorLevel: 0 | 1 | 2) => {
+        return getErrorColor(errorLevel, theme);
     }
 
     return (
@@ -51,10 +37,10 @@ export default function CardBoxTemperature(){
                     <CardActionArea onClick={openPage} sx={{height: '100%'}}>
                         <CardContent sx={{display: "flex", alignItems: "center", height: "100%", padding : 0}}>
                             <Box sx={{marginLeft: '15%', textAlign:'center'}}>
-                                <HalfDonut value={(datas.temp2+10)*2} width={100} valueColor={getStateTemp2(datas.temp2).color}/>
+                                <HalfDonut value={(datas.temp2+10)*2} width={100} valueColor={getColor(tempErrors.temp2.errorLevel)}/>
                                 <Typography>Fût <br/>{datas.temp2}C°</Typography>
                             </Box>
-                            <CircleIcon sx={{ color: getStateTemp2(datas.temp2).color, position: "absolute", right: 5}} />
+                            <CircleIcon sx={{ color: getColor(tempErrors.temp2.errorLevel), position: "absolute", right: 5}} />
                         </CardContent>
                     </CardActionArea>
                 </Card>
@@ -63,18 +49,22 @@ export default function CardBoxTemperature(){
                     <CardActionArea onClick={openPageAmbiante} sx={{height: '100%'}}>
                         <CardContent sx={{display: "flex", alignItems: "center", height: "100%", padding : 0}}>
                             <Box sx={{marginLeft: '15%'}}>
-                                <HalfDonut value={(datas.temp1+10)*2} width={100} valueColor={getStateTemp1(datas.temp1).color}/>
+                                <HalfDonut value={(datas.temp1+10)*2} width={100} valueColor={getColor(tempErrors.temp1.errorLevel)}/>
                                 <Typography>Ambiante <br/>{datas.temp1}C°</Typography>
                             </Box>
 
-                            <CircleIcon sx={{ color: getStateTemp1(datas.temp1).color, position: "absolute", right: 5}} />
+                            <CircleIcon sx={{ color: getColor(tempErrors.temp1.errorLevel), position: "absolute", right: 5}} />
 
                         </CardContent>
                     </CardActionArea>
                 </Card>
             </Box>
-            <Alert severity={getStateTemp2(datas.temp2).alert} sx={{marginTop:2}}>{getStateTemp2(datas.temp2).message}</Alert>
-            <Alert severity={getStateTemp1(datas.temp1).alert} sx={{marginTop:2}}>{getStateTemp1(datas.temp1).message}</Alert>
+
+            <ErrorAlert error={tempErrors.temp2} />
+            {tempErrors.temp1.errorLevel > 0 && tempErrors.temp2.errorLevel === 0 ?
+                <Alert severity={tempErrors.temp1.errorLevel === 1 ? 'warning' : 'error'} sx={{marginTop:2}}>{tempErrors.temp1.message}</Alert>
+                : null
+            }
         </Box>
     );
 }
