@@ -27,6 +27,38 @@ export default function CardBoxPageCO2() {
     useEffect(() => {
         setShowImage(true)
     }, [])
+
+    let imageVal
+
+    switch (true) {
+        case (datas.co2 <= 200):
+            imageVal = "12.5.png"
+            break;
+        case (datas.co2 <= 300 && datas.co2 > 200):
+            imageVal = "25.png"
+            break;
+        case (datas.co2 <= 400 && datas.co2 > 300):
+            imageVal = "37.5.png"
+            break;
+        case (datas.co2 <= 500 && datas.co2 > 400):
+            imageVal = "50.png";
+            break;
+        case (datas.co2 <= 600 && datas.co2 > 500):
+            imageVal ="62.5.png";
+            break;
+        case (datas.co2 <= 700 && datas.co2 > 600):
+            imageVal = "75.png";
+            break;
+        case (datas.co2 <= 800 && datas.co2 > 700):
+                imageVal = "87.5.png";
+                break;
+        case (datas.co2 > 800):
+            imageVal = "100.png";
+            break;
+        default:
+            imageVal = "planete-terre.png"
+            break;
+    }   
     return (
 
         <Box sx={{ display: "flex", justifyContent: "center", marginTop: 5}}>
@@ -52,9 +84,9 @@ export default function CardBoxPageCO2() {
                     <Grow in={showImage} timeout={1000} style={{ transformOrigin: '10% 10%' }}>
                         <Box sx={{ display: "flex", alignItems: "center", height: 250, width: 250, marginBottom:0.5 ,justifyContent: "center"}}>
 
-                            <Box sx={{display: "flex" ,height:80, width:80 ,alignItems: "center"}}>
+                            <Box sx={{display: "flex" ,height:100, width:100 ,alignItems: "center"}}>
 
-                                <img src={require('../images/planete-terre.png')} alt={""} />
+                                <img src={require('../images/' +imageVal )} alt={""} />
 
                             </Box>
 
