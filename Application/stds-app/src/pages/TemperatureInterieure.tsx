@@ -1,12 +1,12 @@
 import {IonContent, IonPage, IonRefresher, IonRefresherContent} from "@ionic/react";
 import Header from "./Header";
 import * as React from "react";
-import CardBoxTemperature from "../components/CardBoxTemperature";
 import BarChart from "../components/BarChart";
 import InformationsEtat from "../components/InformationsEtat";
 import STDSDatasContext from "../utils/mqtt/STDSDatasContext";
+import CardBoxTemperature from "../components/CardBoxTemperature";
 
-export default function TemperatureInterieure() {
+function TemperatureInterieure() {
     const {temp1, temp2} = React.useContext(STDSDatasContext);
 
     const refresh = (e: CustomEvent) => {
@@ -17,8 +17,8 @@ export default function TemperatureInterieure() {
 
     return (
         <IonPage id="temperature-interieure">
-            <Header page={"G" +
-                "temperature-interieure"} dimensionsTitre={130}/>
+            <Header page={
+                "Température ambiante"} dimensionsTitre={205}/>
             <IonContent fullscreen>
                 <IonRefresher slot="fixed" onIonRefresh={refresh}>
                     <IonRefresherContent></IonRefresherContent>
@@ -28,7 +28,10 @@ export default function TemperatureInterieure() {
 
                 <InformationsEtat mesure={"Température"} nombre={temp1} nombre2={temp2}/>
 
+                <CardBoxTemperature title={"Extérieure"}/>
             </IonContent>
         </IonPage>
     );
 }
+
+export default TemperatureInterieure;

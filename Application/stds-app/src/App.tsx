@@ -42,7 +42,7 @@ import ColorModeProvider from "./utils/colormode/ColorModeProvider";
 import ServerAddressProvider from "./utils/serveraddress/ServerAddressProvider";
 import { Co2 } from '@mui/icons-material';
 import CO2 from './pages/CO2';
-import TemperatureInterieure from "./pages/Temperature";
+import TemperatureInterieure from "./pages/TemperatureInterieure";
 
 setupIonicReact();
 
