@@ -1,0 +1,227 @@
+= BACKLOG - SPRINT 2
+:icons: font
+:experimental:
+:toc:
+
+== Introduction
+
+=== 1. Définition
+
+Une user story est une description de ce que l’utilisateur souhaite faire. Elle est écrite de manière que l'utilisateur puisse la comprendre et la valider. Enfin, elle est rédigée dans un format simple et court.
+
+=== 2. Objectif
+
+L’objectif de ce document est de présenter les user stories auxquelles nous devrons répondre au long de ces deux semaines de projet. Nous avons choisi pour la présentation de les numéroter et de définir leurs priorités dans le tableau qui suit.
+
+=== 3. Tableau de priorité des users stories et sprint correspondant
+
+==== US prioritaires
+
+[options="header,footer"]
+|===
+| User Story | Sprint
+|    1     | 2
+|    2     | 2
+|    3     | 2
+|    4     | 2
+|    5     | 2
+|===
+
+==== US de haute importance
+
+[options="header,footer"]
+|===
+| User Story | Sprint
+|    6     | 2
+|    7     | 2
+|===
+
+==== US de moyenne importance
+
+
+== I. User Stories
+
+=== 1 - Consulter le diagnostic de la tireuse à bière
+
+==== 1.1 Description
+
+**En tant que** utilisateur   +
+**Je souhaite** avoir un diagnostic de la tireuse à bière  +
+**Afin de** savoir si la tireuse est en panne
+
+==== 1.2 Critères d’acceptation :
+
+- Le diagnostic de la tireuse est affiché sur l’onglet "Maintenance" de l'application
+- Dans un encadré, un texte présente le diagnostic de la tireuse
+- Un cercle rouge est affiché sur l’application si la tireuse est en panne
+- Un cercle vert est affiché sur l’application si la tireuse n’est pas en panne
+
+==== 1.3 Tâches correspondantes :
+
+- Créer un onglet "maintenance" dans l'application
+- Récupérer le diagnostic de la tireuse à bière
+- Créer un encadré pour afficher le diagnostic de la tireuse
+- Gérer l'affichage des cercles en fonction du diagnostic de la tireuse
+- Gérer l'affichage du message en fonction du diagnostic de la tireuse
+
+==== 1.4 Contraintes :
+
+- Le diagnostic de la tireuse doit être récupéré via le flux MQTT
+- Une fonction doit être créée pour gérer l'affichage des cercles en fonction du diagnostic de la tireuse.
+- Le websocket n'est pas disponible nativement sur Android, il faut donc utiliser une librairie tierce.
+- Le websocket n'est pas implémenté sur le node-red du client.
+- L'affichage doit être dynamique et se mettre à jour automatiquement.
+
+=== 2. Consulter les différents fichiers PDF
+
+==== 2.1 Description
+
+**En tant que** utilisateur   +
+**Je souhaite** avoir accès aux différents fichiers PDF  +
+**Afin de** pouvoir les consulter, que ce soit les notices d’utilisation, les notices de montage ou les notices de maintenance
+
+==== 2.2 Critères d’acceptation :
+
+- Les fichiers PDF sont affichés sur l’onglet "Maintenance" de l'application
+- Les fichiers PDF sont intégrés dans l'application
+- Les fichiers PDF sont accessibles en ligne
+
+==== 2.3 Tâches correspondantes :
+
+- Créer un onglet "maintenance" dans l'application
+- Récupérer les fichiers PDF
+- Afficher les fichiers PDF dans l'application
+
+==== 2.4 Contraintes :
+
+- Les fichiers PDF doivent être adaptées à l'application mobile et Android
+
+=== 3. Consulter l'historique
+
+==== 3.1 Description
+
+**En tant que** utilisateur   +
+**Je souhaite** avoir accès à l'historique des différentes mesures envoyées par les capteurs  +
+**Afin de** pouvoir consulter les données de la tireuse à bière et les données environnementales
+
+==== 3.2 Critères d’acceptation :
+
+- L'historique est affiché sur chaque page ayant un rapport avec une mesure
+- L'historique est affiché sous forme de diagramme en bâtons
+- Il doit être possible de consulter l'historique sur la journée et le jour précédent
+
+==== 3.3 Tâches correspondantes :
+
+- Récupérer l'historique des mesures
+- Afficher l'historique des mesures sous forme de diagramme en bâtons
+- Gérer l'affichage de l'historique sur la journée et le jour précédent
+- Récupérer les données via la base de données influxDB
+
+==== 3.4 Contraintes :
+
+- L'historique doit être récupéré via la base de données influxDB
+- L'historique doit s'adapter aux thèmes de l'application
+
+=== 4. Définir les paramètres de l'application
+
+==== 4.1 Description
+
+**En tant que** utilisateur   +
+**Je souhaite** pouvoir définir les paramètres de l'application  +
+**Afin de** pouvoir choisir améliorer mon expérience utilisateur
+
+==== 4.2 Critères d’acceptation :
+
+- Les paramètres de l'application sont affichés sur l'onglet "Paramètres" de l'application
+- Il doit être possible de choisir le thème de l'application
+- Il doit être possible de choisir l'adresse IP de la base de données influxDB
+
+==== 4.3 Tâches correspondantes :
+
+- Créer un onglet "paramètres" dans l'application
+- Créer un encadré pour afficher les paramètres de l'application
+- Gérer l'affichage des paramètres de l'application
+
+==== 4.4 Contraintes :
+
+- Les paramètres de l'application doivent être sauvegardés dans un fichier de configuration
+
+=== 5. Gestion du diagnostic de la tireuse à bière
+
+==== 5.1 Description
+
+**En tant que** utilisateur   +
+**Je souhaite** pouvoir gérer le diagnostic de la tireuse à bière  +
+**Afin de** pouvoir la réparer
+
+==== 5.2 Critères d’acceptation :
+
+- Il doit être possible de consulter le diagnostic de la tireuse à bière
+- Un texte doit être affiché pour donner un aperçu du diagnostic de la tireuse à bière
+
+==== 5.3 Tâches correspondantes :
+
+- Récupérer le diagnostic de la tireuse à bière
+- Afficher le diagnostic de la tireuse à bière
+
+==== 5.4 Contraintes :
+
+- Le diagnostic de la tireuse à bière doit être récupéré via le flux MQTT
+
+=== 6. Consultation de la température ambiante
+
+==== 6.1 Description
+
+**En tant que** utilisateur   +
+**Je souhaite** pouvoir consulter la température ambiante  +
+**Afin de** pouvoir savoir si la température est idéale pour la bière
+
+==== 6.2 Critères d’acceptation :
+
+- La température ambiante est affichée sur l'onglet "Température" de l'application
+- La température ambiante dispose d'un historique et d'un encadré pour afficher la température ambiante actuelle
+
+==== 6.3 Tâches correspondantes :
+
+- Récupérer la température ambiante
+- Afficher la température ambiante
+- Afficher l'historique de la température ambiante
+
+==== 6.4 Contraintes :
+
+- La température ambiante doit être récupérée via la base de données influxDB
+
+=== 7. Consultation de la quantité de CO2 dans l'air
+
+==== 7.1 Description
+
+**En tant que** utilisateur   +
+**Je souhaite** pouvoir consulter la quantité de CO2 dans l'air  +
+**Afin de** pouvoir savoir si la quantité de CO2 est idéale pour la bière
+
+==== 7.2 Critères d’acceptation :
+
+- La quantité de CO2 dans l'air est affichée sur l'onglet "CO2" de l'application
+- La quantité de CO2 dans l'air dispose d'un historique et d'un encadré pour afficher la quantité de CO2 dans l'air actuelle
+
+==== 7.3 Tâches correspondantes :
+
+- Récupérer la quantité de CO2 dans l'air
+- Afficher la quantité de CO2 dans l'air
+- Afficher l'historique de la quantité de CO2 dans l'air
+
+==== 7.4 Contraintes :
+
+- La quantité de CO2 dans l'air doit être récupérée via la base de données influxDB
+
+
+
+
+
+
+
+
+
+
+
+
