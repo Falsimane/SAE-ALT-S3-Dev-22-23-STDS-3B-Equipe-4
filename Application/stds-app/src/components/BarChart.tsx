@@ -19,10 +19,12 @@ export default function BarChart(props: { measurement: string, labelX: string, l
             let labels = Array.from(value.keys());
             setLabels(labels);
             setData(Array.from(value.values()));
+        }).catch(() => {
+            setLabels([])
+            setData({})
         });
     };
 
-    /* launch fetchData of today just one time */
 
 
     React.useEffect(() => {
@@ -40,18 +42,28 @@ export default function BarChart(props: { measurement: string, labelX: string, l
             let labels = Array.from(value.keys());
             setLabels(labels);
             setData(Array.from(value.values()));
+        }).catch(() => {
+            setLabels([])
+            setData({})
         });
     }
 
     const [checked, setChecked] = React.useState(false);
+    const [isSelectHier, setIsSelectHier] = React.useState(false);
+    const [isSelectToday, setIsSelectToday] = React.useState(false);
+
 
     const handleChangeToday = (event: React.ChangeEvent<HTMLInputElement>) => {
         setChecked(event.target.checked);
+        setIsSelectToday(true);
+        setIsSelectHier(false);
         fetchDataToday();
     }
 
     const handleChangeYesterday = (event: React.ChangeEvent<HTMLInputElement>) => {
         setChecked(event.target.checked);
+        setIsSelectHier(true)
+        setIsSelectToday(false);
         fetchDataYesterday();
     }
 
@@ -122,8 +134,9 @@ export default function BarChart(props: { measurement: string, labelX: string, l
         <>
             <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#ffffff'}}>
                 <Refresh title={'Rafraîchir'} color={'success'}/>
-                <HierButton color={'warning'} onChange={handleChangeYesterday}/>
-                <TodayButton color={'warning'} onChange={handleChangeToday}/>
+
+                <HierButton color={'dark'} onChange={handleChangeYesterday} selected={isSelectHier}/>
+                <TodayButton color={'dark'} onChange={handleChangeToday} selected={isSelectToday}/>
             </Box>
 
             <Box sx={{paddingRight: 2, paddingLeft: 2, backgroundColor: '#ffffff'}}>
