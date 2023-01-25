@@ -93,7 +93,7 @@ export default function CardBoxPuissance(){
 
                                 <Box sx={{display: "flex"}}>
 
-                                    <Typography sx={{fontWeight:"bold", fontSize:30 , height:50, width:100}}>
+                                    <Typography sx={{fontWeight:"bold", fontSize:30 , height:50, width:120}}>
                                         {valPuissance} W
                                     </Typography>
 
