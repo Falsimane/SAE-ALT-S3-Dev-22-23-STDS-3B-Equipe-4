@@ -4,31 +4,50 @@ import Card from "@mui/material/Card";
 import CardActionArea from "@mui/material/CardActionArea";
 import CardContent from "@mui/material/CardContent";
 import * as React from "react";
+import HalfDonut from "./HalfDonut";
+import CircleIcon from "@mui/icons-material/Circle";
+import {useHistory} from "react-router";
+import {useContext} from "react";
+import STDSDatasContext from "../utils/mqtt/STDSDatasContext";
 
 export default function CardBoxTemperature(props: {title: string}){
 
+    const history = useHistory();
+
+    const datas = useContext(STDSDatasContext);
+
+    function getStateTemp1(temperature: number) {
+        if (temperature > 40) {
+            return { color: "#ED1C24", message: "Attention, la température ambiante est trop élevée !", alert : 'error'} as { color: string; message: string; alert: 'error' | 'warning' | 'info' | 'success'}
+        } else if (temperature > 30) {
+            return { color: "#FFC20A", message: "Attention, la température ambiante est legèrement trop élevée !", alert : 'warning'} as { color: string; message: string; alert: 'error' | 'warning' | 'info' | 'success'}
+        } else {
+            return { color: "#22B04B", message: "La température ambiante est bonne !", alert : 'success'} as { color: string; message: string; alert: 'error' | 'warning' | 'info' | 'success'}
+        }
+    }
+
+    function getStateTemp2(temperature: number) {
+        if (temperature > 10) {
+            return { color: "#ED1C24", message: "Attention, la bière est trop chaude !", alert : 'error'} as { color: string; message: string; alert: 'error' | 'warning' | 'info' | 'success'}
+        } else if (temperature >= 7) {
+            return { color: "#FFC20A", message: "Attention, la bière est légèrement trop chaude !", alert : 'warning'} as { color: string; message: string; alert: 'error' | 'warning' | 'info' | 'success'}
+        } else if (temperature >= -2) {
+            return { color: "#22B04B", message: "La bière est à bonne température !", alert : 'success'} as { color: string; message: string; alert: 'error' | 'warning' | 'info' | 'success'}
+        } else {
+            return { color: "#ED1C24", message: "Attention, la bière est trop froide !", alert : 'error' } as { color: string; message: string; alert: 'error' | 'warning' | 'info' | 'success'}
+        }
+    }
+
     return (
         <Box sx={{ display: "flex", justifyContent: "center", marginTop: 5 }}>
-            <Box sx={{ width: "90%" }}>
-                <Typography
-                    sx={{
-                        textAlign: "left",
-                        fontWeight: "bold",
-                        fontSize: 20,
-                        marginBottom: 1
-                    }}>
-                
-                </Typography>
-                
-                <Card sx={{ backgroundColor: "#E6E6E6", height: 120 }}>
-                    <CardActionArea sx={{height: '100%'}}>
-                        <CardContent>
-
+                <Card sx={{ backgroundColor: "#E6E6E6", width: "90%", height: 120 }}>
+                        <CardContent sx={{display: "flex", justifyContent: 'space-around', height: "100%", padding : 0}}>
+                            <HalfDonut value={(datas.temp2+10)*2} width={100} valueColor={getStateTemp2(datas.temp2).color}/>
+                            <Typography>Fût <br/>{datas.temp2}C°</Typography>
+                            <CircleIcon sx={{ color: getStateTemp2(datas.temp2).color, }} />
                         </CardContent>
-                    </CardActionArea>
                 </Card>
 
-            </Box>
         </Box>
     );
 }
