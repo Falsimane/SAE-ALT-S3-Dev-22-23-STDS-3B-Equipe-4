@@ -90,13 +90,9 @@ export default function InformationsEtat(props: { mesure:string, nombre: number,
                 </DialogTitle>
                 <DialogContent>
                     <DialogContent sx={{}}>
-                        <Box sx={{display: "flex", marginBottom: 1}}>
-                            <CircleIcon sx={{ color: "#22B04B", marginRight: 2}} fontSize = "small"/>
-                            <Typography sx={{fontWeight: "bold"}}>{msgVert}
-                            </Typography>
-                        </Box>
-                        <Box sx={{display: "flex", marginBottom: 1}}><CircleIcon sx={{ color: "#F49229", marginRight: 2}} fontSize = "small"/><Typography sx={{fontWeight: "bold"}}>{msgOrange}</Typography></Box>
-                        <Box sx={{display: "flex", marginBottom: 1}}><CircleIcon sx={{ color: "#ED1C24", marginRight: 2}} fontSize = "small"/><Typography sx={{fontWeight: "bold"}}>{msgRouge}</Typography></Box>
+                        <Box sx={{display: "flex", marginBottom: 1}}><CircleIcon sx={{ color: "#22B04B", marginRight: 2}} fontSize = "small"/><Typography sx={{fontWeight: "bold", fontSize: 13}}>{msgVert}</Typography></Box>
+                        <Box sx={{display: "flex", marginBottom: 1}}><CircleIcon sx={{ color: "#F49229", marginRight: 2}} fontSize = "small"/><Typography sx={{fontWeight: "bold", fontSize: 13}}>{msgOrange}</Typography></Box>
+                        <Box sx={{display: "flex", marginBottom: 1}}><CircleIcon sx={{ color: "#ED1C24", marginRight: 2}} fontSize = "small"/><Typography sx={{fontWeight: "bold", fontSize: 13}}>{msgRouge}</Typography></Box>
                     </DialogContent>
                 </DialogContent>
             </Dialog>
