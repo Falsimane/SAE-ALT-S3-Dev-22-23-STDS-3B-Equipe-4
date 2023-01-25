@@ -10,7 +10,7 @@ import {useHistory} from "react-router";
 import {useContext} from "react";
 import STDSDatasContext from "../utils/mqtt/STDSDatasContext";
 
-export default function CardBoxTemperature(props: {title: string}){
+export default function CardBoxTemperature(){
 
     const history = useHistory();
 
@@ -39,15 +39,29 @@ export default function CardBoxTemperature(props: {title: string}){
     }
 
     return (
-        <Box sx={{ display: "flex", justifyContent: "center", marginTop: 5 }}>
+        <Box >
+            <Box sx={{ display:'flex', justifyContent: "center", marginTop: 5 }}>
                 <Card sx={{ backgroundColor: "#E6E6E6", width: "90%", height: 120 }}>
-                        <CardContent sx={{display: "flex", justifyContent: 'space-around', height: "100%", padding : 0}}>
-                            <HalfDonut value={(datas.temp2+10)*2} width={100} valueColor={getStateTemp2(datas.temp2).color}/>
-                            <Typography>Fût <br/>{datas.temp2}C°</Typography>
-                            <CircleIcon sx={{ color: getStateTemp2(datas.temp2).color, }} />
+                        <CardContent sx={{display: "flex", justifyContent: 'space-around',alignItems : 'center', height: "100%", padding : 0}}>
+                            <HalfDonut value={(datas.temp2+10)*2} width={100} height={100} valueColor={getStateTemp2(datas.temp2).color} />
+                            <Box width={70}>
+                                <Typography textAlign={"center"}>Fût <br/>{datas.temp2}C°</Typography>
+                            </Box>
+                            <CircleIcon sx={{ color: getStateTemp2(datas.temp2).color}} />
                         </CardContent>
                 </Card>
-
+            </Box>
+            <Box sx={{ display:'flex', justifyContent: "center", marginTop: 2 }}>
+                <Card sx={{ backgroundColor: "#E6E6E6", width: "90%",height: 120 }}>
+                        <CardContent sx={{display: "flex", justifyContent: 'space-around',alignItems : 'center', height: "100%", padding : 0}}>
+                            <HalfDonut value={(datas.temp1+10)*2} width={100} height={100} valueColor={getStateTemp1(datas.temp1).color}/>
+                            <Box width={70}>
+                                <Typography textAlign={"center"}>Ambiante <br/>{datas.temp1}C°</Typography>
+                            </Box>
+                            <CircleIcon sx={{ color: getStateTemp1(datas.temp1).color}} />
+                        </CardContent>
+                </Card>
+            </Box>
         </Box>
     );
 }

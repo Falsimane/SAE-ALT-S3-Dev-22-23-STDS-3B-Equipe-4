@@ -27,8 +27,7 @@ export default function Temperature() {
 
                 <InformationsEtat mesure={"Température"} nombre={temp1} nombre2={temp2}/>
 
-                <CardBoxTemperature title={"Intérieure"}/>
-                <CardBoxTemperature title={"Extérieure"}/>
+                <CardBoxTemperature/>
 
             </IonContent>
         </IonPage>
