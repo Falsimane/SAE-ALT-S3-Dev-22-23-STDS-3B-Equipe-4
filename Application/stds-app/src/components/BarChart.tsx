@@ -28,7 +28,7 @@ export default function BarChart(props: { measurement: string, labelX: string, l
 
 
     React.useEffect(() => {
-        fetchDataYesterday();
+        fetchDataToday();
     }, []);
 
     const numberOfHours = () => {
@@ -50,7 +50,7 @@ export default function BarChart(props: { measurement: string, labelX: string, l
 
     const [checked, setChecked] = React.useState(false);
     const [isSelectHier, setIsSelectHier] = React.useState(false);
-    const [isSelectToday, setIsSelectToday] = React.useState(false);
+    const [isSelectToday, setIsSelectToday] = React.useState(true);
 
 
     const handleChangeToday = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -133,7 +133,6 @@ export default function BarChart(props: { measurement: string, labelX: string, l
     return (
         <>
             <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#ffffff'}}>
-                <Refresh title={'Rafraîchir'} color={'success'}/>
                 <HierButton onChange={handleChangeYesterday} selected={isSelectHier}/>
                 <TodayButton onChange={handleChangeToday} selected={isSelectToday}/>
             </Box>
