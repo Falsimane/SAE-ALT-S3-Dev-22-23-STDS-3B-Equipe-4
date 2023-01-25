@@ -6,7 +6,7 @@ export default function HierButton(props: {color:string; onChange: any; selected
     if (props.selected) {
             return (
             <>
-                <IonButton onClick={props.onChange} shape="round" size="small" color={props.color} fill="solid">
+                <IonButton onClick={props.onChange} shape="round" size="small" color='warning' fill="solid">
                     Hier
                 </IonButton>
             </>
@@ -14,7 +14,7 @@ export default function HierButton(props: {color:string; onChange: any; selected
 
     return (
         <>
-            <IonButton onClick={props.onChange} shape="round" size="small" color={props.color} fill="clear">
+            <IonButton onClick={props.onChange} shape="round" size="small" color='warning' fill="clear">
                 Hier
             </IonButton>
         </>

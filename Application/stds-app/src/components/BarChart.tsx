@@ -136,7 +136,7 @@ export default function BarChart(props: { measurement: string, labelX: string, l
                 <Refresh title={'Rafraîchir'} color={'success'}/>
 
                 <HierButton color={'dark'} onChange={handleChangeYesterday} selected={isSelectHier}/>
-                <TodayButton color={'dark'} onChange={handleChangeToday} selected={isSelectToday}/>
+                <TodayButton onChange={handleChangeToday} selected={isSelectToday}/>
             </Box>
 
             <Box sx={{paddingRight: 2, paddingLeft: 2, backgroundColor: '#ffffff'}}>
