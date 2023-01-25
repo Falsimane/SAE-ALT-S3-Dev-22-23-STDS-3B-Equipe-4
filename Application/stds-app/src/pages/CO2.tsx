@@ -20,7 +20,37 @@ export default function CO2() {
     const datas = useContext(STDSDatasContext);
     const valCO2 = datas.co2;
    
-   
+    let imageVal
+
+    switch (true) {
+        case (valCO2 <= 200):
+            imageVal = "12.5.png"
+            break;
+        case (valCO2 <= 300 && valCO2> 200):
+            imageVal = "25.png"
+            break;
+        case (valCO2 <= 400 && valCO2 > 300):
+            imageVal = "37.5.png"
+            break;
+        case (valCO2<= 500 && valCO2 > 400):
+            imageVal = "50.png";
+            break;
+        case (valCO2 <= 600 && valCO2 > 500):
+            imageVal ="62.5.png";
+            break;
+        case (valCO2 <= 700 && valCO2 > 600):
+            imageVal = "75.png";
+            break;
+        case (valCO2 <= 800 && valCO2 > 700):
+                imageVal = "87.5.png";
+                break;
+        case (valCO2 > 800):
+            imageVal = "100.png";
+            break;
+        default:
+            imageVal = "planete-terre.png"
+            break;
+    }   
 
     
 
@@ -39,7 +69,7 @@ export default function CO2() {
                     <Box sx={{ height:"40%", width: "80%", backgroundColor:"#E6E6E6", margin:"10%", borderRadius:3, marginTop: "15%",  display:"flex",  justifyContent:"center", alignItems:"center"}}>
                         <Box sx={{display: "flex" ,height:80, width:150 ,alignItems: "center"}}>
 
-                            <img src={require('../images/planete-terre.png')} alt={""}/>
+                            <img src={require('../images/' +imageVal)} alt={""}/>
                         </Box>
 
                         <Box sx={{display: "flex", marginLeft:4}}>
