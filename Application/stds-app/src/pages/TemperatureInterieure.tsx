@@ -28,7 +28,7 @@ function TemperatureInterieure() {
 
                 <InformationsEtat mesure={"Température"} nombre={temp1} nombre2={temp2}/>
 
-                <CardBoxTemperature title={"Extérieure"}/>
+                <CardBoxTemperature/>
             </IonContent>
         </IonPage>
     );
