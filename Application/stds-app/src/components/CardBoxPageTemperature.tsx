@@ -62,7 +62,7 @@ export default function CardBoxTemperature(){
 
             <ErrorAlert error={tempErrors.temp2} />
             {tempErrors.temp1.errorLevel > 0 && tempErrors.temp2.errorLevel === 0 ?
-                <Alert severity={tempErrors.temp1.errorLevel === 1 ? 'warning' : 'error'} sx={{marginTop:2}}>{tempErrors.temp1.message}</Alert>
+                <Alert severity={tempErrors.temp1.errorLevel === 1 ? 'warning' : 'error'} sx={{marginTop:2}} variant={"filled"}>{tempErrors.temp1.message}</Alert>
                 : null
             }
         </Box>

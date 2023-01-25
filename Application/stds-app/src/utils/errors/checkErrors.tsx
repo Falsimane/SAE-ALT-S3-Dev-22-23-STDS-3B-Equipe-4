@@ -9,14 +9,16 @@ const checkTemp = (temp1: number, temp2: number) => {
 
     if (temp1 < -120) {
         errors.temp1.errorLevel = 2;
-        errors.temp1.message = "Capteur de température ambiant déconnecté !";
+        errors.temp1.message = "Capteur de température ambiante déconnecté !";
         errors.temp1.pdf = "";
-        return errors;
     }
     if (temp2 < -120) {
         errors.temp2.errorLevel = 2;
         errors.temp2.message = "Capteur de température déconnecté !";
         errors.temp2.pdf = "";
+    }
+
+    if (errors.temp1.errorLevel === 2 || errors.temp2.errorLevel === 2) {
         return errors;
     }
 
