@@ -24,7 +24,7 @@ const Autodiagnostic = () => {
 
     return (
         <IonPage id="puissance-page">
-            <Header page={"Autodiagnostic"} dimensionsTitre={110}/>
+            <Header page={"Autodiagnostic"} dimensionsTitre={125}/>
             <IonContent fullscreen>
                 <Box sx={{width: '90%', margin: 'auto'}}>
                     <Typography sx={{textAlign: "left",fontWeight: "bold",fontSize: 20,marginBottom: 1}}>
