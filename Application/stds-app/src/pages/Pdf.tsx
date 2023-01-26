@@ -4,7 +4,6 @@ import {useParams} from "react-router-dom";
 import '../theme/Pdf.css';
 import { MobilePDFReader } from 'react-read-pdf';
 import Header from "./Header";
-import Box from "@mui/material/Box";
 
 export default function Pdf() {
 
@@ -59,7 +58,6 @@ export default function Pdf() {
         <IonPage id="pdf">
             <Header page={titre} dimensionsTitre={230}/>
             <IonContent fullscreen>
-                <Box sx={{height: 200}}></Box>
                 <div style={{overflow:'scroll'}}>
                     <MobilePDFReader url={process.env.PUBLIC_URL + pdf}/>
                 </div>

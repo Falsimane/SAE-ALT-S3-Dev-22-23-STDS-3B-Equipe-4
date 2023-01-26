@@ -5,3 +5,8 @@
 .pdfViewer .page {
     margin-top: 50px !important;
 }
+
+.mobile__pdf__container footer {
+    background-color: rgb(255, 190, 118) !important;
+    background-image: none !important;
+}
