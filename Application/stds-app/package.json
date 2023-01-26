@@ -38,6 +38,7 @@
     "react-dom": "^18.2.0",
     "react-pdf": "^6.2.2",
     "react-pdf-js": "^5.1.0",
+    "react-read-pdf": "^2.0.9",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^5.0.0",
