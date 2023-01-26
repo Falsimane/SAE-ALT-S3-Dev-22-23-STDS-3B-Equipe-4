@@ -15,12 +15,6 @@ import { MobilePDFReader } from 'react-read-pdf';
 
 export default function Pdf() {
 
-    const refresh = (e: CustomEvent) => {
-        setTimeout(() => {
-            e.detail.complete();
-        }, 3000);
-    };
-
     const { id } : {id: string} = useParams();
 
     let titre = "";
@@ -71,12 +65,9 @@ export default function Pdf() {
     return (
         <IonPage id="pdf">
             <IonContent fullscreen>
-                <IonRefresher slot="fixed" onIonRefresh={refresh}>
-                    <IonRefresherContent></IonRefresherContent>
-                </IonRefresher>
-                        <div style={{overflow:'scroll',height:600}}>
-                            <MobilePDFReader url="http://localhost:3000/STDS_notice_utilisation.pdf"/>
-                        </div>
+                <div style={{overflow:'scroll',height:600}}>
+                    <MobilePDFReader url={process.env.PUBLIC_URL +  "/STDS_notice_utilisation.pdf"}/>
+                </div>
             </IonContent>
         </IonPage>
     );
