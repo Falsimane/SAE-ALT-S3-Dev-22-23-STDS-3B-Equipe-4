@@ -34,7 +34,7 @@
 
 === 2. Téléchargement
 
-* Télécharger le https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/raw/main/Application/STDS%20App%20-%20APK%20build/app-debug.apk[fichier APK].
+* Télécharger le https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/tree/main/Application/STDS%20App%20-%20build[fichier APK].
 
 === 3. Installation
 
