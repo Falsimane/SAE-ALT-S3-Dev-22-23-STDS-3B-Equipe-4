@@ -13,18 +13,20 @@ import {useContext} from "react";
 import STDSDatasContext from "../utils/mqtt/STDSDatasContext";
 import {useHistory} from "react-router";
 import {useTheme} from "@mui/material";
+import {defaultDataValues} from "../utils/mqtt/STDSDatas";
 export default function Maintenance() {
     const history = useHistory();
     const datas = useContext(STDSDatasContext);
-    const diagnostique = datas.diag2
+    const diagnostic = datas.diag2
     const theme = useTheme();
+    const checkMQTT = datas.diag2 === "MQTT 2 déconnecté" || JSON.stringify(datas) === JSON.stringify(defaultDataValues);
 
     const openPdfDiag = () => {
         history.push("/autodiagnostic");
     }
 
-    const color = diagnostique === "" ? theme.palette.success.light :
-        diagnostique === "MQTT 2 déconnecté" ? theme.palette.error.main : theme.palette.warning.main;
+    const color = checkMQTT ? theme.palette.error.main : diagnostic === "" ?
+        theme.palette.success.light : theme.palette.warning.light;
 
     return (
         <IonContent fullscreen>
@@ -48,8 +50,8 @@ export default function Maintenance() {
 
                                     <Typography color={color} sx={{fontSize: 18, fontWeight: "bold", textAlign:"center", width:"100%"}}>
                                         {
-                                            diagnostique === "" ? "Pas de problème détecté" :
-                                                diagnostique === "MQTT 2 déconnecté" ? "Déconnexion Réseau" :
+                                            checkMQTT ? "Déconnexion Réseau" :
+                                                diagnostic === "" ? "Pas de problème détecté" :
                                                     "Problème(s) détecté(s)"
                                         }
                                     </Typography>
