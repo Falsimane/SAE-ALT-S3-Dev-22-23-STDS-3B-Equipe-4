@@ -39,7 +39,7 @@ N'ayant pas la compétence nécessaire pour concevoir la partie applicative du p
 | 21/01/2023 | User Stories | https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/blob/main/Documentation/UserStories.adoc |
 | 21/01/2023 | Documentation technique | https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/blob/main/Documentation/documentation_technique.adoc |
 | 23/01/2023 | Documentation utilisateur | https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/blob/main/Documentation/documentation_utilisateur.adoc |
-| 25/01/2023 | Cahier de tests | |
+| 25/01/2023 | Cahier de tests | https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/blob/main/Documentation/CahierDeTests.adoc|
 | 25/01/2023 | Sprintboard | https://github.com/users/Falsimane/projects/2/views/1 |
 |===
 
@@ -136,7 +136,9 @@ CR ok
 | Date |  Nom | Lien | Retour
 | 25/01/2023 |  Backlog sprint (avec issues correspondantes) |  https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/blob/main/Documentation/BacklogSprint2.adoc|
 | 25/01/2023 |  Sprintboard |  https://github.com/users/Falsimane/projects/2/views/1|
-| 25/01/2023 |  Cahier de tests |  ?|
+| 25/01/2023 |  Cahier de tests |  https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/blob/main/Documentation/CahierDeTests.adoc|
+| 27/01/2023 |  Documentation technique  | https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/blob/main/Documentation/documentation_technique.adoc|
+| 27/01/2023 |  Documentation utilisateur | https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/blob/main/Documentation/documentation_utilisateur.adoc|
 |===
 
 
