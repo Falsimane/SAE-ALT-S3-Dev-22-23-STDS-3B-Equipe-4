@@ -37,6 +37,7 @@ Pour toutes informations complémentaires, vous pouvez vous référer à la docu
 |====
 
 |====
+|Cas de test 3+|Test-02
 
 >|Cas de test 3+|Test-02
 >|Titre 3+|Accéder à la page pour visualiser la quantité du fût

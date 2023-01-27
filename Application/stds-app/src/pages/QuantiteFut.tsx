@@ -7,6 +7,7 @@ import Divider from '@mui/material/Divider';
 import STDSDatasContext from "../utils/mqtt/STDSDatasContext";
 import {useContext} from "react";
 import InformationsEtat from "../components/InformationsEtat";
+import BarChart from "../components/BarChart";
 
 export default function QuantiteFut() {
     const refresh = (e: CustomEvent) => {
@@ -39,6 +40,8 @@ export default function QuantiteFut() {
                 <IonRefresher slot="fixed" onIonRefresh={refresh}>
                     <IonRefresherContent></IonRefresherContent>
                 </IonRefresher>
+
+                <BarChart measurement={"niveau"} labelX={'Heure'} labelY={'Niveau (L)'} title={'Historique du niveau du fût'}/>
 
                 <InformationsEtat mesure={"Quantité"} nombre={pourcentageQuantite} nombre2={0}/>
 
