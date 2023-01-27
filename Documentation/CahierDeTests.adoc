@@ -1,0 +1,15 @@
+= Cahier de test - Janvier 2023
+:icons: font
+:experimental:
+:toc:
+
+== Introduction
+
+=== 1. Présentation du produit
+
+Le produit que nous allons tester est une application mobile de gestion d'une tireuse à bière connectée. Si vous souhaitez reproduire ces tests, il faudra tout d'abord mettre en place l'architecture de l'application. Pour cela, vous pouvez vous référer à la documentation technique.
+
+=== 2. Prérequis
+
+Pour pouvoir réaliser ces tests, il vous faudra :
+
