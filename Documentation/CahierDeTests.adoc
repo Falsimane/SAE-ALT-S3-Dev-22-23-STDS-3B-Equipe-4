@@ -81,6 +81,20 @@ Pour toutes informations complémentaires, vous pouvez vous référer à la docu
 |====
 
 >|Cas de test 3+|Test-05
+>|Titre 3+|Accéder à la page pour visualiser l'emission de CO2
+>|Objectif 3+| Vérifier qu'il est possible d'accéder à la page pour visualiser l'émission de CO2
+
+4+|
+
+^|ID ^|Action ^|Comportement attendu ^|Résultat
+^|1 ^|Cliquer sur le bouton "CO2" ^|La fenêtre de visualisation de l'émission de CO2 s'affiche. ^|OK
+
+
+|====
+
+|====
+
+>|Cas de test 3+|Test-06
 >|Titre 3+|Accéder à la page de maintenance
 >|Objectif 3+| Vérifier qu'il est possible d'accéder à la page de maintenance
 
@@ -93,7 +107,7 @@ Pour toutes informations complémentaires, vous pouvez vous référer à la docu
 
 |====
 
->|Cas de test 3+|Test-06
+>|Cas de test 3+|Test-07
 >|Titre 3+|Accéder à la page des paramètres
 >|Objectif 3+| Vérifier qu'il est possible d'accéder à la page des paramètres
 
