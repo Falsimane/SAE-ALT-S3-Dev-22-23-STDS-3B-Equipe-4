@@ -169,7 +169,7 @@ Pour toutes informations complémentaires, vous pouvez vous référer à la docu
 4+|
 
 ^|ID ^|Action ^|Comportement attendu ^|Résultat
-^|1 ^|Cliquer sur le bouton "Maintenance curative" ^|La fenêtre de la page de la maintenance curative s'affiche^|OK
-^|2 ^|Cliquer sur un bouton sur la page pour visualiser la gamme ^|La fenêtre de visualisation de la gamme s'affiche^|OK
+^|1 ^|Cliquer sur le bouton "Maintenance curative" ^|La fenêtre de la page de la maintenance curative s'affiche ^|OK
+^|2 ^|Cliquer sur un bouton sur la page pour visualiser la gamme ^|La fenêtre de visualisation de la gamme s'affiche ^|OK
 
 |====
