@@ -31,28 +31,28 @@ export default function CardBoxPageCO2() {
     let imageVal
 
     switch (true) {
-        case (datas.co2 <= 200):
+        case (datas.co2 <= 10):
             imageVal = "12.5.png"
             break;
-        case (datas.co2 <= 300 && datas.co2 > 200):
+        case (datas.co2 <= 15 && datas.co2 > 10):
             imageVal = "25.png"
             break;
-        case (datas.co2 <= 400 && datas.co2 > 300):
+        case (datas.co2 <= 20 && datas.co2 > 15):
             imageVal = "37.5.png"
             break;
-        case (datas.co2 <= 500 && datas.co2 > 400):
+        case (datas.co2 < 30 && datas.co2 > 20):
             imageVal = "50.png";
             break;
-        case (datas.co2 <= 600 && datas.co2 > 500):
+        case (datas.co2 <= 40 && datas.co2 >= 30):
             imageVal ="62.5.png";
             break;
-        case (datas.co2 <= 700 && datas.co2 > 600):
+        case (datas.co2 < 45 && datas.co2 > 40):
             imageVal = "75.png";
             break;
-        case (datas.co2 <= 800 && datas.co2 > 700):
+        case (datas.co2 <= 50 && datas.co2 >= 45):
                 imageVal = "87.5.png";
                 break;
-        case (datas.co2 > 800):
+        case (datas.co2 > 50):
             imageVal = "100.png";
             break;
         default:

@@ -23,28 +23,28 @@ export default function CO2() {
     let imageVal
 
     switch (true) {
-        case (valCO2 <= 200):
+        case (datas.co2 <= 10):
             imageVal = "12.5.png"
             break;
-        case (valCO2 <= 300 && valCO2> 200):
+        case (datas.co2 <= 15 && datas.co2 > 10):
             imageVal = "25.png"
             break;
-        case (valCO2 <= 400 && valCO2 > 300):
+        case (datas.co2 <= 20 && datas.co2 > 15):
             imageVal = "37.5.png"
             break;
-        case (valCO2<= 500 && valCO2 > 400):
+        case (datas.co2 < 30 && datas.co2 > 20):
             imageVal = "50.png";
             break;
-        case (valCO2 <= 600 && valCO2 > 500):
+        case (datas.co2 <= 40 && datas.co2 >= 30):
             imageVal ="62.5.png";
             break;
-        case (valCO2 <= 700 && valCO2 > 600):
+        case (datas.co2 < 45 && datas.co2 > 40):
             imageVal = "75.png";
             break;
-        case (valCO2 <= 800 && valCO2 > 700):
+        case (datas.co2 <= 50 && datas.co2 >= 45):
                 imageVal = "87.5.png";
                 break;
-        case (valCO2 > 800):
+        case (datas.co2 > 50):
             imageVal = "100.png";
             break;
         default:
