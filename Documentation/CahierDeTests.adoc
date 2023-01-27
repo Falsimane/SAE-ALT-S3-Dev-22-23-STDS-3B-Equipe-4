@@ -18,7 +18,7 @@ Pour pouvoir réaliser ces tests, il vous faudra :
 
 |====
 
->|Cas de test 3+|Test-01-01-01
+>|Cas de test 3+|Test-01
 >|Titre 3+|Accéder à la page pour visualiser la puissance
 >|Objectif 3+| Vérifier qu'il est possible d'accéder à la page pour visualiser la puissance
 
@@ -30,3 +30,70 @@ Pour pouvoir réaliser ces tests, il vous faudra :
 
 |====
 
+|====
+
+>|Cas de test 3+|Test-02
+>|Titre 3+|Accéder à la page pour visualiser la quantité du fût
+>|Objectif 3+| Vérifier qu'il est possible d'accéder à la page pour visualiser la quantité du fût
+
+4+|
+
+^|ID ^|Action ^|Comportement attendu ^|Résultat
+^|1 ^|Cliquer sur le bouton "Quantité fût" ^|La fenêtre de visualisation de la quantité du fût s'affiche. ^|OK
+
+
+|====
+
+|====
+
+>|Cas de test 3+|Test-03
+>|Titre 3+|Accéder à la page pour visualiser la température du fût
+>|Objectif 3+| Vérifier qu'il est possible d'accéder à la page pour visualiser la température du fût
+
+4+|
+
+^|ID ^|Action ^|Comportement attendu ^|Résultat
+^|1 ^|Cliquer sur le bouton (gauche) "Températures" ^|La fenêtre de visualisation de la température du fût s'affiche. ^|OK
+
+
+|====
+
+|====
+
+>|Cas de test 3+|Test-04
+>|Titre 3+|Accéder à la page pour visualiser la température ambiante
+>|Objectif 3+| Vérifier qu'il est possible d'accéder à la page pour visualiser la température ambiante
+
+4+|
+
+^|ID ^|Action ^|Comportement attendu ^|Résultat
+^|1 ^|Cliquer sur le bouton (droite) "Températures" ^|La fenêtre de visualisation de la température ambiante s'affiche. ^|OK
+
+
+|====
+
+|====
+
+>|Cas de test 3+|Test-05
+>|Titre 3+|Accéder à la page de maintenance
+>|Objectif 3+| Vérifier qu'il est possible d'accéder à la page de maintenance
+
+4+|
+
+^|ID ^|Action ^|Comportement attendu ^|Résultat
+^|1 ^|Swiper vers la droite ^|La fenêtre de la page de maintenance s'affiche. ^|OK
+
+|====
+
+|====
+
+>|Cas de test 3+|Test-06
+>|Titre 3+|Accéder à la page des paramètres
+>|Objectif 3+| Vérifier qu'il est possible d'accéder à la page des paramètres
+
+4+|
+
+^|ID ^|Action ^|Comportement attendu ^|Résultat
+^|1 ^|Cliquer sur l'engrenage en haut à droite de la page ^|La fenêtre de la page des paramètres s'affiche. ^|OK
+
+|====
