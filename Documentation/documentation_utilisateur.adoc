@@ -23,7 +23,34 @@ _v2.0 - 27/01/2023 - Equipe 4 - SAE ALT S3 Dev 22-23 STDS 3B_
 . Ouvrir le répertoire décompressé dans un terminal.
 . Exécuter la commande `docker build -t node_tireuse .` et attendre la fin du build.
 
-=== 4. Lancement
+=== 4. Changement des identifiants Node-Red
+
+Si vous souhaitez changer les identifiants de connexion à Node-Red, veuillez suivre les étapes suivantes :
+
+* Ouvrir avec un éditeur de texte le fichier `settings.js` présent dans le dossier node_red_data.
+
+* Une fois le fichier ouvert, il vous faut ouvrir un terminal dans le même répertoire et taper cette commande :
+
+[source, bash]
+----
+node -e "console.log(require('bcryptjs').hashSync(process.argv[1], 8));" votre_mot_de_passe`
+----
+
+* Cette commande va vous retourner un hash, il vous suffit de le copier et de le coller dans le fichier `settings.js` à la ligne `n°80` à la place de l'ancien hash.
+
+* Pour l'identifiant, il vous suffit de le modifier à la ligne `n°79`.
+
+* Ensuite, il vous suffit de sauvegarder le fichier et de relancer le backend.
+
+=== 5. Changement des identifiants InfluxDB
+
+Si vous souhaitez changer les identifiants de connexion à InfluxDB, veuillez suivre les étapes suivantes :
+
+* Ouvrir avec un éditeur de texte le fichier `docker-compose.yml` présent dans le dossier décompressé.
+* Modifier les lignes `n°19` et `n°20` pour changer les identifiants de connexion à InfluxDB.
+* Ensuite, il vous suffit de sauvegarder le fichier et de relancer le backend.
+
+=== 6. Lancement
 
 * Exécuter la commande `docker compose up`. 
 
