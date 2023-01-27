@@ -117,3 +117,59 @@ Pour toutes informations complémentaires, vous pouvez vous référer à la docu
 ^|1 ^|Cliquer sur l'engrenage en haut à droite de la page ^|La fenêtre de la page des paramètres s'affiche. ^|OK
 
 |====
+
+=== Fonctionnalités sur la page de maintenance :
+
+|====
+
+>|Cas de test 3+|Test-08
+>|Titre 3+|Visualiser la notice d'utilisation
+>|Objectif 3+| Vérifier qu'il est possible de visualiser la notice d'utilisation
+
+4+|
+
+^|ID ^|Action ^|Comportement attendu ^|Résultat
+^|1 ^|Cliquer sur le bouton "notice d'utilisation" ^|La fenêtre de visualisation de la notice d'utilisation s'affiche^|OK
+
+|====
+
+|====
+
+>|Cas de test 3+|Test-09
+>|Titre 3+|Visualiser le manuel de service
+>|Objectif 3+| Vérifier qu'il est possible de visualiser le manuel de service
+
+4+|
+
+^|ID ^|Action ^|Comportement attendu ^|Résultat
+^|1 ^|Cliquer sur le bouton "manuel de service" ^|La fenêtre de visualisation du manuel de service s'affiche^|OK
+
+|====
+
+|====
+
+>|Cas de test 3+|Test-10
+>|Titre 3+|Visualiser les gammes préventives
+>|Objectif 3+| Vérifier qu'il est possible de visualiser les gammes préventives
+
+4+|
+
+^|ID ^|Action ^|Comportement attendu ^|Résultat
+^|1 ^|Cliquer sur le bouton "Maintenance préventive" ^|La fenêtre de la page de la maintenance préventive s'affiche^|OK
+^|2 ^|Cliquer sur un bouton sur la page pour visualiser la gamme ^|La fenêtre de visualisation de la gamme s'affiche^|OK
+
+|====
+
+|====
+
+>|Cas de test 3+|Test-11
+>|Titre 3+|Visualiser les gammes curatives
+>|Objectif 3+| Vérifier qu'il est possible de visualiser les gammes curatives
+
+4+|
+
+^|ID ^|Action ^|Comportement attendu ^|Résultat
+^|1 ^|Cliquer sur le bouton "Maintenance curative" ^|La fenêtre de la page de la maintenance curative s'affiche^|OK
+^|2 ^|Cliquer sur un bouton sur la page pour visualiser la gamme ^|La fenêtre de visualisation de la gamme s'affiche^|OK
+
+|====
