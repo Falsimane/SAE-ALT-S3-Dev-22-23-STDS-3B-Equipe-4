@@ -13,8 +13,14 @@ Le produit que nous allons tester est une application mobile de gestion d'une ti
 
 Pour pouvoir réaliser ces tests, il vous faudra :
 
-== III. Cas de test :
-=== Fonctionnalités sur la page d'accueil :
+* L'environnement de développement de l'application, ou l'application elle-même installée sur un smartphone Android
+* L'environnement back-end mis en place, en local ou sur un serveur distant.
+
+Pour toutes informations complémentaires, vous pouvez vous référer à la documentation technique disponible sur le dépôt Git.
+
+
+== I. Cas de test :
+=== 1. Fonctionnalités sur la page d'accueil :
 
 |====
 
