@@ -2,7 +2,6 @@ import React, {useContext} from "react";
 import {Chart, registerables} from 'chart.js';
 import {Bar} from "react-chartjs-2";
 import getData from "../utils/db/GetData";
-import Refresh from "./ButtonHistory/RefreshButton";
 import { Box } from "@mui/material";
 import HierButton from "./ButtonHistory/HierSwitchButton";
 import TodayButton from "./ButtonHistory/TodaySwitchButton";
@@ -28,17 +27,9 @@ export default function BarChart(props: { measurement: string, labelX: string, l
         });
     };
 
-
-
     React.useEffect(() => {
         fetchDataToday();
-    }, []);
-
-    const numberOfHours = () => {
-        let date = new Date();
-        let hours = date.getHours();
-        return String(hours) + "h";
-    }
+    });
 
     const fetchDataToday = () => {
         getData(props.measurement, 'today', url).then(value => {
@@ -51,20 +42,17 @@ export default function BarChart(props: { measurement: string, labelX: string, l
         });
     }
 
-    const [checked, setChecked] = React.useState(false);
     const [isSelectHier, setIsSelectHier] = React.useState(false);
     const [isSelectToday, setIsSelectToday] = React.useState(true);
 
 
-    const handleChangeToday = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setChecked(event.target.checked);
+    const handleChangeToday = () => {
         setIsSelectToday(true);
         setIsSelectHier(false);
         fetchDataToday();
     }
 
-    const handleChangeYesterday = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setChecked(event.target.checked);
+    const handleChangeYesterday = () => {
         setIsSelectHier(true)
         setIsSelectToday(false);
         fetchDataYesterday();

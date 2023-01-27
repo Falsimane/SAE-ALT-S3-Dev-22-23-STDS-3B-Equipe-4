@@ -1,18 +1,14 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
-import CardActionArea from "@mui/material/CardActionArea";
 import CardContent from "@mui/material/CardContent";
 import * as React from "react";
 import HalfDonut from "./HalfDonut";
 import CircleIcon from "@mui/icons-material/Circle";
-import {useHistory} from "react-router";
 import {useContext} from "react";
 import STDSDatasContext from "../utils/mqtt/STDSDatasContext";
 
 export default function CardBoxTemperature() {
-
-    const history = useHistory();
 
     const datas = useContext(STDSDatasContext);
 

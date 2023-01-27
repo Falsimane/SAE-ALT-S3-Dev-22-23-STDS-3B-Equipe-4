@@ -51,7 +51,7 @@ const useWebsocket = <T>(path: string, defaultValue: T) => {
         } catch (e) {
             toastError(present);
         }
-    }, [isConnected, path]);
+    }, [isConnected, path, present, serverAddress]);
 
     return val;
 }
