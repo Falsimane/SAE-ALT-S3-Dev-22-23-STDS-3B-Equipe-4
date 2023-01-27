@@ -13,3 +13,20 @@ Le produit que nous allons tester est une application mobile de gestion d'une ti
 
 Pour pouvoir réaliser ces tests, il vous faudra :
 
+== III. Cas de test :
+=== Fonctionnalités sur la page d'accueil :
+
+|====
+
+>|Cas de test 3+|Test-01-01-01
+>|Titre 3+|Accéder à la page pour visualiser la puissance
+>|Objectif 3+| Vérifier qu'il est possible d'accéder à la page pour visualiser la puissance
+
+4+|
+
+^|ID ^|Action ^|Comportement attendu ^|Résultat
+^|1 ^|Cliquer sur le bouton "Puissance" ^|La fenêtre de visualisation de la puissance  s'affiche. ^|OK
+
+
+|====
+
