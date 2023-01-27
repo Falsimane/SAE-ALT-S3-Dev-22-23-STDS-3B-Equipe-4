@@ -3,6 +3,8 @@
 :experimental:
 :toc:
 
+_v2.0 - 27/01/2023 - Equipe 4 - SAE ALT S3 Dev 22-23 STDS 3B_
+
 == I. Installation du backend
 
 === 1. Prérequis
@@ -21,22 +23,51 @@
 . Ouvrir le répertoire décompressé dans un terminal.
 . Exécuter la commande `docker build -t node_tireuse .` et attendre la fin du build.
 
-=== 4. Lancement
+=== 4. Changement des identifiants Node-Red
+
+Si vous souhaitez changer les identifiants de connexion à Node-Red, veuillez suivre les étapes suivantes :
+
+* Ouvrir avec un éditeur de texte le fichier `settings.js` présent dans le dossier node_red_data.
+
+* Une fois le fichier ouvert, il vous faut ouvrir un terminal dans le même répertoire et taper cette commande :
+
+[source, bash]
+----
+node -e "console.log(require('bcryptjs').hashSync(process.argv[1], 8));" votre_mot_de_passe`
+----
+
+* Cette commande va vous retourner un hash, il vous suffit de le copier et de le coller dans le fichier `settings.js` à la ligne `n°80` à la place de l'ancien hash.
+
+* Pour l'identifiant, il vous suffit de le modifier à la ligne `n°79`.
+
+* Ensuite, il vous suffit de sauvegarder le fichier et de relancer le backend.
+
+=== 5. Changement des identifiants InfluxDB
+
+Si vous souhaitez changer les identifiants de connexion à InfluxDB, veuillez suivre les étapes suivantes :
+
+* Ouvrir avec un éditeur de texte le fichier `docker-compose.yml` présent dans le dossier décompressé.
+* Modifier les lignes `n°19` et `n°20` pour changer les identifiants de connexion à InfluxDB.
+* Ensuite, il vous suffit de sauvegarder le fichier et de relancer le backend.
+
+=== 6. Lancement
 
 * Exécuter la commande `docker compose up`. 
 
-== II.A Installation de l'application Android
+== II. Installation de l'application
 
-=== 1. Prérequis
+=== 1. Installation sur la plateforme Android
+
+==== 1.1 Prérequis
 
 * Avoir un téléphone Android, à partir de la version 5.0, capable d'installer des APK (Google PlayStore permet de les installer).
 * Avoir 20 Mo d'espace de stockage libre.
 
-=== 2. Téléchargement
+==== 1.2 Téléchargement
 
 * Télécharger le https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/tree/main/Application/STDS%20App%20-%20build[fichier APK].
 
-=== 3. Installation
+==== 1.3 Installation
 
 * Exécuter le fichier, puis cliquer sur installer, comme ceci :
 
@@ -54,15 +85,15 @@ endif::[]
 
 * Ignorer les éventuels avertissements de sécurité (l'application n'étant pas installée depuis le Google PlayStore, des alertes peuvent apparaître).
 
-=== 4. Lancement
+==== 1.4 Lancement
 
 * L'application se lancera ensuite comme toute application, elle sera également visible dans la liste des applications du téléphone.
 
-== II.B Installation de l'application IOS
+=== 2. Installation de l'application IOS
 
 Malheureusement, la politique d'Apple vis-à-vis des applications non publiées sur l'AppStore ne nous permet pas de fournir une application au format .ipa comme, nous le pouvons avec la version Android .apk. Il faudra potentiellement envisager l'achat d'une licence développeur pour publier l'application sur l'AppStore.
 
-== III. Utilisation de l'application
+== IV. Utilisation de l'application
 
 === 1. Premier lancement
 

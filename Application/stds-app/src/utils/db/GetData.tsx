@@ -1,8 +1,11 @@
 import {InfluxDB} from '@influxdata/influxdb-client'
 import React from "react";
 
-const getData = (_measurement: any, _choiceDay: string) => {
-    const url = 'http://localhost:8086';
+const getData = (_measurement: any, _choiceDay: string, _url:any) => {
+
+    const url = _url;
+    //const url = 'http://localhost:8086';
+
     const token = 'EBE859CD-7EC2-438A-8185-C5856E591C56';
 
     const client = new InfluxDB({url, token})

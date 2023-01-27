@@ -3,6 +3,8 @@
 :experimental:
 :toc:
 
+_v2.0 - 27/01/2023 - Equipe 4 - SAE ALT S3 Dev 22-23 STDS 3B_
+
 == I. Présentation de l'application et des technologies
 
 === 1. Technologies du Backend

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import {Chart, registerables} from 'chart.js';
 import {Bar} from "react-chartjs-2";
 import getData from "../utils/db/GetData";
@@ -6,16 +6,19 @@ import Refresh from "./ButtonHistory/RefreshButton";
 import { Box } from "@mui/material";
 import HierButton from "./ButtonHistory/HierSwitchButton";
 import TodayButton from "./ButtonHistory/TodaySwitchButton";
+import ServerAddressContext from "../utils/serveraddress/ServerAddressContext";
 
 Chart.register(...registerables);
 
 export default function BarChart(props: { measurement: string, labelX: string, labelY: string, title: string }) {
 
+    const url = "http://" +useContext(ServerAddressContext).serverAddress + ":8086";
+
     let [dataSet, setData] = React.useState({});
     let [labels, setLabels] = React.useState<String[]>([]);
 
     const fetchDataYesterday = () => {
-        getData(props.measurement, "yesterday").then(value => {
+        getData(props.measurement, "yesterday", url).then(value => {
             let labels = Array.from(value.keys());
             setLabels(labels);
             setData(Array.from(value.values()));
@@ -38,7 +41,7 @@ export default function BarChart(props: { measurement: string, labelX: string, l
     }
 
     const fetchDataToday = () => {
-        getData(props.measurement, 'today').then(value => {
+        getData(props.measurement, 'today', url).then(value => {
             let labels = Array.from(value.keys());
             setLabels(labels);
             setData(Array.from(value.values()));
