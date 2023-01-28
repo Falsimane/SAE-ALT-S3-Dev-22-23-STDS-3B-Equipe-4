@@ -29,7 +29,7 @@ export default function BarChart(props: { measurement: string, labelX: string, l
 
     React.useEffect(() => {
         fetchDataToday();
-    });
+    }, []);
 
     const fetchDataToday = () => {
         getData(props.measurement, 'today', url).then(value => {
@@ -42,17 +42,20 @@ export default function BarChart(props: { measurement: string, labelX: string, l
         });
     }
 
+    const [checked, setChecked] = React.useState(false);
     const [isSelectHier, setIsSelectHier] = React.useState(false);
     const [isSelectToday, setIsSelectToday] = React.useState(true);
 
 
-    const handleChangeToday = () => {
+    const handleChangeToday = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setChecked(event.target.checked);
         setIsSelectToday(true);
         setIsSelectHier(false);
         fetchDataToday();
     }
 
-    const handleChangeYesterday = () => {
+    const handleChangeYesterday = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setChecked(event.target.checked);
         setIsSelectHier(true)
         setIsSelectToday(false);
         fetchDataYesterday();
