@@ -11,9 +11,10 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import Box from "@mui/material/Box";
 
-export default function InformationsEtat(props: { mesure:string, nombre: number, nombre2: number}) {
+export default function InformationsEtat(props: { mesure:string, nombre: number}) {
 
     const [open, setOpen] = React.useState(false);
+
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -36,10 +37,25 @@ export default function InformationsEtat(props: { mesure:string, nombre: number,
             msgOrange = "Température moyenne";
             msgRouge = "Température élevée"
 
-            if (props.nombre > 30 || props.nombre2 > 30){
+            if (props.nombre <= -10 || props.nombre > 10){
                 colorDot = "#ED1C24";
                 texteEtat = msgRouge;
-            } else if(props.nombre > 20 || props.nombre2 > 20){
+            } else if(props.nombre > 7 && props.nombre <= 10){
+                colorDot = "#F49229";
+                texteEtat = msgOrange;
+            } else {
+                texteEtat = msgVert;
+            }
+            break;
+        case "Température-ambiante":
+            msgVert = "Température ideale";
+            msgOrange = "Température moyenne";
+            msgRouge = "Température élevée"
+
+            if (props.nombre > 30){
+                colorDot = "#ED1C24";
+                texteEtat = msgRouge;
+            } else if(props.nombre > 2){
                 colorDot = "#F49229";
                 texteEtat = msgOrange;
             } else {

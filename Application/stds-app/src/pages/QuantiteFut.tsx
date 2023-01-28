@@ -43,7 +43,7 @@ export default function QuantiteFut() {
 
                 <BarChart measurement={"niveau"} labelX={'Heure'} labelY={'Niveau (L)'} title={'Historique du niveau du fût'}/>
 
-                <InformationsEtat mesure={"Quantité"} nombre={pourcentageQuantite} nombre2={0}/>
+                <InformationsEtat mesure={"Quantité"} nombre={pourcentageQuantite}/>
 
                 <Box>
                     <Typography sx={{paddingTop: 3, paddingBottom: 3, fontWeight: "bold", textAlign: "center", fontSize: 35}}>

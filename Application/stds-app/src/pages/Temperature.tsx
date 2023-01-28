@@ -7,7 +7,7 @@ import InformationsEtat from "../components/InformationsEtat";
 import STDSDatasContext from "../utils/mqtt/STDSDatasContext";
 
 export default function Temperature() {
-    const {temp1, temp2} = React.useContext(STDSDatasContext);
+    const {temp1} = React.useContext(STDSDatasContext);
 
     const refresh = (e: CustomEvent) => {
         setTimeout(() => {
@@ -25,9 +25,9 @@ export default function Temperature() {
 
                 <BarChart measurement={'T1'}  labelX={'Heure'} labelY={'Température °C'} title={'Historique de la température'}/>
 
-                <InformationsEtat mesure={"Température"} nombre={temp1} nombre2={temp2}/>
+                <InformationsEtat mesure={"Température"} nombre={temp1}/>
 
-                <CardBoxTemperature/>
+                <CardBoxTemperature titre={"Fût"}/>
 
             </IonContent>
         </IonPage>
