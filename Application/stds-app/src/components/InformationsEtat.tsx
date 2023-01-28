@@ -33,8 +33,8 @@ export default function InformationsEtat(props: { mesure:string, nombre: number,
     switch (props.mesure){
         case "Température":
             msgVert = "Température ideale";
-            msgOrange = "Température légèrement élevée";
-            msgRouge = "Température trop élevée"
+            msgOrange = "Température moyenne";
+            msgRouge = "Température élevée"
 
             if (props.nombre > 30 || props.nombre2 > 30){
                 colorDot = "#ED1C24";
