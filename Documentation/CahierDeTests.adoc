@@ -119,7 +119,7 @@ Pour toutes informations complémentaires, vous pouvez vous référer à la docu
 
 |====
 
-=== Fonctionnalités sur la page de maintenance :
+=== 2. Fonctionnalités sur la page de maintenance :
 
 |====
 
