@@ -141,5 +141,10 @@ CR ok
 | 27/01/2023 |  Documentation utilisateur | https://github.com/Falsimane/SAE-ALT-S3-Dev-22-23-STDS-3B-Equipe-4/blob/main/Documentation/documentation_utilisateur.adoc|
 |===
 
+==== 2.2 Retour équipe projet 
 
+Pour terminer ces deux semaines, nous allons écrire quelques mots sur ce qui a été notre deuxième sprint. Celui-ci a été comme le premier, accompagné de quelques difficultés. Il a en effet été assez compliqué pour nous de mettre en place l'intégration des PDF dans l'application. Néanmoins, après quelques heures passées sur ce problème, nous avons finalement réussi à trouver une solution. De plus, le pare-feu de l'IUT étant très restrictif, le déploiement d'un environnement de production n'a pas été possible. Toutefois, la très bonne entente entre les différents membres de l'équipe a été la source du bon déroulement de ce projet.  
 
+En conclusion, ces deux semaines sont pour nous une réussite, que ce soit sur le plan technique ou organisationnel. Chaque membre a fourni un travail conséquent pour que toutes les fonctionnalités soient disponibles avant la fin du deuxième sprint. Enfin, une réunion avec le client a été tenue le 28/01 pour leur faire une démonstration du produit. Il semblerait qu'ils aient été très satisfait de l'application que nous leur avons proposée. Nous terminons donc ce projet de la meilleure des manières. 
+
+==== 2.3 Retour sprint semaine 4
