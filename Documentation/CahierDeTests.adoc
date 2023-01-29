@@ -174,3 +174,172 @@ Pour toutes informations complémentaires, vous pouvez vous référer à la docu
 ^|2 ^|Cliquer sur un bouton sur la page pour visualiser la gamme ^|La fenêtre de visualisation de la gamme s'affiche ^|OK
 
 |====
+
+=== 3. Fonctionnalités sur la page de température :
+
+|====
+
+>|Cas de test 3+|Test-12
+>|Titre 3+| Visualiser l'historique de la température
+>|Objectif 3+| Vérifier qu'il est possible de visualiser l'historique de la température
+
+4+|
+
+^|ID ^|Action ^|Comportement attendu ^|Résultat
+^|1 ^|Cliquer sur le bouton "Aujourd'hui" ^|L'historique de la température de la journée s'affiche^|OK
+^|2 ^|Cliquer sur le bouton "Hier" ^|L'historique de la température de la veille s'affiche^|OK
+
+|====
+
+|====
+
+>|Cas de test 3+|Test-13
+>|Titre 3+| Visualiser l'état de la température
+>|Objectif 3+| Vérifier si la température est correcte
+
+4+|
+
+^|ID ^|Action ^|Comportement attendu ^|Résultat
+^|1 ^|Arrivée sur la page température" ^|Un cercle de couleur doit être visible et changer selon l'état de la température^|OK
+^|2 ^|Cliquer sur le bouton "(i)" ^|Les différents états disponibles avec les couleurs associées doivent s'afficher^|OK
+
+|====
+
+|====
+
+>|Cas de test 3+|Test-14
+>|Titre 3+| Vérifier l'état de la jauge
+>|Objectif 3+| Vérifier si la température est correcte
+
+4+|
+
+^|ID ^|Action ^|Comportement attendu ^|Résultat
+^|1 ^|Arrivée sur la page température" ^|Une jauge de couleur doit être disponible et être en accord avec l'état de la température^|OK
+|====
+
+=== 4. Fonctionnalités sur la page puissance :
+
+|====
+
+>|Cas de test 3+|Test-15
+>|Titre 3+| Visualiser l'historique de la puissance
+>|Objectif 3+| Vérifier qu'il est possible de visualiser l'historique de la température
+
+4+|
+
+^|ID ^|Action ^|Comportement attendu ^|Résultat
+^|1 ^|Cliquer sur le bouton "Aujourd'hui" ^|L'historique de la puissance de la journée s'affiche^|OK
+^|2 ^|Cliquer sur le bouton "Hier" ^|L'historique de la puissance de la veille s'affiche^|OK
+
+|====
+
+|====
+
+>|Cas de test 3+|Test-16
+>|Titre 3+| Visualiser l'état de la puissance
+>|Objectif 3+| Vérifier si la puissance est correcte
+
+4+|
+
+^|ID ^|Action ^|Comportement attendu ^|Résultat
+^|1 ^|Arrivée sur la page puissance" ^|Un cercle de couleur doit être visible et changer selon l'état de la puissance^|OK
+^|2 ^|Cliquer sur le bouton "(i)" ^|Les différents états disponibles avec les couleurs associées doivent s'afficher^|OK
+
+|====
+
+|====
+
+>|Cas de test 3+|Test-17
+>|Titre 3+| Vérifier l'état de l'éclair
+>|Objectif 3+| Vérifier si la puissance est correcte
+
+4+|
+
+^|ID ^|Action ^|Comportement attendu ^|Résultat
+^|1 ^|Arrivée sur la page température" ^|Un éclair doit être disponible et être en accord avec l'état de la température^|OK
+|====
+
+=== 4. Fonctionnalités sur la page Co2 :
+
+
+|====
+
+>|Cas de test 3+|Test-18
+>|Titre 3+| Visualiser l'historique du Co2
+>|Objectif 3+| Vérifier qu'il est possible de visualiser l'historique du Co2
+
+4+|
+
+^|ID ^|Action ^|Comportement attendu ^|Résultat
+^|1 ^|Cliquer sur le bouton "Aujourd'hui" ^|L'historique du Co2 de la journée s'affiche^|OK
+^|2 ^|Cliquer sur le bouton "Hier" ^|L'historique du Co2 de la veille s'affiche^|OK
+
+|====
+
+|====
+
+>|Cas de test 3+|Test-19
+>|Titre 3+| Visualiser l'état du Co2
+>|Objectif 3+| Vérifier si l'air ambiant est sain
+
+4+|
+
+^|ID ^|Action ^|Comportement attendu ^|Résultat
+^|1 ^|Arrivée sur la page Co2" ^|Un cercle de couleur doit être visible et changer selon le niveau du Co2 dans l'air^|OK
+^|2 ^|Cliquer sur le bouton "(i)" ^|Les différents états disponibles avec les couleurs associées doivent s'afficher^|OK
+
+|====
+
+|====
+
+>|Cas de test 3+|Test-20
+>|Titre 3+| Vérifier l'état de la terre
+>|Objectif 3+| Vérifier si le niveau de Co2 dans l'air est correct
+
+4+|
+
+^|ID ^|Action ^|Comportement attendu ^|Résultat
+^|1 ^|Arrivée sur la page Co2" ^|Une terre (image) doit être disponible et être en accord avec l'état du Co2^|OK
+|====
+
+=== 4. Fonctionnalités sur la page Quantité Fût :
+
+|====
+
+>|Cas de test 3+|Test-21
+>|Titre 3+| Visualiser l'historique de la quantité de bière
+>|Objectif 3+| Vérifier qu'il est possible de visualiser l'historique de la quantité de bière
+
+4+|
+
+^|ID ^|Action ^|Comportement attendu ^|Résultat
+^|1 ^|Cliquer sur le bouton "Aujourd'hui" ^|L'historique de la quantité de la journée s'affiche^|OK
+^|2 ^|Cliquer sur le bouton "Hier" ^|L'historique de la quantité de la veille s'affiche^|OK
+
+|====
+
+|====
+
+>|Cas de test 3+|Test-21
+>|Titre 3+| Visualiser l'état de la bière dans le fût
+>|Objectif 3+| Vérifier si le niveau de bière est correct
+
+4+|
+
+^|ID ^|Action ^|Comportement attendu ^|Résultat
+^|1 ^|Arrivée sur la page Quantité Fût" ^|Un cercle de couleur doit être visible et changer selon le niveau de bière dans le fût^|OK
+^|2 ^|Cliquer sur le bouton "(i)" ^|Les différents états disponibles avec les couleurs associées doivent s'afficher^|OK
+
+|====
+
+|====
+
+>|Cas de test 3+|Test-22
+>|Titre 3+| Vérifier l'état du fût
+>|Objectif 3+| Vérifier si le niveau de de bière est correct
+
+4+|
+
+^|ID ^|Action ^|Comportement attendu ^|Résultat
+^|1 ^|Arrivée sur la page Quantité Fût" ^|Un fût (image) doit être disponible et être en accord avec l'état du taux de remplissage^|OK
+|====
