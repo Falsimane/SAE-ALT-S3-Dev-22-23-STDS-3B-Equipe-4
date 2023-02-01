@@ -21,7 +21,7 @@ _v2.0 - 27/01/2023 - Equipe 4 - SAE ALT S3 Dev 22-23 STDS 3B_
 === 3. Build
 
 . Ouvrir le répertoire décompressé dans un terminal.
-. Exécuter la commande `docker build -t node_tireuse .` et attendre la fin du build.
+. Exécuter la commande `docker build -t node_tireuse .` (ne pas oublier le point !) et attendre la fin du build.
 
 === 4. Changement des identifiants Node-Red
 
